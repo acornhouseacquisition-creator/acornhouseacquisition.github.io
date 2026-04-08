@@ -161,3 +161,334 @@
   </div>
 
 </div>
+
+   <!----------------------------------- 🟡FAQ🟡 --------------------------------------->
+<section style="background:#ffffff; padding:100px 20px; font-family:-apple-system, BlinkMacSystemFont, sans-serif;">
+  <div style="max-width:800px; margin:0 auto;">
+
+    <h2 style="color:#000; text-align:center; font-size:34px; margin-bottom:50px;">
+      Frequently Asked Questions
+    </h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <button class="faq-question">How does your process work?</button>
+        <div class="faq-answer">
+          <p>Our process is simple and stress-free. You provide basic information about your property, we evaluate it, and present you with a clear offer. If you decide to move forward, we handle everything through a licensed title company and coordinate the entire closing process from start to finish.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need to make any repairs or clean the property?</button>
+        <div class="faq-answer">
+          <p>No. We purchase properties in their current condition. There is no need to make repairs, clean, or prepare the home in any way.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How quickly can you close?</button>
+        <div class="faq-answer">
+          <p>We can typically close in as little as 7 days, but we can also adjust the timeline to match your needs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are there any fees or commissions involved?</button>
+        <div class="faq-answer">
+          <p>No. There are no commissions or hidden fees. We cover standard closing costs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if my property is in good condition?</button>
+        <div class="faq-answer">
+          <p>That is not a problem. We purchase both distressed and well-maintained homes if they fit our investment criteria.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why would I sell to you instead of listing with an agent?</button>
+        <div class="faq-answer">
+          <p>Selling traditionally can take time, require repairs, and involve uncertainty. We provide a direct, predictable solution with no showings, no contingencies, and a clear closing timeline.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if I have little or no equity in the property?</button>
+        <div class="faq-answer">
+          <p>We may still be able to help. In certain situations, we purchase properties <b>subject to the existing mortgage</b>, meaning we take ownership and continue making the payments so you can move on without bringing money to closing.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I have to move out immediately after accepting the offer?</button>
+        <div class="faq-answer">
+          <p>No. We can work around your timeline and make the transition as smooth as possible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I know your company is legitimate?</button>
+        <div class="faq-answer">
+          <p>We operate through licensed title companies and follow a standard, transparent closing process. Everything is documented and handled professionally, so you can move forward with confidence.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will I be pressured to accept an offer?</button>
+        <div class="faq-answer">
+          <p>No. There is absolutely no obligation. You are free to review the offer and decide what works best for you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I choose my own closing date?</button>
+        <div class="faq-answer">
+          <p>Yes. We work around your schedule and can close when it’s convenient for you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What makes your company different?</button>
+        <div class="faq-answer">
+          <p>We focus on clear communication, reliable execution, and solutions that actually work. We don’t make offers we can’t follow through on — our goal is a smooth and predictable experience from start to finish.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-item {
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: #f7f7f7;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 17px;
+  padding: 20px 22px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  color: #f4b400;
+  font-size: 20px;
+}
+
+.faq-question.active::after {
+  content: "−";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  color: #333;
+  padding: 0 22px;
+}
+
+.faq-answer p {
+  margin: 15px 0 20px;
+  line-height: 1.6;
+}
+</style>
+
+<script>
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q => {
+  q.addEventListener("click", () => {
+    const active = document.querySelector(".faq-question.active");
+
+    if (active && active !== q) {
+      active.classList.remove("active");
+      active.nextElementSibling.style.maxHeight = null;
+    }
+
+    q.classList.toggle("active");
+    const answer = q.nextElementSibling;
+
+    if (q.classList.contains("active")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = null;
+    }
+  });
+});
+</script> 
+
+    <!----------------------------------- 🟡LAST SECTION🟡 --------------------------------------->
+<div style="background:#000000;color:#fff;padding:80px 20px;font-family:Arial,sans-serif;">
+
+  <div style="max-width:1100px;margin:auto;">
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-bottom:60px;">
+      <h2 style="font-size:32px;margin-bottom:10px;">
+        Get Your Cash Offer Today
+      </h2>
+      <p style="color:#bbb;margin-bottom:25px;">
+        No obligation. No pressure. Just a simple, fair offer in 24–48 hours.
+      </p>
+
+      <a href="#form" style="
+        background:#f4b400;
+        color:#000;
+        padding:14px 34px;
+        border-radius:8px;
+        font-weight:bold;
+        text-decoration:none;
+        display:inline-block;
+      ">
+        Get My Cash Offer Now
+      </a>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div style="
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:50px;
+      margin-bottom:50px;
+    ">
+
+      <!-- BRAND -->
+      <div>
+        <h3 style="margin-bottom:15px;">Acorn House Acquisition</h3>
+        <p style="color:#aaa;line-height:1.6;">
+          Helping homeowners sell quickly, easily, and without stress.
+        </p>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 style="margin-bottom:15px;color:#ccc;">Contact</h4>
+
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:center;">
+          <span>📞</span>
+          <span style="color:#aaa;">(786) 982-8464</span>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:center;">
+          <span>✉️</span>
+          <span style="color:#aaa;">info@acornhouseacquisition.com</span>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;">
+          <span>🌐</span>
+          <span style="color:#aaa;">acornhouseacquisition.com</span>
+        </div>
+      </div>
+
+      <!-- SERVICE AREAS -->
+      <div>
+        <h4 style="margin-bottom:15px;color:#ccc;">Service Areas</h4>
+
+        <p style="color:#aaa;margin-bottom:6px;">North Carolina</p>
+        <p style="color:#aaa;margin-bottom:6px;">Florida</p>
+        <p style="color:#aaa;">Texas</p>
+      </div>
+
+      <!-- LEGAL -->
+      <div>
+        <h4 style="margin-bottom:15px;color:#ccc;">Legal</h4>
+
+        <p style="margin-bottom:8px;">
+          <a href="/terms" style="color:#f4b400;text-decoration:none;">
+            Terms of Service
+          </a>
+        </p>
+
+        <p>
+          <a href="/privacy" style="color:#f4b400;text-decoration:none;">
+            Privacy Policy
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- PARTNERS -->
+    <div style="text-align:center;margin-bottom:30px;">
+      <p style="color:#888;margin-bottom:20px;">
+        We work with trusted partners to ensure a smooth and secure closing
+      </p>
+
+      <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+        gap:20px;
+        max-width:800px;
+        margin:auto;
+        color:#aaa;
+        font-size:14px;
+      ">
+        <div>🏢 Licensed Title Companies</div>
+        <div>⚖️ Real Estate Attorneys</div>
+        <div>📄 Transaction Coordinators</div>
+        <div>🏦 Lending Partners</div>
+      </div>
+    </div>
+
+    <!-- DISCLOSURE -->
+    <div style="
+      max-width:750px;
+      margin:30px auto;
+      color:#777;
+      font-size:12px;
+      line-height:1.6;
+      text-align:center;
+    ">
+      Acorn House Acquisition is a real estate investment company and does not represent homeowners as a licensed real estate broker. 
+      We purchase properties directly or may assign contracts to affiliated buyers. All offers are subject to property evaluation, 
+      condition, and market factors.
+    </div>
+
+    <!-- TRANSPARENCY -->
+    <p style="text-align:center;color:#777;font-size:12px;margin-top:10px;">
+      We are direct buyers and may purchase properties at a discount, allowing us to resell or renovate for profit.
+    </p>
+
+    <!-- SMS -->
+    <div style="
+      max-width:750px;
+      margin:20px auto;
+      color:#777;
+      font-size:11px;
+      line-height:1.5;
+      text-align:center;
+    ">
+      By submitting your information, you agree to receive calls, text messages, and emails. 
+      Message and data rates may apply. Reply STOP to unsubscribe.
+    </div>
+
+    <!-- BOTTOM -->
+    <div style="
+      border-top:1px solid #222;
+      margin-top:30px;
+      padding-top:15px;
+      text-align:center;
+      color:#666;
+      font-size:13px;
+    ">
+      © 2026 Acorn House Acquisition. All rights reserved.
+    </div>
+
+  </div>
+</div>
