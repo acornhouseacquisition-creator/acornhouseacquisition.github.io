@@ -157,10 +157,268 @@
   </a>
 </div>
 
+    <!----------------------------------- 🟡Cards🟡 --------------------------------------->
 
   </div>
 
 </div>
+
+<div style="background:#f9f9f9;padding:80px 20px;font-family:Arial,sans-serif;">
+
+  <div style="max-width:1200px;margin:auto;text-align:center;">
+
+    <h2 style="font-size:34px;color:#111;margin-bottom:10px;">
+      Situations We Help Solve
+    </h2>
+
+    <p style="font-size:16px;color:#666;margin-bottom:40px;">
+      Tap a card to view how we help homeowners
+    </p>
+
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    ">
+
+      <!-- CARD -->
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="img" style="background-image:url('https://i.imgur.com/XA40fJG.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>Facing Foreclosure</h3>
+              <p>Behind on payments</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>Closed:</b> 7–10 Days</p>
+              <p><b>Stopped Foreclosure</b></p>
+              <p class="quote">“They helped us avoid losing the house.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+<div class="img" style="background-image:url('https://i.imgur.com/6A1bvT7.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>Inherited Property</h3>
+              <p>Probate situations</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>No Repairs Needed</b></p>
+              <p><b>Handled Paperwork</b></p>
+              <p class="quote">“Made a difficult situation simple.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="img" style="background-image:url('https://i.imgur.com/zpAJpzX.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>Divorce Situations</h3>
+              <p>Need fast resolution</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>Fast Sale</b></p>
+              <p><b>Fair Agreement</b></p>
+              <p class="quote">“Helped us move forward quickly.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="img" style="background-image:url('https://i.imgur.com/WKHwho2.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>No Equity</h3>
+              <p>Owe close to value</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>Creative Solutions</b></p>
+              <p><b>Loan Takeover Options</b></p>
+              <p class="quote">“We didn’t think selling was possible.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="img" style="background-image:url('https://i.imgur.com/h4XLm7i.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>On Market, No Offers</h3>
+              <p>Property not selling</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>As-Is Purchase</b></p>
+              <p><b>No Commissions</b></p>
+              <p class="quote">“Solved what the market couldn’t.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="this.classList.toggle('flip')" class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+           <div class="img" style="background-image:url('https://i.imgur.com/eq1NDve.jpg');background-size:cover;background-position:center;"></div>
+            <div class="content">
+              <h3>Vacant Property</h3>
+              <p>Maintenance issues</p>
+              <span class="hint">↻ Tap to flip</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="center">
+              <p><b>No Cleanup Needed</b></p>
+              <p><b>Quick Close</b></p>
+              <p class="quote">“Took a burden off our hands.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* LOCK SIZE */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flip .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* FRONT */
+.flip-front {
+  background:#fff;
+}
+
+.flip-front .img {
+  background:#ddd;
+  height:120px;
+}
+
+.flip-front .content {
+  padding:15px;
+  text-align:left;
+}
+
+/* HINT */
+.hint {
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  color:#f4b400;
+  font-weight:bold;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+  100% { opacity: 0.6; transform: translateY(0); }
+}
+
+/* BACK */
+.flip-back {
+  background:#111;
+  color:#fff;
+  transform: rotateY(180deg);
+}
+
+/* CENTER CONTENT */
+.center {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.quote {
+  margin-top:10px;
+  font-style:italic;
+  font-size:13px;
+}
+
+/* HOVER EFFECT */
+.flip-card:hover .flip-inner {
+  transform: rotateY(6deg);
+}
+
+.flip-card.flip:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+</style>
+
+<script>
+// NUDGE ON LOAD (one-time flip hint)
+window.addEventListener('load', () => {
+  const cards = document.querySelectorAll('.flip-card');
+
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add('flip');
+
+      setTimeout(() => {
+        card.classList.remove('flip');
+      }, 800);
+
+    }, i * 250);
+  });
+});
+</script>
 
    <!----------------------------------- 🟡FAQ🟡 --------------------------------------->
 <section style="background:#ffffff; padding:100px 20px; font-family:-apple-system, BlinkMacSystemFont, sans-serif;">
