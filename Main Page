@@ -86,20 +86,12 @@
 
   </div>
 
-</div>
+
 <div style="
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #ffffff 15%,
-    rgba(244,180,0,0.15) 30%,
-    #f4b400 70%,
-    #f4b400 100%
-  );
+  background: linear-gradient(135deg, #ffffff 60%, #f4b400 40%);
   padding:60px 20px;
   font-family:Arial,sans-serif;
 ">
-
   <div style="max-width:1100px;margin:auto;text-align:center;">
 
     <!-- HEADLINE -->
