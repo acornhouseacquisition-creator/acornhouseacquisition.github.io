@@ -879,12 +879,79 @@ questions.forEach(q => {
 
 <------------🟡auto paps up 10 sec🟡 ------------->
 
-  <script>
+  <!-- SECTION -->
+<div style="background:#000000;color:#fff;padding:70px 20px;text-align:center;">
+  <div style="max-width:800px;margin:auto;">
+
+    <h2 style="font-size:32px;margin-bottom:15px;">
+      Get Your Cash Offer Today
+    </h2>
+
+    <p style="color:#fff;margin-bottom:30px;">
+      No obligation. No pressure. Just a simple, fair offer in 24–48 hours.
+    </p>
+
+    <p style="text-align:center;color:#fff;font-size:14px;margin-top:30px;font-weight:700;">
+      We buy properties at a discount, handle the repairs, and take on the risk — allowing you to sell quickly and without hassle.
+    </p>
+
+    <!-- BUTTON -->
+    <button onclick="openPopup()" 
+      style="background:#f4b400;color:#000;padding:15px 35px;
+      border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+      Get My Cash Offer Now
+    </button>
+
+  </div>
+</div>
+
+<!-- POPUP OVERLAY -->
+<div id="popupForm" style="
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.8);
+  z-index:9999;
+
+  justify-content:center;
+  align-items:center;
+">
+
+  <!-- POPUP BOX -->
+  <div style="
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    max-width:600px;
+    width:95%;
+    position:relative;
+    max-height:90vh;
+    overflow:auto;
+  ">
+
+    <!-- CLOSE BUTTON -->
+    <span onclick="closePopup()" style="
+      position:absolute;
+      top:10px;
+      right:15px;
+      font-size:26px;
+      cursor:pointer;
+      color:#000;
+    ">&times;</span>
+
+    <!-- FORM -->
+    <script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
+    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
   function openPopup() {
     const popup = document.getElementById("popupForm");
-    if (!popup) return;
-
-    popup.style.display = "block";
+    popup.style.display = "flex";
     document.body.style.overflow = "hidden";
   }
 
@@ -907,7 +974,7 @@ questions.forEach(q => {
       setTimeout(function () {
         openPopup();
         sessionStorage.setItem("popupShown", "true");
-      }, 10000); // 10 seconds
+      }, 10000);
     }
   });
 </script>
