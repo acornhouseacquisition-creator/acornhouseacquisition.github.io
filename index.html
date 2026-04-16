@@ -726,6 +726,173 @@ questions.forEach(q => {
 });
 </script> 
 
+<!----------🟡With no Agent 🟡----->
+<!-- CLOSE FORM SCRIPT -->
+<script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
+
+<!-- POPUP OVERLAY -->
+<div id="popupForm" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+">
+  <div style="
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    max-width:500px;
+    width:90%;
+    position:relative;
+  ">
+    <span onclick="closePopup()" style="
+      position:absolute;
+      top:15px;
+      right:20px;
+      font-size:20px;
+      cursor:pointer;
+    ">✕</span>
+
+    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+  </div>
+</div>
+
+<!-- SECTION -->
+<div style="background:#000;color:#fff;padding:90px 20px;text-align:center;">
+  <div style="max-width:1100px;margin:auto;">
+
+    <h2 style="font-size:40px;margin-bottom:15px;">
+      Why Sell Your House Directly To Us?
+    </h2>
+
+    <p style="color:#ccc;font-size:18px;margin-bottom:70px;">
+      A faster, simpler way to sell without fees, repairs, or stress.
+    </p>
+
+    <!-- GRID FIXED -->
+    <div style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      max-width:900px;
+      margin:0 auto;
+      align-items:start;
+    ">
+
+      <!-- LEFT COLUMN -->
+      <div style="text-align:left; justify-self:start;">
+        <h3 style="color:#f5b400;font-size:22px;margin-bottom:20px;">
+          Sell Directly To Us
+        </h3>
+
+        <ul style="
+          list-style:none;
+          padding:0;
+          line-height:2;
+          color:#ddd;
+          max-width:320px;
+        ">
+          <li>✔ Get a fair cash offer within 24 hours</li>
+          <li>✔ Close in as little as 7 to 21 days</li>
+          <li>✔ No agent fees or commissions</li>
+          <li>✔ We pay ALL closing costs so you don’t pay a dime</li>
+          <li>✔ No repairs needed sell as-is</li>
+          <li>✔ No showings or open houses</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="text-align:left; justify-self:end;">
+        <h3 style="color:#999;font-size:22px;margin-bottom:20px;">
+          Listing With An Agent
+        </h3>
+
+        <ul style="
+          list-style:none;
+          padding:0;
+          line-height:2;
+          color:#aaa;
+          max-width:320px;
+        ">
+          <li>✖ Can take months to sell</li>
+          <li>✖ 5% to 6% commissions and fees</li>
+          <li>✖ You may pay your closing costs and help the buyer</li>
+          <li>✖ Repairs and inspections required</li>
+          <li>✖ Constant showings and disruptions</li>
+          <li>✖ Deals can fall through</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:80px;">
+      <button onclick="openPopup()" style="
+        background:#f5b400;
+        color:#000;
+        border:none;
+        padding:18px 40px;
+        font-size:18px;
+        font-weight:700;
+        border-radius:6px;
+        cursor:pointer;
+      ">
+        Get My Cash Offer Now
+      </button>
+
+      <p style="color:#aaa;margin-top:15px;font-size:14px;">
+        No obligation. No pressure. Just a fair offer.
+      </p>
+
+      <!-- TESTIMONIAL -->
+      <div style="
+        margin-top:35px;
+        border:1px solid #333;
+        border-radius:10px;
+        padding:20px;
+        max-width:500px;
+        margin-left:auto;
+        margin-right:auto;
+        background:#0a0a0a;
+      ">
+        <p style="color:#ddd;font-size:15px;font-style:italic;margin-bottom:10px;">
+          “My experience on the market was frustrating. Acorn gave me a fair cash offer within 24 hours and handled everything. We closed quickly with no hassle.”
+        </p>
+        <p style="color:#888;font-size:13px;">
+          — Sarah M., North Carolina
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openPopup() {
+  document.getElementById("popupForm").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popupForm").style.display = "none";
+}
+
+window.onclick = function(e) {
+  let popup = document.getElementById("popupForm");
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+}
+</script>
+
+
+
     <!----------------------------------- 🟡LAST SECTION🟡 --------------------------------------->
 <div style="background:#000000;color:#fff;padding:80px 20px;font-family:Arial,sans-serif;">
 
@@ -888,175 +1055,4 @@ questions.forEach(q => {
   </div>
 </div>
 
-  <!----------🟡----->
-
-  <!-- CLOSE FORM SCRIPT -->
-<script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
-
-<!-- POPUP OVERLAY -->
-<div id="popupForm" style="
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.7);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-">
-
-  <div style="
-    background:#fff;
-    border-radius:12px;
-    padding:30px;
-    max-width:500px;
-    width:90%;
-    position:relative;
-  ">
-
-    <!-- CLOSE BUTTON -->
-    <span onclick="closePopup()" style="
-      position:absolute;
-      top:15px;
-      right:20px;
-      font-size:20px;
-      cursor:pointer;
-    ">✕</span>
-
-    <!-- FORM -->
-    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
-
-  </div>
-</div>
-
-<!-- SECTION -->
-<div style="background:#000;color:#fff;padding:90px 20px;text-align:center;">
-  <div style="max-width:1000px;margin:auto;">
-
-    <h2 style="font-size:40px;margin-bottom:15px;">
-      Why Sell Your House Directly To Us?
-    </h2>
-
-    <p style="color:#ccc;font-size:18px;margin-bottom:60px;">
-      A faster, simpler way to sell without fees, repairs, or stress.
-    </p>
-
-    <!-- PERFECTLY CENTERED GRID -->
-    <div style="
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      max-width:800px;
-      margin:0 auto;
-      text-align:left;
-    ">
-
-      <!-- LEFT -->
-      <div>
-        <h3 style="color:#f5b400;font-size:22px;margin-bottom:20px;">
-          Sell Directly To Us
-        </h3>
-
-        <ul style="
-          list-style:none;
-          padding:0;
-          line-height:2;
-          color:#ddd;
-          max-width:320px;
-        ">
-          <li>✔ Get a fair cash offer within 24 hours</li>
-          <li>✔ Close in as little as 7 to 21 days</li>
-          <li>✔ No agent fees or commissions</li>
-          <li>✔ We pay ALL closing costs so you don’t pay a dime</li>
-          <li>✔ No repairs needed sell as-is</li>
-          <li>✔ No showings or open houses</li>
-        </ul>
-      </div>
-
-      <!-- RIGHT -->
-      <div>
-        <h3 style="color:#999;font-size:22px;margin-bottom:20px;">
-          Listing With An Agent
-        </h3>
-
-        <ul style="
-          list-style:none;
-          padding:0;
-          line-height:2;
-          color:#aaa;
-          max-width:320px;
-        ">
-          <li>✖ Can take months to sell</li>
-          <li>✖ 5% to 6% commissions and fees</li>
-          <li>✖ You may pay your closing costs and help the buyer</li>
-          <li>✖ Repairs and inspections required</li>
-          <li>✖ Constant showings and disruptions</li>
-          <li>✖ Deals can fall through</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div style="margin-top:70px;">
-      <button onclick="openPopup()" style="
-        background:#f5b400;
-        color:#000;
-        border:none;
-        padding:18px 40px;
-        font-size:18px;
-        font-weight:700;
-        border-radius:6px;
-        cursor:pointer;
-      ">
-        Get My Cash Offer Now
-      </button>
-
-      <p style="color:#aaa;margin-top:15px;font-size:14px;">
-        No obligation. No pressure. Just a fair offer.
-      </p>
-
-      <!-- TESTIMONIAL BOX -->
-      <div style="
-        margin-top:30px;
-        border:1px solid #333;
-        border-radius:10px;
-        padding:20px;
-        max-width:500px;
-        margin-left:auto;
-        margin-right:auto;
-        background:#0a0a0a;
-      ">
-        <p style="color:#ddd;font-size:15px;font-style:italic;margin-bottom:10px;">
-          “My experience on the market was frustrating. Acorn gave me a fair cash offer and handled everything.”
-        </p>
-        <p style="color:#888;font-size:13px;">
-          — Sarah M., North Carolina
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-<!-- SCRIPT -->
-<script>
-function openPopup() {
-  document.getElementById("popupForm").style.display = "flex";
-}
-
-function closePopup() {
-  document.getElementById("popupForm").style.display = "none";
-}
-
-window.onclick = function(e) {
-  let popup = document.getElementById("popupForm");
-  if (e.target === popup) {
-    popup.style.display = "none";
-  }
-}
-</script>
-
+  
