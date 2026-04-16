@@ -824,22 +824,23 @@ questions.forEach(q => {
       </p>
 
       <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-        gap:20px;
-        max-width:800px;
-        margin:auto;
-        color:#aaa;
-        font-size:14px;
-      ">
-        <div>🏢 Licensed Title Companies</div>
-        <div>⚖️ Real Estate Attorneys</div>
-        <div>📄 Transaction Coordinators</div>
-        <div>🧑‍💻 RE Agents</div>
-        <div>🏦 Lending Partners</div>
-      </div>
-    </div>
-
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  max-width:1000px;
+  margin:auto;
+  color:#aaa;
+  font-size:14px;
+  white-space:nowrap;
+  overflow-x:auto;
+">
+  <div>🏢 Licensed Title Companies</div>
+  <div>⚖️ Real Estate Attorneys</div>
+  <div>📄 Transaction Coordinators</div>
+  <div>🧑‍💻 RE Agents</div>
+  <div>🏦 Lending Partners</div>
+</div>
+      
     <!-- DISCLOSURE -->
     <div style="
       max-width:750px;
