@@ -875,3 +875,39 @@ questions.forEach(q => {
 
   </div>
 </div>
+
+
+<------------🟡auto paps up 10 sec🟡 ------------->
+
+  <script>
+  function openPopup() {
+    const popup = document.getElementById("popupForm");
+    if (!popup) return;
+
+    popup.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePopup() {
+    document.getElementById("popupForm").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Close when clicking outside
+  window.onclick = function(event) {
+    const popup = document.getElementById("popupForm");
+    if (event.target === popup) {
+      closePopup();
+    }
+  }
+
+  // AUTO OPEN after 10 seconds (only once per visit)
+  window.addEventListener("load", function () {
+    if (!sessionStorage.getItem("popupShown")) {
+      setTimeout(function () {
+        openPopup();
+        sessionStorage.setItem("popupShown", "true");
+      }, 10000); // 10 seconds
+    }
+  });
+</script>
