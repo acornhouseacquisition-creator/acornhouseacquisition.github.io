@@ -1000,17 +1000,17 @@ window.onclick = function(e) {
         No obligation. No pressure. Just a simple, fair offer in 24–48 hours.
       </p>
 
-      <a href="#form" style="
-        background:#f4b400;
-        color:#000;
-        padding:14px 34px;
-        border-radius:8px;
-        font-weight:bold;
-        text-decoration:none;
-        display:inline-block;
-      ">
-        Get My Cash Offer Now
-      </a>
+<a href="javascript:void(0)" onclick="openForm()" style="
+  background:#f4b400;
+  color:#000;
+  padding:14px 34px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
+">
+  Get My Cash Offer Now
+</a>
     </div>
 
     <!-- MAIN GRID -->
@@ -1147,5 +1147,61 @@ window.onclick = function(e) {
 
   </div>
 </div>
+
+  <!-- CLOSE FORM SCRIPT -->
+<script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
+
+<!-- POPUP FORM -->
+<div id="formPopup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+">
+
+  <div style="
+    background:#ffffff;
+    border-radius:16px;
+    max-width:520px;
+    width:100%;
+    padding:30px 25px;
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,0.4);
+  ">
+
+    <!-- CLOSE BUTTON -->
+    <span onclick="closeForm()" style="
+      position:absolute;
+      top:12px;
+      right:16px;
+      font-size:22px;
+      cursor:pointer;
+      color:#333;
+      font-weight:bold;
+    ">×</span>
+
+    <!-- FORM -->
+    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openForm() {
+  document.getElementById("formPopup").style.display = "flex";
+}
+
+function closeForm() {
+  document.getElementById("formPopup").style.display = "none";
+}
+</script>
 
   
