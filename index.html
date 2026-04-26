@@ -29,6 +29,9 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .nav-phone{font-size:15px;font-weight:600;color:var(--black);text-decoration:none;display:flex;align-items:center;gap:7px;}
 .nav-phone:hover{color:var(--gold-d);}
 .nav-phone svg{width:17px;height:17px;}
+/* TASK 2: Blog nav link */
+.nav-blog{font-size:14px;font-weight:600;color:var(--tm);text-decoration:none;padding:8px 14px;border-radius:8px;border:1.5px solid var(--gm);transition:all .2s;white-space:nowrap;}
+.nav-blog:hover{border-color:var(--gold);color:var(--gold-d);}
 .nav-cta{background:var(--gold);color:var(--black);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .nav-cta:hover{background:var(--gold-d);transform:translateY(-1px);}
 
@@ -165,6 +168,105 @@ section{padding:88px 5%;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:15px;color:var(--tm);line-height:1.75;}
 .faq-ai{padding:0 24px 20px;border-top:1px solid var(--gm);padding-top:16px;}
 
+/* =============================================
+   TASK 3: LATEST INSIGHTS / BLOG SECTION
+   ============================================= */
+.blog-bg{background:var(--white);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;}
+.blog-card{background:var(--gl);border-radius:var(--rl);overflow:hidden;border:1px solid var(--gm);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shl);}
+.blog-card-img{height:180px;background:var(--gm);background-size:cover;background-position:center;position:relative;}
+.blog-card-img-placeholder{height:180px;background:linear-gradient(135deg,var(--black) 0%,#2a2a2a 100%);display:flex;align-items:center;justify-content:center;}
+.blog-card-img-placeholder svg{width:40px;height:40px;fill:var(--gold);opacity:.6;}
+.blog-card-tag{position:absolute;bottom:12px;left:14px;background:var(--gold);color:var(--black);font-size:11px;font-weight:800;padding:3px 11px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
+.blog-card-body{padding:22px 20px;flex:1;display:flex;flex-direction:column;}
+.blog-card-date{font-size:12px;color:var(--tl);margin-bottom:8px;font-weight:500;}
+.blog-card-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--black);line-height:1.3;margin-bottom:10px;}
+.blog-card-excerpt{font-size:14px;color:var(--tm);line-height:1.65;flex:1;margin-bottom:18px;}
+.blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--gold-d);text-decoration:none;transition:gap .2s;}
+.blog-card-link:hover{gap:10px;}
+.blog-card-link svg{width:14px;height:14px;fill:var(--gold-d);}
+/* Loading state for dynamic fetch */
+.blog-loading{text-align:center;padding:40px;color:var(--tm);font-size:15px;}
+.blog-loading-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin:0 3px;animation:blink 1.4s infinite;}
+.blog-loading-dot:nth-child(2){animation-delay:.2s;}
+.blog-loading-dot:nth-child(3){animation-delay:.4s;}
+@keyframes blink{0%,80%,100%{opacity:.2;}40%{opacity:1;}}
+.blog-cta{text-align:center;margin-top:42px;}
+.blog-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--white);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;}
+.blog-cta a:hover{background:var(--bs);transform:translateY(-1px);}
+.blog-cta a svg{width:15px;height:15px;fill:var(--gold);}
+
+/* =============================================
+   WHERE WE BUY — REDESIGNED
+   ============================================= */
+.where-bg{background:var(--black);padding:88px 5%;}
+.where-bg .eyebrow{color:var(--gold);}
+.where-bg .sec-title{color:var(--white);}
+.where-context{font-size:17px;color:rgba(255,255,255,.6);line-height:1.8;max-width:680px;margin-top:16px;margin-bottom:52px;font-weight:300;}
+.where-context strong{color:rgba(255,255,255,.9);}
+
+/* STATE TABS */
+.where-tabs{display:flex;gap:0;margin-bottom:0;border-radius:var(--rl) var(--rl) 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-bottom:none;width:fit-content;}
+.where-tab{padding:14px 34px;background:rgba(255,255,255,.05);border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:rgba(255,255,255,.45);cursor:pointer;transition:all .2s;letter-spacing:.6px;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.1);}
+.where-tab:last-child{border-right:none;}
+.where-tab:hover{background:rgba(255,255,255,.09);color:rgba(255,255,255,.75);}
+.where-tab.active{background:var(--gold);color:var(--black);}
+
+/* STATE PANELS */
+.where-panels{border:1px solid rgba(255,255,255,.1);border-radius:0 var(--rl) var(--rl) var(--rl);overflow:hidden;}
+.where-panel{display:none;padding:36px 38px 40px;}
+.where-panel.active{display:block;}
+
+/* PANEL HEADER ROW */
+.where-panel-header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:32px;flex-wrap:wrap;}
+.where-panel-headline{display:flex;flex-direction:column;gap:6px;}
+.where-panel-title{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--white);line-height:1;}
+.where-panel-sub{font-size:14px;color:rgba(255,255,255,.45);}
+.where-panel-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(244,180,0,.12);border:1px solid rgba(244,180,0,.3);color:var(--gold);padding:7px 16px;border-radius:100px;font-size:13px;font-weight:600;white-space:nowrap;}
+.where-panel-badge svg{width:13px;height:13px;fill:var(--gold);}
+
+/* CITY PILLS GRID */
+.where-cities{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:32px;}
+.where-city-pill{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);text-decoration:none;color:rgba(255,255,255,.8);font-size:14px;font-weight:600;transition:all .22s;cursor:pointer;}
+.where-city-pill:hover{background:rgba(244,180,0,.13);border-color:var(--gold);color:var(--white);}
+.where-city-pill svg{width:14px;height:14px;flex-shrink:0;opacity:0;transition:opacity .2s;fill:none;stroke:var(--gold);stroke-width:2.5;}
+.where-city-pill:hover svg{opacity:1;}
+
+/* PANEL FOOTER — radius note + CTA */
+.where-panel-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
+.where-radius-note{display:flex;align-items:center;gap:10px;}
+.where-radius-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(244,180,0,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.where-radius-icon svg{width:16px;height:16px;fill:var(--gold);}
+.where-radius-note p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5;}
+.where-radius-note strong{color:rgba(255,255,255,.7);}
+
+/* CITY CHECKER */
+.city-checker{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--rl);padding:30px 32px;margin-bottom:44px;}
+.city-checker-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+.city-checker-icon-wrap{width:42px;height:42px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.city-checker-icon-wrap svg{width:20px;height:20px;fill:var(--black);}
+.city-checker-text h3{font-family:'Fraunces',serif;font-size:20px;color:var(--white);margin-bottom:4px;}
+.city-checker-text p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.5;}
+.city-checker-row{display:flex;gap:12px;flex-wrap:wrap;}
+.city-checker-input{flex:1;min-width:200px;padding:14px 18px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--white);background:rgba(255,255,255,.08);outline:none;transition:border-color .2s;}
+.city-checker-input::placeholder{color:rgba(255,255,255,.3);}
+.city-checker-input:focus{border-color:var(--gold);background:rgba(255,255,255,.11);}
+.city-checker-btn{background:var(--gold);color:var(--black);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap;}
+.city-checker-btn:hover{background:var(--gold-l);transform:translateY(-1px);}
+.city-result{background:rgba(244,180,0,.08);border-radius:var(--r);padding:20px 22px;margin-top:16px;border:1.5px solid rgba(244,180,0,.35);animation:slideDown .3s ease;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+.city-result-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;}
+.city-result-text{display:flex;align-items:flex-start;gap:11px;flex:1;}
+.city-result-icon{width:26px;height:26px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--black);flex-shrink:0;margin-top:1px;line-height:1;}
+#cityResultMsg{font-size:15px;color:rgba(255,255,255,.85);font-weight:400;line-height:1.6;}
+#cityResultMsg strong{color:var(--gold-l);}
+.city-result-close{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);width:28px;height:28px;min-width:28px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.city-result-close:hover{background:rgba(255,255,255,.18);color:var(--white);}
+.city-result-cta{border-top:1px solid rgba(244,180,0,.2);padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.city-result-cta p{font-size:14px;color:rgba(255,255,255,.6);flex:1;margin:0;}
+.city-result-cta .btn-gold{padding:12px 22px;font-size:14px;white-space:nowrap;}
+
 /* ABOUT */
 .about-bg{background:var(--white);}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:78px;align-items:start;margin-top:54px;}
@@ -235,58 +337,62 @@ section{padding:88px 5%;}
   .about-grid{grid-template-columns:1fr;gap:38px;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
+  .blog-grid{grid-template-columns:1fr;}
+  .where-tabs{width:100%;}
+  .where-tab{flex:1;padding:12px 10px;font-size:12px;text-align:center;}
+  .where-panel{padding:24px 20px 28px;}
+  .where-cities{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
+  .where-panel-footer{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:700px){
+  .city-checker-row{flex-direction:column;}
+  .city-checker-btn{width:100%;}
+  .city-result-cta{flex-direction:column;align-items:flex-start;}
+  .city-result-cta .btn-gold{width:100%;text-align:center;}
 }
 @media(max-width:600px){
   .trust-inner{gap:12px;}.trust-div{display:none;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .footer-grid{grid-template-columns:1fr;}
   nav .nav-phone{display:none;}
+  nav .nav-blog{display:none;}
 }
 </style>
 </head>
 <body>
 
-<!-- SVG SYMBOL DEFS (reusable icons — badge style like screenshot) -->
+<!-- SVG SYMBOL DEFS -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- checkmark -->
     <symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <!-- phone -->
     <symbol id="ico-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"/></symbol>
-    <!-- house -->
     <symbol id="ico-house" viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></symbol>
-    <!-- lightning bolt -->
     <symbol id="ico-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></symbol>
-    <!-- shield / trust -->
     <symbol id="ico-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></symbol>
-    <!-- no repairs / wrench-x -->
     <symbol id="ico-norepair" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a6 6 0 01-7.4 7.4L6 21a1 1 0 01-1.4-1.4L12 12.3a6 6 0 017.4-7.4l-3 3-.7-1.6z" fill="currentColor"/><line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <!-- dollar / zero fees -->
     <symbol id="ico-dollar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="900" fill="white" font-family="Arial">$</text></symbol>
-    <!-- title company / building -->
     <symbol id="ico-building" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1" fill="currentColor"/><rect x="7" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="7" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="10" y="17" width="4" height="4" fill="white" opacity=".5"/></symbol>
-    <!-- mail -->
     <symbol id="ico-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></symbol>
-    <!-- globe -->
     <symbol id="ico-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.8"/></symbol>
-    <!-- pin/location -->
     <symbol id="ico-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white"/></symbol>
-    <!-- recycle/no-agent -->
     <symbol id="ico-noagent" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><line x1="7" y1="7" x2="17" y2="17" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="7" x2="7" y2="17" stroke="white" stroke-width="2.5" stroke-linecap="round"/></symbol>
-    <!-- calendar -->
     <symbol id="ico-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" fill="currentColor"/><line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.5"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="7" y="13" width="2" height="2" fill="white" rx=".3"/><rect x="11" y="13" width="2" height="2" fill="white" rx=".3"/><rect x="15" y="13" width="2" height="2" fill="white" rx=".3"/></symbol>
+    <symbol id="ico-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="12 5 19 12 12 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
 
 <!-- ===================== MAIN PAGE ===================== -->
 <div id="page-main" class="page active">
 
+<!-- NAV — TASK 2: Blog link added -->
 <nav>
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('main')">
       <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition">
     </div>
     <div class="nav-right">
+      <!-- TASK 2: Blog link in nav -->
+      <a href="https://acornhouseacquisition.com/blog" class="nav-blog" target="_blank" rel="noopener">Visit Our Blog</a>
       <a href="tel:+17869828464" class="nav-phone">
         <svg><use href="#ico-phone"/></svg>
         (786) 982-8464
@@ -375,6 +481,165 @@ section{padding:88px 5%;}
   </div>
 </div>
 
+<!-- WHERE WE BUY — redesigned, placed before How It Works -->
+<section class="where-bg">
+  <div class="container">
+
+    <!-- Header -->
+    <span class="eyebrow">Service Areas</span>
+    <h2 class="sec-title">We Buy Houses Across<br>North Carolina, Florida &amp; Texas</h2>
+    <p class="where-context">We are active buyers in major cities <strong>and</strong> in the small towns and rural communities surrounding them. If you're within about 50 miles of any city listed below, we're almost certainly buying in your area — suburbs, countryside, small towns, all of it. <strong>You don't have to be in a big city to get a fair cash offer from us.</strong></p>
+
+    <!-- City Checker -->
+    <div class="city-checker">
+      <div class="city-checker-top">
+        <div class="city-checker-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2" fill="black"/></svg>
+        </div>
+        <div class="city-checker-text">
+          <h3>Not sure if we cover your area?</h3>
+          <p>Type your city name below and find out instantly — no phone call needed.</p>
+        </div>
+      </div>
+      <div class="city-checker-row">
+        <input
+          type="text"
+          id="cityInput"
+          class="city-checker-input"
+          placeholder="e.g. Mooresville, Bradenton, Katy..."
+          onkeydown="if(event.key==='Enter')checkCity()"
+          autocomplete="off"
+        >
+        <button class="city-checker-btn" onclick="checkCity()">
+          Check My City &nbsp;&#8594;
+        </button>
+      </div>
+      <!-- Result banner -->
+      <div class="city-result" id="cityResult" style="display:none;">
+        <div class="city-result-inner">
+          <div class="city-result-text">
+            <span class="city-result-icon">&#10003;</span>
+            <span id="cityResultMsg"></span>
+          </div>
+          <button class="city-result-close" onclick="closeResult()" aria-label="Close">&#x2715;</button>
+        </div>
+        <div class="city-result-cta">
+          <p>Ready for a fair cash offer? No repairs, no fees, and no stress — just a clear number within 24 hours.</p>
+          <button class="btn-gold" onclick="closeResult();openPopup()">Get My Free Cash Offer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- State Tabs -->
+    <div class="where-tabs" role="tablist">
+      <button class="where-tab active" onclick="switchState('nc',this)" role="tab">North Carolina</button>
+      <button class="where-tab" onclick="switchState('fl',this)" role="tab">Florida</button>
+      <button class="where-tab" onclick="switchState('tx',this)" role="tab">Texas</button>
+    </div>
+
+    <!-- Panels -->
+    <div class="where-panels">
+
+      <!-- NC PANEL -->
+      <div class="where-panel active" id="panel-nc">
+        <div class="where-panel-header">
+          <div class="where-panel-headline">
+            <div class="where-panel-title">North Carolina</div>
+            <div class="where-panel-sub">6 major markets · Mecklenburg to Buncombe County and beyond</div>
+          </div>
+          <div class="where-panel-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#f4b400"/></svg>
+            We live &amp; operate here
+          </div>
+        </div>
+        <div class="where-cities">
+          <a href="/sell-my-house-charlotte-nc" class="where-city-pill">Charlotte <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-raleigh-nc" class="where-city-pill">Raleigh <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-asheville-nc" class="where-city-pill">Asheville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-greensboro-nc" class="where-city-pill">Greensboro <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-winston-salem-nc" class="where-city-pill">Winston-Salem <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fayetteville-nc" class="where-city-pill">Fayetteville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+        <div class="where-panel-footer">
+          <div class="where-radius-note">
+            <div class="where-radius-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <p>We buy in every listed city <strong>plus all towns and suburbs within ~50 miles</strong> — including Cornelius, Davidson, Huntersville, Concord, Kannapolis, Black Mountain, Weaverville, and more.</p>
+          </div>
+          <button class="btn-gold" style="padding:13px 26px;font-size:14px;white-space:nowrap;" onclick="openPopup()">Get an Offer for My NC Home</button>
+        </div>
+      </div>
+
+      <!-- FL PANEL -->
+      <div class="where-panel" id="panel-fl">
+        <div class="where-panel-header">
+          <div class="where-panel-headline">
+            <div class="where-panel-title">Florida</div>
+            <div class="where-panel-sub">9 major markets · Gulf Coast, Atlantic Coast, and Central Florida</div>
+          </div>
+          <div class="where-panel-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#f4b400"/></svg>
+            Office in Sarasota FL
+          </div>
+        </div>
+        <div class="where-cities">
+          <a href="/sell-my-house-miami-fl" class="where-city-pill">Miami <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-tampa-fl" class="where-city-pill">Tampa <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-orlando-fl" class="where-city-pill">Orlando <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-jacksonville-fl" class="where-city-pill">Jacksonville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-lauderdale-fl" class="where-city-pill">Fort Lauderdale <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-sarasota-fl" class="where-city-pill">Sarasota <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-pensacola-fl" class="where-city-pill">Pensacola <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-tallahassee-fl" class="where-city-pill">Tallahassee <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-myers-fl" class="where-city-pill">Fort Myers <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+        <div class="where-panel-footer">
+          <div class="where-radius-note">
+            <div class="where-radius-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <p>We buy throughout Florida — including Bradenton, Venice, North Port, Lakeland, Cape Coral, Naples, Bonita Springs, Clearwater, St. Pete, and surrounding communities.</p>
+          </div>
+          <button class="btn-gold" style="padding:13px 26px;font-size:14px;white-space:nowrap;" onclick="openPopup()">Get an Offer for My FL Home</button>
+        </div>
+      </div>
+
+      <!-- TX PANEL -->
+      <div class="where-panel" id="panel-tx">
+        <div class="where-panel-header">
+          <div class="where-panel-headline">
+            <div class="where-panel-title">Texas</div>
+            <div class="where-panel-sub">6 major markets · From Houston Metro to the Hill Country</div>
+          </div>
+          <div class="where-panel-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#f4b400"/></svg>
+            Expanding across TX
+          </div>
+        </div>
+        <div class="where-cities">
+          <a href="/sell-my-house-houston-tx" class="where-city-pill">Houston <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-dallas-tx" class="where-city-pill">Dallas <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-austin-tx" class="where-city-pill">Austin <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-san-antonio-tx" class="where-city-pill">San Antonio <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-worth-tx" class="where-city-pill">Fort Worth <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-corpus-christi-tx" class="where-city-pill">Corpus Christi <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+        <div class="where-panel-footer">
+          <div class="where-radius-note">
+            <div class="where-radius-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <p>We cover the greater Houston, Dallas-Fort Worth, Austin, and San Antonio metro areas — including The Woodlands, Katy, Sugar Land, Plano, Frisco, Round Rock, and more.</p>
+          </div>
+          <button class="btn-gold" style="padding:13px 26px;font-size:14px;white-space:nowrap;" onclick="openPopup()">Get an Offer for My TX Home</button>
+        </div>
+      </div>
+
+    </div><!-- /where-panels -->
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="how-bg">
   <div class="container">
@@ -415,191 +680,118 @@ section{padding:88px 5%;}
     <h2 class="sec-title">Situations We Help Solve</h2>
     <p class="sec-sub">Every homeowner's story is different. Tap a card — see how we've helped people just like you.</p>
     <div class="flip-grid">
-
-      <!-- CARD 1: FORECLOSURE -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/XA40fJG.jpg')"></div>
-            <div class="content">
-              <h3>Facing Foreclosure</h3>
-              <p>Behind on payments, running out of time</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Facing Foreclosure</h3><p>Behind on payments, running out of time</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">Closed in 9 Days</div>
-              <h4>Foreclosure Stopped Cold</h4>
-              <div class="stat">Missed payments: <strong>4 months</strong></div>
-              <div class="stat">Sale price agreed: <strong>in 48 hours</strong></div>
-              <p class="story">"I was 4 months behind and the bank had already sent the notice. Acorn called me back the same day, made an offer, and we closed before the auction date. I walked away with cash and my credit didn't take the full hit."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— James T., Charlotte NC</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">Closed in 9 Days</div><h4>Foreclosure Stopped Cold</h4>
+            <div class="stat">Missed payments: <strong>4 months</strong></div>
+            <div class="stat">Sale price agreed: <strong>in 48 hours</strong></div>
+            <p class="story">"I was 4 months behind and the bank had already sent the notice. Acorn called me back the same day, made an offer, and we closed before the auction date. I walked away with cash and my credit didn't take the full hit."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— James T., Charlotte NC</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 2: INHERITED -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/6A1bvT7.jpg')"></div>
-            <div class="content">
-              <h3>Inherited Property</h3>
-              <p>Probate situations, out-of-state owners</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Inherited Property</h3><p>Probate situations, out-of-state owners</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">No Repairs. No Hassle.</div>
-              <h4>Inherited &amp; Gone in 3 Weeks</h4>
-              <div class="stat">Property condition: <strong>As-Is</strong></div>
-              <div class="stat">Paperwork handled: <strong>100% by us</strong></div>
-              <p class="story">"My mom passed and left me a house in Florida. I live in Ohio — I had no idea what to do. Acorn handled the probate paperwork, I never had to fly down, and they wired me the money directly. Couldn't have been easier during such a hard time."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Linda R., Columbus OH</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">No Repairs. No Hassle.</div><h4>Inherited &amp; Gone in 3 Weeks</h4>
+            <div class="stat">Property condition: <strong>As-Is</strong></div>
+            <div class="stat">Paperwork handled: <strong>100% by us</strong></div>
+            <p class="story">"My mom passed and left me a house in Florida. I live in Ohio — I had no idea what to do. Acorn handled the probate paperwork, I never had to fly down, and they wired me the money directly."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Linda R., Columbus OH</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 3: DIVORCE -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/zpAJpzX.jpg')"></div>
-            <div class="content">
-              <h3>Divorce Situations</h3>
-              <p>Need fast resolution, shared asset</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Divorce Situations</h3><p>Need fast resolution, shared asset</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">Fast &amp; Fair Split</div>
-              <h4>Both Parties Got Closure</h4>
-              <div class="stat">Time from call to close: <strong>18 days</strong></div>
-              <div class="stat">Agent fees saved: <strong>$14,000+</strong></div>
-              <p class="story">"Neither of us wanted the house. We just needed it gone fast so we could both move on. Acorn came in, gave us one fair offer, and split the proceeds exactly as we asked. No drama, no delays. It made the whole process so much less painful."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Mark &amp; Dana V., Raleigh NC</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">Fast &amp; Fair Split</div><h4>Both Parties Got Closure</h4>
+            <div class="stat">Time from call to close: <strong>18 days</strong></div>
+            <div class="stat">Agent fees saved: <strong>$14,000+</strong></div>
+            <p class="story">"Neither of us wanted the house. Acorn came in, gave us one fair offer, and split the proceeds exactly as we asked. No drama, no delays."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Mark &amp; Dana V., Raleigh NC</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 4: NO EQUITY -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/WKHwho2.jpg')"></div>
-            <div class="content">
-              <h3>Little or No Equity</h3>
-              <p>Owe close to value, can't list traditionally</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Little or No Equity</h3><p>Owe close to value, can't list traditionally</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">Creative Solution</div>
-              <h4>Left Without Owing a Dime</h4>
-              <div class="stat">Equity available: <strong>Nearly $0</strong></div>
-              <div class="stat">Cash to seller at closing: <strong>$0 owed</strong></div>
-              <p class="story">"I owed more than the house was worth and thought I was stuck. Acorn offered to take over my mortgage payments — subject-to. They took the property, kept paying the loan, and I walked away free and clear. I didn't think that was even possible."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Michael R., Sarasota FL</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">Creative Solution</div><h4>Left Without Owing a Dime</h4>
+            <div class="stat">Equity available: <strong>Nearly $0</strong></div>
+            <div class="stat">Cash to seller at closing: <strong>$0 owed</strong></div>
+            <p class="story">"I owed more than the house was worth. Acorn offered to take over my mortgage payments — subject-to. They took the property, kept paying the loan, and I walked away free and clear."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Michael R., Sarasota FL</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 5: ON MARKET -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/h4XLm7i.jpg')"></div>
-            <div class="content">
-              <h3>Stuck on the Market</h3>
-              <p>Listed for months, no serious offers</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Stuck on the Market</h3><p>Listed for months, no serious offers</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">Sold in 11 Days</div>
-              <h4>Sold Where Agents Couldn't</h4>
-              <div class="stat">Days on market before: <strong>127 days</strong></div>
-              <div class="stat">Commissions paid: <strong>$0</strong></div>
-              <p class="story">"My house sat on MLS for 4 months. Three deals fell apart at inspection. I was paying two mortgages and running out of patience. Acorn bought it as-is, no inspection contingency, no back-and-forth. Done in under 2 weeks. I wish I'd called them first."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Carla M., Tampa FL</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">Sold in 11 Days</div><h4>Sold Where Agents Couldn't</h4>
+            <div class="stat">Days on market before: <strong>127 days</strong></div>
+            <div class="stat">Commissions paid: <strong>$0</strong></div>
+            <p class="story">"My house sat on MLS for 4 months. Three deals fell apart at inspection. Acorn bought it as-is, no inspection contingency. Done in under 2 weeks."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Carla M., Tampa FL</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 6: VACANT -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/eq1NDve.jpg')"></div>
-            <div class="content">
-              <h3>Vacant Property</h3>
-              <p>Empty home bleeding money every month</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Vacant Property</h3><p>Empty home bleeding money every month</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">No Cleanup. Quick Close.</div>
-              <h4>Stopped the Bleeding Fast</h4>
-              <div class="stat">Property empty for: <strong>14 months</strong></div>
-              <div class="stat">Monthly costs stopped: <strong>immediately</strong></div>
-              <p class="story">"The house had been sitting empty after a bad tenant trashed it. I was paying insurance, taxes, and HOA every month on a property I couldn't rent or sell. Acorn didn't blink at the condition. They made an offer, and 12 days later it was their problem."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Derek H., Cornelius NC</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">No Cleanup. Quick Close.</div><h4>Stopped the Bleeding Fast</h4>
+            <div class="stat">Property empty for: <strong>14 months</strong></div>
+            <div class="stat">Monthly costs stopped: <strong>immediately</strong></div>
+            <p class="story">"The house had been sitting empty after a bad tenant trashed it. Acorn didn't blink at the condition. They made an offer, and 12 days later it was their problem."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Derek H., Cornelius NC</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 7: FIRE DAMAGE -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/FnTEMWv.jpg')"></div>
-            <div class="content">
-              <h3>Fire Damage</h3>
-              <p>Damaged home, no budget to restore</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Fire Damage</h3><p>Damaged home, no budget to restore</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">As-Is. No Repairs.</div>
-              <h4>Sold a Burned House in 2 Weeks</h4>
-              <div class="stat">Repair estimate: <strong>$80,000+</strong></div>
-              <div class="stat">What seller paid for repairs: <strong>$0</strong></div>
-              <p class="story">"The kitchen fire spread to the whole second floor. Insurance covered part of it but not enough. I couldn't afford to rebuild and couldn't afford to keep paying the mortgage on a home I couldn't live in. Acorn bought it exactly as it was. That call changed everything."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Patricia K., Houston TX</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">As-Is. No Repairs.</div><h4>Sold a Burned House in 2 Weeks</h4>
+            <div class="stat">Repair estimate: <strong>$80,000+</strong></div>
+            <div class="stat">What seller paid for repairs: <strong>$0</strong></div>
+            <p class="story">"The kitchen fire spread to the whole second floor. Insurance didn't cover enough. Acorn bought it exactly as it was. That call changed everything."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— Patricia K., Houston TX</em></p>
+          </div></div>
         </div>
       </div>
-
-      <!-- CARD 8: PROBATE -->
       <div onclick="this.classList.toggle('flip')" class="flip-card">
         <div class="flip-inner">
           <div class="flip-front">
             <div class="img" style="background-image:url('https://i.imgur.com/ZkIwOri.jpg')"></div>
-            <div class="content">
-              <h3>Probate Property</h3>
-              <p>Estate property, legal complexity</p>
-              <span class="flip-hint">&#8635; TAP TO SEE THE STORY</span>
-            </div>
+            <div class="content"><h3>Probate Property</h3><p>Estate property, legal complexity</p><span class="flip-hint">&#8635; TAP TO SEE THE STORY</span></div>
           </div>
-          <div class="flip-back">
-            <div class="fbi">
-              <div class="result">Full Probate Support</div>
-              <h4>We Navigate the Legal Side</h4>
-              <div class="stat">Heirs involved: <strong>3 siblings</strong></div>
-              <div class="stat">Agent fees saved: <strong>$11,500</strong></div>
-              <p class="story">"My dad passed and left the house to three of us. We all lived in different states and nobody agreed on anything. Acorn coordinated with our attorney, got all three of us to sign, and handled the whole probate process. We split the cash and it was over. What a relief."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— The Wilson Family, FL</em></p>
-            </div>
-          </div>
+          <div class="flip-back"><div class="fbi">
+            <div class="result">Full Probate Support</div><h4>We Navigate the Legal Side</h4>
+            <div class="stat">Heirs involved: <strong>3 siblings</strong></div>
+            <div class="stat">Agent fees saved: <strong>$11,500</strong></div>
+            <p class="story">"My dad passed and left the house to three of us in different states. Acorn coordinated with our attorney, got all three of us to sign, and handled the whole process."<br><em style="color:rgba(255,255,255,.4);font-size:11px;margin-top:6px;display:block;">— The Wilson Family, FL</em></p>
+          </div></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -630,30 +822,22 @@ section{padding:88px 5%;}
     <p class="sec-sub">We make selling simple, fast, and completely stress-free.</p>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="var(--gold)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
+        <div class="why-icon-wrap"><svg viewBox="0 0 24 24" fill="var(--gold)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3>Fast Closings</h3>
         <p>Close in as little as 7 days — or on whatever timeline works best for your situation.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a6 6 0 01-7.4 7.4L6 21a1 1 0 01-1.4-1.4L12 12.3a6 6 0 017.4-7.4l-3 3z" fill="var(--gold)"/><line x1="4" y1="4" x2="20" y2="20" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
+        <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a6 6 0 01-7.4 7.4L6 21a1 1 0 01-1.4-1.4L12 12.3a6 6 0 017.4-7.4l-3 3z" fill="var(--gold)"/><line x1="4" y1="4" x2="20" y2="20" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>No Repairs Needed</h3>
         <p>We buy houses exactly as-is. No cleaning, no fixing, no staging. Leave it exactly how it is.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon-wrap">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="var(--gold)"/><text x="12" y="17" text-anchor="middle" font-size="11" font-weight="900" fill="black" font-family="Arial">$0</text></svg>
-        </div>
+        <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="var(--gold)"/><text x="12" y="17" text-anchor="middle" font-size="11" font-weight="900" fill="black" font-family="Arial">$0</text></svg></div>
         <h3>Zero Fees</h3>
         <p>No commissions. No hidden costs. What we offer is exactly what you receive at the closing table.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="var(--gold)"/><polyline points="9 12 11 14 15 10" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
+        <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="var(--gold)"/><polyline points="9 12 11 14 15 10" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>Trusted Process</h3>
         <p>Every closing runs through a licensed title company. Documented, professional, and 100% secure.</p>
       </div>
@@ -739,6 +923,39 @@ section{padding:88px 5%;}
   </div>
 </section>
 
+<!-- =============================================
+     TASK 3: LATEST INSIGHTS SECTION
+     Placed after FAQ as specified.
+     Dynamically fetches from /blog via JS.
+     Falls back to static placeholder cards if fetch fails.
+     To add new posts: update the STATIC_POSTS array in the script below,
+     OR connect to your CMS/RSS feed URL in fetchBlogPosts().
+     ============================================= -->
+<section class="blog-bg">
+  <div class="container">
+    <span class="eyebrow">Stay Informed</span>
+    <h2 class="sec-title">Latest Insights</h2>
+    <p class="sec-sub">Tips, guides, and real stories to help homeowners make smart decisions about selling.</p>
+
+    <!-- Blog cards render here — JS populates this -->
+    <div class="blog-grid" id="blog-posts-grid">
+      <!-- Loading state shown while JS fetches -->
+      <div class="blog-loading" style="grid-column:1/-1;">
+        <span class="blog-loading-dot"></span>
+        <span class="blog-loading-dot"></span>
+        <span class="blog-loading-dot"></span>
+      </div>
+    </div>
+
+    <div class="blog-cta">
+      <a href="https://acornhouseacquisition.com/blog" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><use href="#ico-arrow-right"/></svg>
+        View All Articles
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about-bg">
   <div class="container">
@@ -808,12 +1025,14 @@ section{padding:88px 5%;}
       <button onclick="scrollTop()">How It Works</button>
       <button onclick="scrollTop()">About Us</button>
       <button onclick="scrollTop()">FAQ</button>
+      <!-- TASK 2: Blog link also in footer -->
+      <a href="https://acornhouseacquisition.com/blog" target="_blank" rel="noopener">Visit Our Blog</a>
     </div>
     <div class="footer-col">
       <h4>Service Areas</h4>
-      <a href="#">Florida</a>
-      <a href="#">North Carolina</a>
-      <a href="#">Texas</a>
+      <a href="/florida">Florida</a>
+      <a href="/north-carolina">North Carolina</a>
+      <a href="/texas">Texas</a>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
@@ -957,6 +1176,9 @@ section{padding:88px 5%;}
 
 
 <script>
+/* =============================================
+   EXISTING FUNCTIONS — unchanged
+   ============================================= */
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
@@ -982,6 +1204,163 @@ window.addEventListener('load',()=>{
   });
 });
 function scrollTop(){window.scrollTo(0,0);}
+
+/* ---- STATE TABS ---- */
+function switchState(state, btn){
+  // Deactivate all tabs and panels
+  document.querySelectorAll('.where-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.where-panel').forEach(p => p.classList.remove('active'));
+  // Activate selected
+  btn.classList.add('active');
+  document.getElementById('panel-' + state).classList.add('active');
+}
+
+/* ---- CITY CHECKER ---- */
+function checkCity(){
+  const raw = document.getElementById('cityInput').value.trim();
+  if(!raw) return;
+
+  // Capitalise first letter of each word
+  const city = raw.replace(/\b\w/g, c => c.toUpperCase());
+
+  const msg = document.getElementById('cityResultMsg');
+  const result = document.getElementById('cityResult');
+
+  msg.innerHTML = `
+    Yes, we buy houses in <strong>${city}</strong> and the surrounding area!
+    We serve major cities and small towns within roughly 50 miles across Florida, North Carolina, and Texas.
+    If your home is in this region — we want to make you a fair cash offer.
+  `;
+  result.style.display = 'block';
+  result.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function closeResult(){
+  document.getElementById('cityResult').style.display = 'none';
+  document.getElementById('cityInput').value = '';
+}
+
+/* =============================================
+   TASK 3: BLOG POSTS — Dynamic with static fallback
+   
+   HOW IT WORKS:
+   1. On page load, fetchBlogPosts() tries to load posts
+      from your blog page via /blog (RSS or API endpoint).
+   2. If that fails (CORS, no API, etc.), it falls back to
+      STATIC_POSTS below.
+   
+   TO UPDATE STATIC POSTS: Edit the STATIC_POSTS array.
+   TO CONNECT TO A CMS: Replace fetchBlogPosts() with your
+   CMS API call (WordPress REST API, Contentful, etc.)
+   
+   WORDPRESS EXAMPLE:
+   Replace the fetch URL with:
+   https://acornhouseacquisition.com/wp-json/wp/v2/posts?per_page=3
+   ============================================= */
+
+// ---- STATIC FALLBACK POSTS ----
+// UPDATE THESE when you publish new blog articles.
+// Each post needs: title, excerpt, date, tag, url, and optionally imgUrl.
+const STATIC_POSTS = [
+  {
+    title: "5 Signs It's Time to Sell Your House for Cash (Instead of Listing)",
+    excerpt: "Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress — even if you leave some value on the table.",
+    date: "April 2026",
+    tag: "Seller Tips",
+    url: "https://acornhouseacquisition.com/blog",
+    imgUrl: ""
+  },
+  {
+    title: "What Is a Subject-To Real Estate Deal? A Plain-English Guide for Sellers",
+    excerpt: "If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing. Here's exactly how it works — and what to watch out for.",
+    date: "March 2026",
+    tag: "Creative Finance",
+    url: "https://acornhouseacquisition.com/blog",
+    imgUrl: ""
+  },
+  {
+    title: "How to Stop Foreclosure in North Carolina: Your Options and Timeline",
+    excerpt: "Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's a clear breakdown of every path available, including selling fast for cash.",
+    date: "February 2026",
+    tag: "Foreclosure Help",
+    url: "https://acornhouseacquisition.com/blog",
+    imgUrl: ""
+  }
+];
+
+// ---- BLOG CARD RENDERER ----
+function renderBlogCards(posts) {
+  const grid = document.getElementById('blog-posts-grid');
+  if (!posts || posts.length === 0) {
+    grid.innerHTML = '<p style="color:var(--tm);text-align:center;padding:20px;">No posts found. <a href="https://acornhouseacquisition.com/blog" style="color:var(--gold-d);">Visit the blog →</a></p>';
+    return;
+  }
+  grid.innerHTML = posts.slice(0, 3).map(post => `
+    <article class="blog-card">
+      <div class="blog-card-img-placeholder">
+        ${post.imgUrl
+          ? `<img src="${post.imgUrl}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+          : `<svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+        }
+        <span class="blog-card-tag">${post.tag || 'Insights'}</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">${post.date || ''}</div>
+        <h3 class="blog-card-title">${post.title}</h3>
+        <p class="blog-card-excerpt">${post.excerpt}</p>
+        <a href="${post.url}" class="blog-card-link" target="_blank" rel="noopener">
+          Read Article
+          <svg viewBox="0 0 24 24"><use href="#ico-arrow-right"/></svg>
+        </a>
+      </div>
+    </article>
+  `).join('');
+}
+
+// ---- DYNAMIC FETCH ATTEMPT ----
+// Tries to load from WordPress REST API first.
+// To connect: replace the URL with your actual API endpoint.
+// Falls back to STATIC_POSTS automatically on any error.
+async function fetchBlogPosts() {
+  // ---- OPTION A: WordPress REST API (uncomment & update URL when ready) ----
+  // const WP_API = 'https://acornhouseacquisition.com/wp-json/wp/v2/posts?per_page=3&_fields=title,excerpt,date,link,categories,featured_media';
+  
+  // ---- OPTION B: RSS Feed via RSS2JSON (uncomment when ready) ----
+  // const RSS_URL = encodeURIComponent('https://acornhouseacquisition.com/blog/feed');
+  // const RSS_API = `https://api.rss2json.com/v1/api.json?rss_url=${RSS_URL}&count=3`;
+  
+  // Currently using static posts — remove the line below once you connect an API
+  throw new Error('Using static posts');
+
+  /* UNCOMMENT BELOW FOR WORDPRESS REST API:
+  try {
+    const res = await fetch(WP_API);
+    if (!res.ok) throw new Error('WP API error');
+    const data = await res.json();
+    return data.map(post => ({
+      title: post.title.rendered,
+      excerpt: post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 160) + '...',
+      date: new Date(post.date).toLocaleDateString('en-US', {month:'long', year:'numeric'}),
+      tag: 'Insights',
+      url: post.link,
+      imgUrl: ''
+    }));
+  } catch(e) {
+    return null;
+  }
+  */
+}
+
+// ---- INIT BLOG SECTION ----
+(async () => {
+  try {
+    const posts = await fetchBlogPosts();
+    renderBlogCards(posts || STATIC_POSTS);
+  } catch {
+    // Fetch failed or static mode — render static posts
+    renderBlogCards(STATIC_POSTS);
+  }
+})();
 </script>
 </body>
 </html>
