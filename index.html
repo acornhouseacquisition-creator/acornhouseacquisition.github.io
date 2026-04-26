@@ -96,7 +96,7 @@ section{padding:88px 5%;}
 .flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:20px;margin-top:54px;}
 .flip-card{perspective:1000px;cursor:pointer;height:300px;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
-.flip-card.flip .flip-inner{transform:rotateY(180deg);}
+.flip-card.flip .flip-inner{transform:rotateY(180deg) !important;}
 .flip-front,.flip-back{position:absolute;width:100%;height:100%;border-radius:var(--rl);backface-visibility:hidden;overflow:hidden;}
 .flip-front{background:var(--white);box-shadow:var(--sh);}
 .flip-front .img{height:145px;background:#ddd;background-size:cover;background-position:center;}
@@ -481,7 +481,40 @@ section{padding:88px 5%;}
   </div>
 </div>
 
-<!-- WHERE WE BUY — redesigned, placed before How It Works -->
+<!-- HOW IT WORKS — moved before Where We Buy -->
+<section class="how-bg">
+  <div class="container">
+    <span class="eyebrow">Simple Process</span>
+    <h2 class="sec-title">How It Works</h2>
+    <p class="sec-sub">Simple, transparent, and designed to make selling easy — completely on your timeline.</p>
+    <div class="steps-row">
+      <div class="step">
+        <span class="step-badge">STEP 1</span>
+        <span class="step-num">01</span>
+        <h3>Submit Your Info</h3>
+        <p>Fill out the short form or call us. A few basic details is all we need — no inspection, no pressure, no commitment.</p>
+      </div>
+      <div class="step">
+        <span class="step-badge">STEP 2</span>
+        <span class="step-num">02</span>
+        <h3>Get Your Offer</h3>
+        <p>We review your property and send a fair, no-pressure cash offer within 24–48 hours. One clear number — no games.</p>
+      </div>
+      <div class="step">
+        <span class="step-badge">STEP 3</span>
+        <span class="step-num">03</span>
+        <h3>Close On Your Terms</h3>
+        <p>You pick the closing date. We handle all paperwork, title work, and coordination from start to finish. Just show up.</p>
+      </div>
+    </div>
+    <div class="how-trust">
+      <p>We work exclusively with <strong>licensed title companies</strong> and experienced <strong>transaction coordinators</strong> to ensure every closing is handled professionally, legally, and smoothly.</p>
+    </div>
+    <div class="how-cta"><button class="btn-gold" onclick="openPopup()">Get Your Offer Now</button></div>
+  </div>
+</section>
+
+<!-- WHERE WE BUY — after How It Works -->
 <section class="where-bg">
   <div class="container">
 
@@ -637,39 +670,6 @@ section{padding:88px 5%;}
       </div>
 
     </div><!-- /where-panels -->
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how-bg">
-  <div class="container">
-    <span class="eyebrow">Simple Process</span>
-    <h2 class="sec-title">How It Works</h2>
-    <p class="sec-sub">Simple, transparent, and designed to make selling easy — completely on your timeline.</p>
-    <div class="steps-row">
-      <div class="step">
-        <span class="step-badge">STEP 1</span>
-        <span class="step-num">01</span>
-        <h3>Submit Your Info</h3>
-        <p>Fill out the short form or call us. A few basic details is all we need — no inspection, no pressure, no commitment.</p>
-      </div>
-      <div class="step">
-        <span class="step-badge">STEP 2</span>
-        <span class="step-num">02</span>
-        <h3>Get Your Offer</h3>
-        <p>We review your property and send a fair, no-pressure cash offer within 24–48 hours. One clear number — no games.</p>
-      </div>
-      <div class="step">
-        <span class="step-badge">STEP 3</span>
-        <span class="step-num">03</span>
-        <h3>Close On Your Terms</h3>
-        <p>You pick the closing date. We handle all paperwork, title work, and coordination from start to finish. Just show up.</p>
-      </div>
-    </div>
-    <div class="how-trust">
-      <p>We work exclusively with <strong>licensed title companies</strong> and experienced <strong>transaction coordinators</strong> to ensure every closing is handled professionally, legally, and smoothly.</p>
-    </div>
-    <div class="how-cta"><button class="btn-gold" onclick="openPopup()">Get Your Offer Now</button></div>
   </div>
 </section>
 
@@ -1199,8 +1199,26 @@ function toggleFaq(btn){
   if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';}
 }
 window.addEventListener('load',()=>{
+  // Wave nudge on page load — cards flip one by one then flip back
   document.querySelectorAll('.flip-card').forEach((c,i)=>{
-    setTimeout(()=>{c.classList.add('flip');setTimeout(()=>c.classList.remove('flip'),800);},i*200);
+    setTimeout(()=>{
+      c.classList.add('flip');
+      setTimeout(()=>c.classList.remove('flip'),800);
+    },i*200);
+  });
+});
+
+// Hover peek: gently tilt toward back while hovering (only if not already flipped by click)
+document.querySelectorAll('.flip-card').forEach(card=>{
+  card.addEventListener('mouseenter',()=>{
+    if(!card.classList.contains('flip')){
+      card.querySelector('.flip-inner').style.transform='rotateY(25deg)';
+    }
+  });
+  card.addEventListener('mouseleave',()=>{
+    if(!card.classList.contains('flip')){
+      card.querySelector('.flip-inner').style.transform='';
+    }
   });
 });
 function scrollTop(){window.scrollTo(0,0);}
