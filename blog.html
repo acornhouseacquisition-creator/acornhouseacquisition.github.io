@@ -3,35 +3,759 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Real Estate Blog | Acorn House Acquisition</title>
-
+<title>Blog | Acorn House Acquisition — Real Estate Tips & Seller Insights</title>
+<meta name="description" content="Expert tips for homeowners looking to sell fast in NC, FL, and TX. Learn about cash sales, foreclosure help, subject-to deals, and more.">
+<link rel="canonical" href="https://acornhouseacquisition.com/blog">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body {margin:0;font-family:Arial;background:#000;color:#fff;}
-.container {max-width:1100px;margin:auto;padding:60px 20px;}
-h1,h2 {margin-bottom:15px;}
-a {color:#f4b400;text-decoration:none;}
-.card {background:#111;padding:20px;border-radius:10px;margin-bottom:20px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#111;overflow-x:hidden;}
+:root{--gold:#f4b400;--gold-d:#d49d00;--gold-l:#ffd84d;--black:#0a0a0a;--white:#fff;--gl:#f5f5f5;--gm:#e8e8e8;--tm:#666;--tl:#999;--r:12px;--rl:20px;--sh:0 4px 20px rgba(0,0,0,.08);--shl:0 14px 52px rgba(0,0,0,.16);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px solid var(--gold);padding:0 5%;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:82px;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo img{height:64px;width:auto;display:block;}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-phone{font-size:15px;font-weight:600;color:var(--black);text-decoration:none;display:flex;align-items:center;gap:7px;}
+.nav-phone:hover{color:var(--gold-d);}
+.nav-cta{background:var(--gold);color:var(--black);padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.nav-cta:hover{background:var(--gold-d);transform:translateY(-1px);}
+
+/* HERO */
+.blog-hero{background:var(--black);padding:68px 5% 60px;position:relative;overflow:hidden;}
+.blog-hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(140deg,var(--gold) 0%,#e6a800 100%);clip-path:polygon(18% 0%,100% 0%,100% 100%,0% 100%);opacity:.92;}
+.blog-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;}
+.blog-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(244,180,0,.15);border:1px solid rgba(244,180,0,.35);color:var(--gold);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
+.blog-hero h1{font-family:'Fraunces',serif;font-size:clamp(32px,4vw,52px);color:var(--white);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:14px;max-width:620px;}
+.blog-hero h1 span{color:var(--gold);}
+.blog-hero p{font-size:16px;color:rgba(255,255,255,.62);font-weight:300;max-width:520px;line-height:1.7;}
+
+/* SEARCH */
+.blog-search-bar{background:var(--gl);border-bottom:1px solid var(--gm);padding:16px 5%;}
+.bsb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.bsb-input{flex:1;min-width:200px;padding:11px 16px;border:1.5px solid var(--gm);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--black);background:var(--white);outline:none;transition:border-color .2s;}
+.bsb-input:focus{border-color:var(--gold);}
+.filter-wrap{display:flex;gap:7px;flex-wrap:wrap;}
+.fbtn{padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid var(--gm);background:var(--white);color:var(--tm);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.fbtn:hover{border-color:var(--gold);color:var(--gold-d);}
+.fbtn.active{background:var(--gold);border-color:var(--gold);color:var(--black);}
+
+/* LAYOUT */
+.blog-layout{max-width:1200px;margin:0 auto;padding:52px 5% 80px;display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+
+/* CARDS */
+.posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.bcard{background:var(--white);border-radius:var(--rl);overflow:hidden;border:1px solid var(--gm);transition:all .22s;cursor:pointer;}
+.bcard:hover{transform:translateY(-4px);box-shadow:var(--shl);border-color:rgba(244,180,0,.38);}
+.bcard-img{height:196px;background:var(--gm);background-size:cover;background-position:center;position:relative;flex-shrink:0;}
+.bcard-img-ph{height:196px;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;position:relative;}
+.bcard-img-ph svg{width:40px;height:40px;fill:rgba(244,180,0,.35);}
+.bcard-tag{position:absolute;bottom:11px;left:13px;background:var(--gold);color:var(--black);font-size:10px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
+.bcard-body{padding:20px 18px 22px;}
+.bcard-meta{display:flex;align-items:center;gap:8px;margin-bottom:9px;font-size:12px;color:var(--tl);}
+.bcard-dot{width:3px;height:3px;border-radius:50%;background:var(--tl);}
+.bcard-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--black);line-height:1.3;margin-bottom:9px;}
+.bcard-exc{font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:14px;}
+.bcard-read{font-size:13px;font-weight:700;color:var(--gold-d);display:flex;align-items:center;gap:4px;}
+.bcard-read svg{width:12px;height:12px;transition:transform .2s;}
+.bcard:hover .bcard-read svg{transform:translateX(3px);}
+.bcard.featured{grid-column:1/-1;}
+.bcard.featured .bcard-img,.bcard.featured .bcard-img-ph{height:270px;}
+.bcard.featured .bcard-title{font-size:24px;}
+
+/* EMPTY */
+.posts-empty{grid-column:1/-1;text-align:center;padding:56px 20px;}
+.posts-empty svg{width:50px;height:50px;fill:var(--gm);margin:0 auto 14px;display:block;}
+.posts-empty h3{font-family:'Fraunces',serif;font-size:21px;color:var(--black);margin-bottom:7px;}
+.posts-empty p{font-size:14px;color:var(--tm);}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:40px;}
+.pg-btn{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--gm);background:var(--white);color:var(--black);font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.pg-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold-d);}
+.pg-btn.active{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.pg-btn:disabled{opacity:.3;cursor:default;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:100px;}
+.scard{background:var(--gl);border-radius:var(--rl);padding:24px 20px;}
+.scard h3{font-family:'Fraunces',serif;font-size:16px;color:var(--black);margin-bottom:14px;padding-bottom:11px;border-bottom:2px solid var(--gold);}
+.scard-cta{background:var(--black);border-radius:var(--rl);padding:26px 20px;text-align:center;}
+.scard-cta h3{font-family:'Fraunces',serif;font-size:19px;color:var(--white);margin-bottom:9px;border:none;padding:0;}
+.scard-cta p{font-size:13px;color:rgba(255,255,255,.58);margin-bottom:18px;line-height:1.6;}
+.btn-gold{background:var(--gold);color:var(--black);padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all .2s;}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-1px);}
+.recent-list{display:flex;flex-direction:column;gap:12px;}
+.recent-item{display:flex;gap:10px;cursor:pointer;text-decoration:none;}
+.recent-thumb{width:52px;height:52px;border-radius:8px;background:var(--gm);flex-shrink:0;background-size:cover;background-position:center;}
+.recent-thumb-ph{width:100%;height:100%;border-radius:8px;background:linear-gradient(135deg,#1a1a1a,#333);display:flex;align-items:center;justify-content:center;}
+.recent-thumb-ph svg{width:18px;height:18px;fill:rgba(244,180,0,.4);}
+.recent-title{font-size:13px;font-weight:600;color:var(--black);line-height:1.4;margin-bottom:3px;transition:color .2s;}
+.recent-item:hover .recent-title{color:var(--gold-d);}
+.recent-date{font-size:11px;color:var(--tl);}
+.cat-list{display:flex;flex-direction:column;gap:7px;}
+.cat-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--white);border-radius:var(--r);border:1.5px solid transparent;cursor:pointer;font-size:13px;font-weight:600;color:var(--black);transition:all .2s;}
+.cat-row:hover,.cat-row.active{border-color:var(--gold);color:var(--gold-d);}
+.cat-row.active{background:#fffbee;}
+.cat-count{font-size:12px;color:var(--tl);font-weight:400;}
+
+/* POST READER */
+.reader-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9998;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto;}
+.reader-ov.open{display:flex;}
+.reader-box{background:var(--white);border-radius:var(--rl);max-width:760px;width:100%;margin:auto;position:relative;overflow:hidden;}
+.reader-img{height:320px;background:var(--gm);background-size:cover;background-position:center;}
+.reader-img-ph{height:320px;background:linear-gradient(135deg,#111,#2a2a2a);display:flex;align-items:center;justify-content:center;}
+.reader-img-ph svg{width:56px;height:56px;fill:rgba(244,180,0,.25);}
+.reader-close{position:absolute;top:13px;right:13px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.65);border:none;cursor:pointer;font-size:19px;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s;}
+.reader-close:hover{background:rgba(0,0,0,.9);}
+.reader-body{padding:34px 40px 44px;}
+.reader-tag{display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:800;padding:3px 11px;border-radius:100px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase;}
+.reader-title{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,34px);color:var(--black);font-weight:900;line-height:1.2;margin-bottom:13px;letter-spacing:-.5px;}
+.reader-meta{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--tl);margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--gm);}
+.reader-mdot{width:3px;height:3px;border-radius:50%;background:var(--tl);}
+.reader-content{font-size:16px;color:#333;line-height:1.85;}
+.reader-content p{margin-bottom:16px;}
+.reader-content h2{font-family:'Fraunces',serif;font-size:22px;color:var(--black);margin:26px 0 11px;}
+.reader-content h3{font-family:'Fraunces',serif;font-size:18px;color:var(--black);margin:20px 0 9px;}
+.reader-content ul,.reader-content ol{padding-left:20px;margin-bottom:16px;}
+.reader-content li{margin-bottom:6px;}
+.reader-content strong{color:var(--black);font-weight:700;}
+.reader-cta-block{margin-top:32px;padding:24px;background:var(--black);border-radius:var(--rl);text-align:center;}
+.reader-cta-block p{color:rgba(255,255,255,.65);font-size:14px;margin-bottom:14px;line-height:1.6;}
+.reader-cta-block .btn-gold{width:auto;display:inline-block;padding:12px 28px;}
+
+/* ADMIN TRIGGER */
+.admin-fab{position:fixed;bottom:26px;right:26px;background:var(--black);color:var(--white);border:none;border-radius:50px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(0,0,0,.3);transition:all .2s;z-index:100;}
+.admin-fab:hover{background:#222;transform:translateY(-2px);}
+.admin-fab svg{width:15px;height:15px;fill:var(--gold);}
+
+/* ADMIN OVERLAY */
+.admin-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto;}
+.admin-ov.open{display:flex;}
+.admin-box{background:var(--white);border-radius:var(--rl);max-width:840px;width:100%;margin:auto;border-top:5px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+
+/* GATE */
+.admin-gate{padding:44px 32px;text-align:center;}
+.admin-gate h3{font-family:'Fraunces',serif;font-size:22px;color:var(--black);margin-bottom:8px;}
+.admin-gate p{font-size:14px;color:var(--tm);margin-bottom:22px;line-height:1.6;}
+.gate-row{display:flex;gap:10px;max-width:340px;margin:0 auto;}
+.gate-input{flex:1;padding:12px 16px;border:1.5px solid var(--gm);border-radius:10px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--black);background:var(--gl);outline:none;transition:border-color .2s;}
+.gate-input:focus{border-color:var(--gold);}
+.gate-err{color:#cc3333;font-size:13px;margin-top:10px;display:none;}
+.gate-hint{font-size:12px;color:var(--tl);margin-top:18px;}
+
+/* ADMIN PANEL */
+.admin-head{padding:22px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gm);}
+.admin-head h2{font-family:'Fraunces',serif;font-size:22px;color:var(--black);}
+.admin-head-r{display:flex;align-items:center;gap:10px;}
+.atab{padding:8px 16px;border-radius:8px;border:1.5px solid var(--gm);background:var(--white);font-size:13px;font-weight:600;color:var(--tm);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.atab.active{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.admin-close-btn{background:none;border:none;cursor:pointer;font-size:24px;color:var(--tl);line-height:1;padding:0 4px;}
+.admin-close-btn:hover{color:var(--black);}
+.admin-body{padding:26px 30px 30px;}
+
+/* FORM */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.fg.full{grid-column:1/-1;}
+.flabel{font-size:12px;font-weight:700;color:var(--black);}
+.flabel em{color:var(--tl);font-style:normal;font-weight:400;}
+.ainput,.aselect,.atextarea{padding:11px 15px;border:1.5px solid var(--gm);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--black);background:var(--gl);outline:none;transition:border-color .2s;width:100%;}
+.ainput:focus,.aselect:focus,.atextarea:focus{border-color:var(--gold);background:var(--white);}
+.atextarea{resize:vertical;min-height:250px;line-height:1.7;}
+.img-prev{width:100%;height:148px;border-radius:10px;background:var(--gl);border:1.5px dashed var(--gm);display:flex;align-items:center;justify-content:center;margin-top:7px;overflow:hidden;background-size:cover;background-position:center;}
+.img-prev-hint{font-size:12px;color:var(--tl);text-align:center;}
+.img-prev-hint svg{width:26px;height:26px;fill:var(--gm);display:block;margin:0 auto 7px;}
+.fmt-bar{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px;}
+.fmt-btn{background:var(--white);border:1.5px solid var(--gm);color:var(--tm);padding:4px 11px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.fmt-btn:hover{border-color:var(--gold);color:var(--gold-d);}
+.form-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--gm);}
+.form-actions-l{display:flex;gap:9px;}
+.btn-pub{background:var(--gold);color:var(--black);padding:12px 26px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-pub:hover{background:var(--gold-l);transform:translateY(-1px);}
+.btn-pub.dark{background:var(--black);color:var(--white);}
+.btn-pub.dark:hover{background:#222;}
+.btn-sec{background:none;border:1.5px solid var(--gm);color:var(--tm);padding:11px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-sec:hover{border-color:var(--gold);color:var(--gold-d);}
+.btn-del{background:none;border:1.5px solid #ffd0d0;color:#cc3333;padding:11px 16px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-del:hover{background:#fff5f5;}
+.edit-label{font-size:12px;color:var(--tl);font-style:italic;}
+.success-bar{display:none;background:#f0fff4;border:1px solid #86efac;border-radius:8px;padding:11px 15px;font-size:14px;color:#166534;font-weight:600;margin-bottom:14px;align-items:center;gap:8px;}
+.success-bar.show{display:flex;}
+
+/* MANAGE LIST */
+.manage-list{display:flex;flex-direction:column;gap:10px;max-height:480px;overflow-y:auto;}
+.mrow{display:flex;align-items:center;gap:12px;padding:13px 14px;background:var(--gl);border-radius:10px;border:1px solid var(--gm);}
+.mthumb{width:48px;height:48px;border-radius:8px;background:var(--gm);flex-shrink:0;background-size:cover;background-position:center;overflow:hidden;}
+.mthumb-ph{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#333);display:flex;align-items:center;justify-content:center;}
+.mthumb-ph svg{width:18px;height:18px;fill:rgba(244,180,0,.4);}
+.minfo{flex:1;min-width:0;}
+.minfo-title{font-size:13px;font-weight:700;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;}
+.minfo-meta{font-size:11px;color:var(--tl);}
+.mactions{display:flex;gap:7px;flex-shrink:0;}
+.mact-edit{background:var(--white);border:1.5px solid var(--gm);color:var(--tm);padding:6px 13px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.mact-edit:hover{border-color:var(--gold);color:var(--gold-d);}
+.mact-del{background:none;border:1.5px solid #ffd0d0;color:#cc3333;padding:6px 13px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.mact-del:hover{background:#fff5f5;}
+.manage-empty{text-align:center;padding:36px 20px;color:var(--tl);font-size:14px;}
+
+/* OFFER POPUP */
+.offer-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9997;justify-content:center;align-items:center;padding:20px;}
+.offer-ov.open{display:flex;}
+.offer-box{background:var(--white);border-radius:var(--rl);padding:30px 26px;max-width:540px;width:100%;position:relative;max-height:92vh;overflow-y:auto;border-top:5px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.offer-close{position:absolute;top:11px;right:13px;background:none;border:none;cursor:pointer;font-size:25px;color:var(--tl);line-height:1;font-weight:300;}
+.offer-close:hover{color:var(--black);}
+.offer-box h2{font-family:'Fraunces',serif;font-size:23px;color:var(--black);margin-bottom:4px;}
+.offer-box>p{font-size:14px;color:var(--tm);margin-bottom:18px;}
+.form-disc{font-size:11px;color:var(--tl);text-align:center;margin-top:10px;line-height:1.5;}
+
+/* FOOTER */
+.footer-bg{background:var(--black);padding:60px 5% 28px;border-top:3px solid rgba(244,180,0,.3);}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:42px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-logo-img{height:50px;width:auto;margin-bottom:12px;display:block;}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:16px;}
+.footer-contact a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.46);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-contact a:hover{color:var(--gold);}
+.footer-col h4{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:13px;}
+.footer-col a{display:block;color:rgba(255,255,255,.42);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:22px;text-align:center;}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.2);line-height:1.6;max-width:800px;margin:0 auto 8px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.2);margin-top:14px;}
+
+/* RESPONSIVE */
+@media(max-width:1000px){.blog-layout{grid-template-columns:1fr;}.sidebar{position:static;}}
+@media(max-width:680px){.posts-grid{grid-template-columns:1fr;}.bcard.featured{grid-column:auto;}.form-row{grid-template-columns:1fr;}.reader-body{padding:22px 20px 30px;}.reader-img,.reader-img-ph{height:210px;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.gate-row{flex-direction:column;}}
 </style>
 </head>
-
 <body>
 
-<div class="container">
-<h1>Real Estate Insights</h1>
-<p>Helpful information for homeowners looking to sell fast, avoid foreclosure, or explore creative selling options.</p>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition">
+    </a>
+    <div class="nav-right">
+      <a href="tel:+17869828464" class="nav-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (786) 982-8464
+      </a>
+      <button class="nav-cta" onclick="openOffer()">Get Cash Offer</button>
+    </div>
+  </div>
+</nav>
 
-<div class="card">
-<h2><a href="/sell-house-with-mortgage-nc.html">Can You Sell a House With a Mortgage in North Carolina?</a></h2>
-<p>Learn how selling with an existing mortgage works and what your options are.</p>
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="blog-eyebrow">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Real Estate Insights
+    </div>
+    <h1>Tips &amp; Guides for<br><span>NC, FL &amp; TX</span> Homeowners</h1>
+    <p>Real advice on selling fast, avoiding foreclosure, understanding cash offers, and navigating the situations most homeowners face.</p>
+  </div>
 </div>
 
-<div class="card">
-<h2><a href="/subject-to-real-estate-nc.html">How Subject-To Real Estate Works in NC</a></h2>
-<p>Understand how taking over a mortgage can help sellers avoid foreclosure.</p>
+<!-- SEARCH + FILTERS -->
+<div class="blog-search-bar">
+  <div class="bsb-inner">
+    <input type="text" class="bsb-input" id="searchInput" placeholder="Search articles..." oninput="doFilter()">
+    <div class="filter-wrap">
+      <button class="fbtn active" onclick="setFilter('all',this)">All</button>
+      <button class="fbtn" onclick="setFilter('Seller Tips',this)">Seller Tips</button>
+      <button class="fbtn" onclick="setFilter('Foreclosure',this)">Foreclosure</button>
+      <button class="fbtn" onclick="setFilter('Creative Finance',this)">Creative Finance</button>
+      <button class="fbtn" onclick="setFilter('NC',this)">North Carolina</button>
+      <button class="fbtn" onclick="setFilter('FL',this)">Florida</button>
+      <button class="fbtn" onclick="setFilter('TX',this)">Texas</button>
+    </div>
+  </div>
 </div>
 
+<!-- MAIN LAYOUT -->
+<div class="blog-layout">
+  <div>
+    <div class="posts-grid" id="postsGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+  <aside class="sidebar">
+    <div class="scard-cta">
+      <h3>Ready to Sell Fast?</h3>
+      <p>No repairs. No fees. Fair cash offer in 24 hours — close in as little as 7 days.</p>
+      <button class="btn-gold" onclick="openOffer()">Get My Free Cash Offer</button>
+    </div>
+    <div class="scard">
+      <h3>Recent Articles</h3>
+      <div class="recent-list" id="sidebarRecent"></div>
+    </div>
+    <div class="scard">
+      <h3>Topics</h3>
+      <div class="cat-list" id="sidebarCats"></div>
+    </div>
+    <div class="scard" style="text-align:center;">
+      <h3>Questions?</h3>
+      <p style="font-size:13px;color:var(--tm);margin-bottom:14px;line-height:1.6;">We'll answer you with no sales pressure.</p>
+      <a href="tel:+17869828464" style="display:inline-flex;align-items:center;gap:7px;background:var(--black);color:var(--white);padding:11px 20px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (786) 982-8464
+      </a>
+    </div>
+  </aside>
 </div>
 
+<!-- FOOTER -->
+<div class="footer-bg">
+  <div class="footer-grid">
+    <div>
+      <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition" class="footer-logo-img">
+      <p class="footer-desc">Helping homeowners in Florida, North Carolina, and Texas sell quickly, easily, and without stress.</p>
+      <div class="footer-contact">
+        <a href="tel:+17869828464">📞 (786) 982-8464</a>
+        <a href="mailto:info@acornhouseacquisition.com">✉ info@acornhouseacquisition.com</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><a href="/index.html">Home</a><a href="/blog">Blog</a><a href="/index.html#offer-form">Get Cash Offer</a></div>
+    <div class="footer-col"><h4>Service Areas</h4><a href="/sell-my-house-charlotte-nc.html">Charlotte, NC</a><a href="/sell-my-house-asheville-nc.html">Asheville, NC</a><a href="/sell-my-house-sarasota-fl.html">Sarasota, FL</a><a href="/sell-my-house-houston-tx.html">Houston, TX</a></div>
+    <div class="footer-col"><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-disc">Acorn House Acquisition is a real estate investment company and does not represent homeowners as a licensed real estate broker.</p>
+    <p class="footer-copy" style="margin-top:14px;">© 2026 Acorn House Acquisition LLC. All rights reserved.</p>
+  </div>
+</div>
+
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="openAdmin()">
+  <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+  Write a Post
+</button>
+
+<!-- ═══ POST READER ═══ -->
+<div class="reader-ov" id="readerOv" onclick="if(event.target===this)closeReader()">
+  <div class="reader-box">
+    <button class="reader-close" onclick="closeReader()">×</button>
+    <div id="readerImgWrap"></div>
+    <div class="reader-body">
+      <div id="readerTag" class="reader-tag"></div>
+      <h1 class="reader-title" id="readerTitle"></h1>
+      <div class="reader-meta" id="readerMeta"></div>
+      <div class="reader-content" id="readerContent"></div>
+      <div class="reader-cta-block">
+        <p>Ready to sell your house fast? Get a fair cash offer in 24 hours — no repairs, no fees, no stress.</p>
+        <button class="btn-gold" style="display:inline-block;width:auto;padding:12px 28px;" onclick="closeReader();openOffer()">Get My Free Cash Offer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ADMIN OVERLAY ═══ -->
+<div class="admin-ov" id="adminOv" onclick="if(event.target===this)closeAdmin()">
+  <div class="admin-box">
+
+    <!-- PASSWORD GATE -->
+    <div class="admin-gate" id="adminGate">
+      <h3>Blog Admin Panel</h3>
+      <p>Enter your password to write and manage blog posts.<br>Posts are saved in your browser and appear on the page instantly.</p>
+      <div class="gate-row">
+        <input type="password" class="gate-input" id="pwInput" placeholder="Password..." onkeydown="if(event.key==='Enter')checkPw()">
+        <button class="btn-pub" onclick="checkPw()">Enter</button>
+      </div>
+      <p class="gate-err" id="gateErr">Incorrect password. Try again.</p>
+      <p class="gate-hint">Default password: <strong>acorn2026</strong> — find it in the script to change it.</p>
+    </div>
+
+    <!-- PANEL (shown after auth) -->
+    <div id="adminPanel" style="display:none;">
+      <div class="admin-head">
+        <h2>Blog Admin</h2>
+        <div class="admin-head-r">
+          <button class="atab active" id="tabWrite" onclick="switchTab('write')">✏️ Write Post</button>
+          <button class="atab" id="tabManage" onclick="switchTab('manage')">📋 Manage Posts</button>
+          <button class="admin-close-btn" onclick="closeAdmin()">×</button>
+        </div>
+      </div>
+      <div class="admin-body">
+
+        <div class="success-bar" id="successBar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Post published! It now appears on the blog page.
+        </div>
+
+        <!-- WRITE TAB -->
+        <div id="writeTab">
+          <div class="form-row">
+            <div class="fg">
+              <label class="flabel">Title <em>*</em></label>
+              <input type="text" class="ainput" id="pTitle" placeholder="e.g. How to Sell Fast in Charlotte NC">
+            </div>
+            <div class="fg">
+              <label class="flabel">Category</label>
+              <select class="aselect" id="pCat">
+                <option>Seller Tips</option>
+                <option>Foreclosure</option>
+                <option>Creative Finance</option>
+                <option>NC</option>
+                <option>FL</option>
+                <option>TX</option>
+                <option>Market Update</option>
+                <option>Probate</option>
+                <option>Divorce</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flabel">Short Excerpt <em>(shown on blog cards — 1–2 sentences)</em></label>
+            <input type="text" class="ainput" id="pExc" placeholder="A brief summary of what this post covers...">
+          </div>
+          <div class="fg">
+            <label class="flabel">Featured Image URL <em>(paste an image link, or leave blank for a placeholder)</em></label>
+            <input type="url" class="ainput" id="pImg" placeholder="https://i.imgur.com/your-image.jpg" oninput="prevImg()">
+            <div class="img-prev" id="imgPrev">
+              <div class="img-prev-hint">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.5" fill="white"/><polyline points="21 15 16 10 5 21" fill="none" stroke="white" stroke-width="1.5"/></svg>
+                Image preview will appear here
+              </div>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flabel">Post Body <em>* — use ## Heading, ### Subheading, **bold**, - bullet point</em></label>
+            <div class="fmt-bar">
+              <button class="fmt-btn" onclick="ins('**','**')"><b>Bold</b></button>
+              <button class="fmt-btn" onclick="ins('## ','')">H2</button>
+              <button class="fmt-btn" onclick="ins('### ','')">H3</button>
+              <button class="fmt-btn" onclick="ins('- ','')">• Bullet</button>
+              <button class="fmt-btn" onclick="ins('\n\n','')">New Para</button>
+            </div>
+            <textarea class="atextarea" id="pBody" placeholder="Write your full article here...
+
+## Start with a Heading
+
+Your intro paragraph goes here. Explain the problem your reader is facing.
+
+### First Point
+
+More detail here. Use **bold** for key phrases.
+
+- Bullet item one
+- Bullet item two
+- Bullet item three
+
+Keep writing — there's no limit on length."></textarea>
+          </div>
+          <div class="form-actions">
+            <div class="form-actions-l">
+              <button class="btn-pub" onclick="publish()">Publish Post</button>
+              <button class="btn-sec" onclick="clearForm()">Clear</button>
+            </div>
+            <span class="edit-label" id="editLabel"></span>
+          </div>
+        </div>
+
+        <!-- MANAGE TAB -->
+        <div id="manageTab" style="display:none;">
+          <div class="manage-list" id="manageList"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFER POPUP -->
+<div class="offer-ov" id="offerOv" onclick="if(event.target===this)closeOffer()">
+  <div class="offer-box">
+    <button class="offer-close" onclick="closeOffer()">×</button>
+    <h2>Get Your Cash Offer</h2>
+    <p>Free. No obligation. We'll respond within 24–48 hours.</p>
+    <script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
+    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+    <p class="form-disc">No spam. No pressure. Your information is 100% private.</p>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   CONFIG — change ADMIN_PW to your own password
+══════════════════════════════════════════════════════ */
+const ADMIN_PW   = 'acorn2026';
+const STORE_KEY  = 'acorn_blog_v1';
+const PER_PAGE   = 6;
+
+/* ═══════════════════════════════════════════════════════
+   SEED POSTS — always visible, never editable/deletable
+   Replace or expand as you wish
+══════════════════════════════════════════════════════ */
+const SEEDS = [
+  {
+    id:'seed1', title:'5 Signs It\'s Time to Sell for Cash Instead of Listing',
+    category:'Seller Tips', imgUrl:'',
+    excerpt:'Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.',
+    body:`## Not Every Home Belongs on the MLS\n\nThere\'s a common assumption that listing with a real estate agent is always the right move. But for many homeowners, the traditional route costs more than it saves.\n\nHere are five signs that selling for cash is the smarter path.\n\n### 1. Your Home Needs Major Repairs\n\nTraditional buyers — especially those using mortgage financing — require the home to meet minimum condition standards. If your roof is failing, the HVAC is shot, or the foundation has issues, you\'re looking at repair quotes before you ever get to market.\n\nCash buyers purchase as-is. No repairs, no inspection contingencies, no deals that collapse at the last minute.\n\n### 2. You\'ve Already Been on the Market Too Long\n\nIf your home has been listed for 60, 90, or 120+ days with no serious offers, every additional day costs you — carrying costs, mortgage payments, HOA dues, insurance. At some point, a discounted cash offer nets you more than a retail listing that never closes.\n\n### 3. You\'re Facing a Time Pressure\n\nPCS orders. Job relocation. Divorce settlement. Foreclosure auction date. These situations don\'t wait for the MLS to find the right buyer. Cash buyers can close in 7–14 days.\n\n### 4. You Inherited the Property\n\nInherited properties often come with probate complications, out-of-state ownership, and deferred maintenance. Cash buyers handle the complexity.\n\n### 5. You Have Little or No Equity\n\nIf you owe close to what your home is worth, agent commissions (5–6%) and closing costs will eat whatever margin you have. Creative solutions like subject-to financing can let you exit without bringing money to the table.\n\n## The Bottom Line\n\nA cash sale isn\'t right for everyone — but if any of these situations apply to you, it\'s worth getting an offer. There\'s no obligation, and you might be surprised what works out better.`,
+    date: new Date(Date.now()-7*86400000).toISOString(), readTime:'4 min read', seed:true
+  },
+  {
+    id:'seed2', title:'What Is a Subject-To Real Estate Deal? A Plain-English Guide',
+    category:'Creative Finance', imgUrl:'',
+    excerpt:'If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.',
+    body:`## Subject-To: Explained Simply\n\n"Subject to" is a creative real estate purchase method where a buyer takes ownership of a property **subject to the existing mortgage** — the loan stays in the seller\'s name, but the buyer takes control of the property and makes the payments going forward.\n\n### How It Works\n\n- Seller and buyer agree on terms\n- Title transfers to the buyer at closing\n- The existing mortgage remains in the seller\'s name\n- The buyer makes the mortgage payments going forward\n- The seller is released from the day-to-day burden of the property\n\n### When Does Subject-To Make Sense?\n\nThis approach is most useful when the seller has little or no equity, needs to move fast but can\'t sell for enough to cover closing costs, or the home\'s value has dropped since purchase.\n\n### What Are the Risks?\n\nThe main risk is the **due-on-sale clause** — most mortgages contain language that technically allows the lender to demand full repayment if ownership changes. In practice, lenders rarely invoke this as long as payments are being made consistently.\n\nHowever, sellers should understand: the mortgage remains in their name until paid off or refinanced. We always recommend consulting with a real estate attorney before agreeing to a subject-to transaction.\n\n## The Bottom Line\n\nSubject-to can be a powerful tool for homeowners who feel stuck. At Acorn, we handle these purchases professionally, document everything through a licensed title company, and have helped dozens of homeowners exit difficult situations cleanly.`,
+    date: new Date(Date.now()-14*86400000).toISOString(), readTime:'5 min read', seed:true
+  },
+  {
+    id:'seed3', title:'How to Stop Foreclosure in North Carolina: Your Timeline and Options',
+    category:'Foreclosure', imgUrl:'',
+    excerpt:'Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here\'s what to do at each stage.',
+    body:`## North Carolina Foreclosure: What You Need to Know\n\nNorth Carolina uses a **non-judicial foreclosure** process, which means it moves faster than many other states. Once the bank files, you may have as little as 60–90 days before the property is sold at auction.\n\n## Stage 1: You\'ve Missed Payments but No Notice Yet\n\nThis is when you have the most options.\n\n- **Contact your lender** — ask about forbearance, loan modification, or repayment plans\n- **Sell the home** — if you have equity, a traditional or cash sale can pay off the loan\n- **Refinance** — if your credit is still intact, a refi can restructure the debt\n\n**Cash sale advantage:** A buyer like Acorn can have a cash offer to you within 24 hours and can close in 7–14 days — giving you a clean exit before the process escalates.\n\n## Stage 2: You\'ve Received a Notice of Hearing\n\nNC law requires a Notice of Hearing before a lender can foreclose. You have the right to attend and raise defenses. You still have time to sell — contact a foreclosure attorney immediately.\n\n## Stage 3: The Clerk Has Issued the Order\n\nAfter the hearing, the clerk issues an order allowing foreclosure. You now have a **10-day window** to appeal. A cash buyer can still close in time if you act immediately.\n\n## Stage 4: After the 10-Day Period\n\nThe sale is scheduled at the courthouse. At this point, your options are limited — but a cash buyer may still be able to help depending on timing.\n\n## The Key Takeaway\n\n**Don\'t wait.** Every day you delay reduces your options. If you\'re behind on payments in NC, call us at (786) 982-8464 today.`,
+    date: new Date(Date.now()-21*86400000).toISOString(), readTime:'6 min read', seed:true
+  }
+];
+
+/* ═══ STATE ═══ */
+let posts=[], filtered=[], activeCat='all', page=1, editId=null, authed=false;
+
+/* ═══ STORAGE ═══ */
+function load(){
+  try{
+    const s=localStorage.getItem(STORE_KEY);
+    const saved=s?JSON.parse(s):[];
+    const savedIds=new Set(saved.map(p=>p.id));
+    posts=[...saved,...SEEDS.filter(s=>!savedIds.has(s.id))];
+  }catch{posts=[...SEEDS];}
+  filtered=[...posts];
+}
+function save(){
+  localStorage.setItem(STORE_KEY,JSON.stringify(posts.filter(p=>!p.seed)));
+}
+
+/* ═══ RENDER CARDS ═══ */
+function render(){
+  const grid=document.getElementById('postsGrid');
+  const start=(page-1)*PER_PAGE;
+  const slice=filtered.slice(start,start+PER_PAGE);
+  if(!slice.length){
+    grid.innerHTML=`<div class="posts-empty">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="1.5"/></svg>
+      <h3>No articles found</h3><p>Try a different search or filter.</p></div>`;
+    document.getElementById('pagination').innerHTML='';
+  } else {
+    grid.innerHTML=slice.map((p,i)=>{
+      const feat=i===0&&page===1&&activeCat==='all'&&!document.getElementById('searchInput').value;
+      const d=new Date(p.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+      const img=p.imgUrl
+        ?`<div class="bcard-img" style="background-image:url('${p.imgUrl}')"><span class="bcard-tag">${p.category}</span></div>`
+        :`<div class="bcard-img-ph"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span class="bcard-tag">${p.category}</span></div>`;
+      return`<div class="bcard${feat?' featured':''}" onclick="openPost('${p.id}')">
+        ${img}
+        <div class="bcard-body">
+          <div class="bcard-meta"><span>${d}</span><span class="bcard-dot"></span><span>${p.readTime||'3 min read'}</span></div>
+          <div class="bcard-title">${p.title}</div>
+          <div class="bcard-exc">${p.excerpt}</div>
+          <span class="bcard-read">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </div></div>`;
+    }).join('');
+    renderPages();
+  }
+  renderSidebar();
+}
+
+function renderPages(){
+  const total=Math.ceil(filtered.length/PER_PAGE);
+  const el=document.getElementById('pagination');
+  if(total<=1){el.innerHTML='';return;}
+  let h=`<button class="pg-btn" onclick="goPage(${page-1})" ${page===1?'disabled':''}>‹</button>`;
+  for(let i=1;i<=total;i++) h+=`<button class="pg-btn${i===page?' active':''}" onclick="goPage(${i})">${i}</button>`;
+  h+=`<button class="pg-btn" onclick="goPage(${page+1})" ${page===total?'disabled':''}>›</button>`;
+  el.innerHTML=h;
+}
+
+function goPage(n){
+  const t=Math.ceil(filtered.length/PER_PAGE);
+  if(n<1||n>t)return;
+  page=n; render(); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ═══ SIDEBAR ═══ */
+function renderSidebar(){
+  // Recent
+  const rec=document.getElementById('sidebarRecent');
+  rec.innerHTML=posts.slice(0,5).map(p=>{
+    const d=new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    const t=p.imgUrl
+      ?`<div class="recent-thumb" style="background-image:url('${p.imgUrl}')"></div>`
+      :`<div class="recent-thumb"><div class="recent-thumb-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.4)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div></div>`;
+    return`<div class="recent-item" onclick="openPost('${p.id}')">${t}<div><div class="recent-title">${p.title}</div><div class="recent-date">${d}</div></div></div>`;
+  }).join('')||'<p style="font-size:13px;color:var(--tl);">No posts yet.</p>';
+
+  // Cats
+  const counts={};
+  posts.forEach(p=>{counts[p.category]=(counts[p.category]||0)+1;});
+  document.getElementById('sidebarCats').innerHTML=Object.entries(counts).map(([c,n])=>
+    `<div class="cat-row${activeCat===c?' active':''}" onclick="setFilter('${c}',null)">${c}<span class="cat-count">${n}</span></div>`
+  ).join('');
+}
+
+/* ═══ FILTER / SEARCH ═══ */
+function setFilter(cat,btn){
+  activeCat=cat; page=1;
+  if(btn){document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  applyFilter();
+}
+function doFilter(){page=1;applyFilter();}
+function applyFilter(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  filtered=posts.filter(p=>{
+    const mc=activeCat==='all'||p.category===activeCat;
+    const mq=!q||p.title.toLowerCase().includes(q)||p.excerpt.toLowerCase().includes(q)||p.body.toLowerCase().includes(q);
+    return mc&&mq;
+  });
+  render();
+}
+
+/* ═══ POST READER ═══ */
+function openPost(id){
+  const p=posts.find(x=>x.id===id);if(!p)return;
+  const d=new Date(p.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('readerTag').textContent=p.category;
+  document.getElementById('readerTitle').textContent=p.title;
+  document.getElementById('readerMeta').innerHTML=`<span>${d}</span><span class="reader-mdot"></span><span>${p.readTime||'3 min read'}</span>`;
+  document.getElementById('readerImgWrap').innerHTML=p.imgUrl
+    ?`<div class="reader-img" style="background-image:url('${p.imgUrl}')"></div>`
+    :`<div class="reader-img-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.25)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div>`;
+  document.getElementById('readerContent').innerHTML=md(p.body);
+  document.getElementById('readerOv').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeReader(){document.getElementById('readerOv').classList.remove('open');document.body.style.overflow='';}
+
+/* Lightweight markdown parser */
+function md(s){
+  if(!s)return'';
+  return s
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>[\s\S]+?<\/li>)/g,'<ul>$1</ul>')
+    .replace(/<\/ul>\s*<ul>/g,'')
+    .split(/\n{2,}/)
+    .map(b=>{
+      if(b.startsWith('<h')||b.startsWith('<ul'))return b;
+      if(!b.trim())return'';
+      return`<p>${b.replace(/\n/g,' ')}</p>`;
+    }).filter(Boolean).join('\n');
+}
+
+/* ═══ ADMIN ═══ */
+function openAdmin(){
+  document.getElementById('adminOv').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(!authed){
+    document.getElementById('adminGate').style.display='block';
+    document.getElementById('adminPanel').style.display='none';
+    setTimeout(()=>document.getElementById('pwInput').focus(),80);
+  }
+}
+function closeAdmin(){document.getElementById('adminOv').classList.remove('open');document.body.style.overflow='';}
+function checkPw(){
+  if(document.getElementById('pwInput').value===ADMIN_PW){
+    authed=true;
+    document.getElementById('adminGate').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    document.getElementById('pwInput').value='';
+  }else{
+    document.getElementById('gateErr').style.display='block';
+    document.getElementById('pwInput').value='';
+    document.getElementById('pwInput').focus();
+  }
+}
+function switchTab(t){
+  document.getElementById('tabWrite').classList.toggle('active',t==='write');
+  document.getElementById('tabManage').classList.toggle('active',t==='manage');
+  document.getElementById('writeTab').style.display=t==='write'?'block':'none';
+  document.getElementById('manageTab').style.display=t==='manage'?'block':'none';
+  if(t==='manage')renderManage();
+}
+function prevImg(){
+  const u=document.getElementById('pImg').value.trim();
+  const el=document.getElementById('imgPrev');
+  if(u){el.style.backgroundImage=`url('${u}')`;el.style.backgroundSize='cover';el.style.backgroundPosition='center';el.innerHTML='';}
+  else{el.style.backgroundImage='';el.innerHTML='<div class="img-prev-hint"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.5" fill="white"/><polyline points="21 15 16 10 5 21" fill="none" stroke="white" stroke-width="1.5"/></svg>Image preview will appear here</div>';}
+}
+function ins(a,b){
+  const ta=document.getElementById('pBody');
+  const s=ta.selectionStart,e=ta.selectionEnd,sel=ta.value.substring(s,e);
+  ta.value=ta.value.substring(0,s)+a+sel+b+ta.value.substring(e);
+  ta.focus();ta.selectionStart=s+a.length;ta.selectionEnd=s+a.length+sel.length;
+}
+function wc(body){return Math.max(1,Math.round((body||'').trim().split(/\s+/).length/200))+' min read';}
+function publish(){
+  const title=document.getElementById('pTitle').value.trim();
+  const body=document.getElementById('pBody').value.trim();
+  if(!title||!body){alert('Title and body are required.');return;}
+  const cat=document.getElementById('pCat').value;
+  const exc=document.getElementById('pExc').value.trim()||body.substring(0,150)+'...';
+  const img=document.getElementById('pImg').value.trim();
+  if(editId){
+    const i=posts.findIndex(p=>p.id===editId);
+    if(i>-1)posts[i]={...posts[i],title,category:cat,excerpt:exc,imgUrl:img,body,readTime:wc(body)};
+    editId=null;document.getElementById('editLabel').textContent='';
+  }else{
+    posts.unshift({id:'p'+Date.now(),title,category:cat,excerpt:exc,imgUrl:img,body,date:new Date().toISOString(),readTime:wc(body),seed:false});
+  }
+  save();filtered=[...posts];applyFilter();clearForm();
+  const sb=document.getElementById('successBar');sb.classList.add('show');
+  setTimeout(()=>sb.classList.remove('show'),4000);
+}
+function clearForm(){
+  ['pTitle','pExc','pImg','pBody'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('pCat').value='Seller Tips';
+  editId=null;document.getElementById('editLabel').textContent='';prevImg();
+}
+function renderManage(){
+  const user=posts.filter(p=>!p.seed);
+  document.getElementById('manageList').innerHTML=user.length
+    ?user.map(p=>{
+      const d=new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      const t=p.imgUrl
+        ?`<div class="mthumb" style="background-image:url('${p.imgUrl}')"></div>`
+        :`<div class="mthumb"><div class="mthumb-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.4)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div></div>`;
+      return`<div class="mrow">${t}<div class="minfo"><div class="minfo-title">${p.title}</div><div class="minfo-meta">${p.category} · ${d}</div></div>
+        <div class="mactions">
+          <button class="mact-edit" onclick="editPost('${p.id}')">Edit</button>
+          <button class="mact-del" onclick="deletePost('${p.id}')">Delete</button>
+        </div></div>`;
+    }).join('')
+    :'<div class="manage-empty">No posts yet. Go to Write Post to create your first article.</div>';
+}
+function editPost(id){
+  const p=posts.find(x=>x.id===id);if(!p)return;
+  document.getElementById('pTitle').value=p.title;
+  document.getElementById('pCat').value=p.category;
+  document.getElementById('pExc').value=p.excerpt;
+  document.getElementById('pImg').value=p.imgUrl||'';
+  document.getElementById('pBody').value=p.body;
+  prevImg();editId=id;
+  document.getElementById('editLabel').textContent='Editing: '+p.title.substring(0,40)+'…';
+  switchTab('write');
+}
+function deletePost(id){
+  if(!confirm('Delete this post permanently?'))return;
+  posts=posts.filter(p=>p.id!==id);
+  save();filtered=[...posts];applyFilter();renderManage();
+}
+
+/* ═══ OFFER ═══ */
+function openOffer(){document.getElementById('offerOv').classList.add('open');document.body.style.overflow='hidden';}
+function closeOffer(){document.getElementById('offerOv').classList.remove('open');document.body.style.overflow='';}
+
+/* ═══ INIT ═══ */
+load();render();
+</script>
 </body>
 </html>
