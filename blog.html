@@ -49,9 +49,9 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 
 /* CARDS */
 .posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.bcard{background:var(--white);border-radius:var(--rl);overflow:hidden;border:1px solid var(--gm);transition:all .22s;cursor:pointer;}
+.bcard{background:var(--white);border-radius:var(--rl);overflow:hidden;border:1px solid var(--gm);transition:all .22s;cursor:pointer;text-decoration:none;display:block;color:inherit;}
 .bcard:hover{transform:translateY(-4px);box-shadow:var(--shl);border-color:rgba(244,180,0,.38);}
-.bcard-img{height:196px;background:var(--gm);background-size:cover;background-position:center;position:relative;flex-shrink:0;}
+.bcard-img{height:196px;background:var(--gm);background-size:cover;background-position:center;position:relative;}
 .bcard-img-ph{height:196px;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;position:relative;}
 .bcard-img-ph svg{width:40px;height:40px;fill:rgba(244,180,0,.35);}
 .bcard-tag{position:absolute;bottom:11px;left:13px;background:var(--gold);color:var(--black);font-size:10px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
@@ -66,6 +66,8 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .bcard.featured{grid-column:1/-1;}
 .bcard.featured .bcard-img,.bcard.featured .bcard-img-ph{height:270px;}
 .bcard.featured .bcard-title{font-size:24px;}
+.bcard-slug-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--tl);margin-top:8px;font-family:monospace;}
+.bcard-slug-badge svg{width:11px;height:11px;flex-shrink:0;}
 
 /* EMPTY */
 .posts-empty{grid-column:1/-1;text-align:center;padding:56px 20px;}
@@ -103,7 +105,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .cat-row.active{background:#fffbee;}
 .cat-count{font-size:12px;color:var(--tl);font-weight:400;}
 
-/* POST READER */
+/* POST READER (full page view) */
 .reader-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9998;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto;}
 .reader-ov.open{display:flex;}
 .reader-box{background:var(--white);border-radius:var(--rl);max-width:760px;width:100%;margin:auto;position:relative;overflow:hidden;}
@@ -115,8 +117,12 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .reader-body{padding:34px 40px 44px;}
 .reader-tag{display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:800;padding:3px 11px;border-radius:100px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase;}
 .reader-title{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,34px);color:var(--black);font-weight:900;line-height:1.2;margin-bottom:13px;letter-spacing:-.5px;}
-.reader-meta{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--tl);margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--gm);}
+.reader-meta{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--tl);margin-bottom:8px;padding-bottom:20px;border-bottom:1px solid var(--gm);flex-wrap:wrap;}
 .reader-mdot{width:3px;height:3px;border-radius:50%;background:var(--tl);}
+.reader-url{display:inline-flex;align-items:center;gap:5px;background:var(--gl);border:1px solid var(--gm);border-radius:6px;padding:4px 10px;font-family:monospace;font-size:12px;color:var(--tm);cursor:pointer;transition:all .2s;margin-left:4px;}
+.reader-url:hover{border-color:var(--gold);color:var(--gold-d);}
+.reader-url svg{width:11px;height:11px;flex-shrink:0;}
+.reader-url-copied{color:var(--gold-d)!important;border-color:var(--gold)!important;}
 .reader-content{font-size:16px;color:#333;line-height:1.85;}
 .reader-content p{margin-bottom:16px;}
 .reader-content h2{font-family:'Fraunces',serif;font-size:22px;color:var(--black);margin:26px 0 11px;}
@@ -136,7 +142,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 /* ADMIN OVERLAY */
 .admin-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto;}
 .admin-ov.open{display:flex;}
-.admin-box{background:var(--white);border-radius:var(--rl);max-width:840px;width:100%;margin:auto;border-top:5px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.admin-box{background:var(--white);border-radius:var(--rl);max-width:860px;width:100%;margin:auto;border-top:5px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.5);}
 
 /* GATE */
 .admin-gate{padding:44px 32px;text-align:center;}
@@ -161,9 +167,41 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 /* FORM */
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
 .fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
-.fg.full{grid-column:1/-1;}
 .flabel{font-size:12px;font-weight:700;color:var(--black);}
 .flabel em{color:var(--tl);font-style:normal;font-weight:400;}
+
+/* CATEGORY SELECTOR — custom styled grid */
+.cat-selector{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:4px;}
+.cat-opt{display:flex;align-items:center;gap:7px;padding:9px 13px;border-radius:var(--r);border:1.5px solid var(--gm);background:var(--gl);cursor:pointer;font-size:13px;font-weight:600;color:var(--tm);transition:all .2s;user-select:none;}
+.cat-opt:hover{border-color:var(--gold);color:var(--gold-d);}
+.cat-opt.selected{border-color:var(--gold);background:var(--gold);color:var(--black);}
+.cat-opt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+/* category color dots */
+.dot-seller{background:#22aa55;}
+.dot-foreclosure{background:#cc4444;}
+.dot-creative{background:#7c3aed;}
+.dot-nc{background:#2563eb;}
+.dot-fl{background:#0891b2;}
+.dot-tx{background:#d97706;}
+.dot-market{background:#64748b;}
+.dot-probate{background:#92400e;}
+.dot-divorce{background:#db2777;}
+.dot-custom{background:var(--gold-d);}
+/* custom cat input */
+.custom-cat-wrap{display:none;margin-top:8px;}
+.custom-cat-wrap.show{display:block;}
+
+/* SLUG FIELD */
+.slug-wrap{position:relative;}
+.slug-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--tl);font-family:monospace;pointer-events:none;white-space:nowrap;}
+.slug-input{padding-left:130px!important;font-family:monospace!important;font-size:13px!important;}
+.slug-preview{font-size:12px;color:var(--tl);margin-top:5px;font-family:monospace;}
+.slug-preview span{color:var(--gold-d);font-weight:600;}
+.slug-copy{display:inline-flex;align-items:center;gap:4px;background:var(--gl);border:1px solid var(--gm);border-radius:5px;padding:2px 8px;font-size:11px;cursor:pointer;color:var(--tm);transition:all .2s;margin-left:6px;vertical-align:middle;}
+.slug-copy:hover{border-color:var(--gold);color:var(--gold-d);}
+.slug-auto{font-size:11px;color:var(--tl);margin-top:4px;display:flex;align-items:center;gap:6px;}
+.slug-auto-btn{background:none;border:none;color:var(--gold-d);font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;text-decoration:underline;padding:0;}
+
 .ainput,.aselect,.atextarea{padding:11px 15px;border:1.5px solid var(--gm);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--black);background:var(--gl);outline:none;transition:border-color .2s;width:100%;}
 .ainput:focus,.aselect:focus,.atextarea:focus{border-color:var(--gold);background:var(--white);}
 .atextarea{resize:vertical;min-height:250px;line-height:1.7;}
@@ -177,31 +215,51 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .form-actions-l{display:flex;gap:9px;}
 .btn-pub{background:var(--gold);color:var(--black);padding:12px 26px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .btn-pub:hover{background:var(--gold-l);transform:translateY(-1px);}
-.btn-pub.dark{background:var(--black);color:var(--white);}
-.btn-pub.dark:hover{background:#222;}
 .btn-sec{background:none;border:1.5px solid var(--gm);color:var(--tm);padding:11px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .btn-sec:hover{border-color:var(--gold);color:var(--gold-d);}
-.btn-del{background:none;border:1.5px solid #ffd0d0;color:#cc3333;padding:11px 16px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
-.btn-del:hover{background:#fff5f5;}
 .edit-label{font-size:12px;color:var(--tl);font-style:italic;}
-.success-bar{display:none;background:#f0fff4;border:1px solid #86efac;border-radius:8px;padding:11px 15px;font-size:14px;color:#166534;font-weight:600;margin-bottom:14px;align-items:center;gap:8px;}
+.success-bar{display:none;background:#f0fff4;border:1px solid #86efac;border-radius:8px;padding:11px 15px;font-size:14px;color:#166534;font-weight:600;margin-bottom:14px;align-items:center;gap:8px;flex-wrap:wrap;}
 .success-bar.show{display:flex;}
+.success-bar .post-link{font-family:monospace;background:#dcfce7;padding:2px 8px;border-radius:4px;font-size:12px;color:#166534;}
 
 /* MANAGE LIST */
-.manage-list{display:flex;flex-direction:column;gap:10px;max-height:480px;overflow-y:auto;}
+.manage-list{display:flex;flex-direction:column;gap:10px;max-height:500px;overflow-y:auto;}
 .mrow{display:flex;align-items:center;gap:12px;padding:13px 14px;background:var(--gl);border-radius:10px;border:1px solid var(--gm);}
 .mthumb{width:48px;height:48px;border-radius:8px;background:var(--gm);flex-shrink:0;background-size:cover;background-position:center;overflow:hidden;}
 .mthumb-ph{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#333);display:flex;align-items:center;justify-content:center;}
 .mthumb-ph svg{width:18px;height:18px;fill:rgba(244,180,0,.4);}
 .minfo{flex:1;min-width:0;}
-.minfo-title{font-size:13px;font-weight:700;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;}
-.minfo-meta{font-size:11px;color:var(--tl);}
+.minfo-title{font-size:13px;font-weight:700;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px;}
+.minfo-meta{font-size:11px;color:var(--tl);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.minfo-slug{font-family:monospace;font-size:11px;color:var(--gold-d);background:#fffbee;padding:1px 6px;border-radius:4px;border:1px solid rgba(212,157,0,.2);}
+.mcat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .mactions{display:flex;gap:7px;flex-shrink:0;}
 .mact-edit{background:var(--white);border:1.5px solid var(--gm);color:var(--tm);padding:6px 13px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .mact-edit:hover{border-color:var(--gold);color:var(--gold-d);}
+.mact-copy{background:var(--white);border:1.5px solid var(--gm);color:var(--tm);padding:6px 10px;border-radius:7px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;gap:4px;}
+.mact-copy:hover{border-color:var(--gold);color:var(--gold-d);}
 .mact-del{background:none;border:1.5px solid #ffd0d0;color:#cc3333;padding:6px 13px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .mact-del:hover{background:#fff5f5;}
 .manage-empty{text-align:center;padding:36px 20px;color:var(--tl);font-size:14px;}
+
+/* CATEGORIES MANAGEMENT TAB */
+.catmgr-wrap{display:flex;flex-direction:column;gap:12px;}
+.catmgr-list{display:flex;flex-direction:column;gap:8px;max-height:280px;overflow-y:auto;}
+.catmgr-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--gl);border-radius:var(--r);border:1px solid var(--gm);}
+.catmgr-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.catmgr-name{font-size:14px;font-weight:600;color:var(--black);flex:1;}
+.catmgr-count{font-size:12px;color:var(--tl);}
+.catmgr-del{background:none;border:1px solid #ffd0d0;color:#cc3333;padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.catmgr-del:hover{background:#fff5f5;}
+.catmgr-del:disabled{opacity:.3;cursor:default;}
+.add-cat-row{display:flex;gap:8px;align-items:center;}
+.add-cat-input{flex:1;padding:10px 14px;border:1.5px solid var(--gm);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;background:var(--gl);outline:none;transition:border-color .2s;}
+.add-cat-input:focus{border-color:var(--gold);}
+.add-cat-btn{background:var(--black);color:var(--white);padding:10px 18px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:all .2s;}
+.add-cat-btn:hover{background:#222;}
+.add-cat-color{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.add-cat-color-opt{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border .2s;}
+.add-cat-color-opt.selected{border-color:var(--black);}
 
 /* OFFER POPUP */
 .offer-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9997;justify-content:center;align-items:center;padding:20px;}
@@ -229,7 +287,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 
 /* RESPONSIVE */
 @media(max-width:1000px){.blog-layout{grid-template-columns:1fr;}.sidebar{position:static;}}
-@media(max-width:680px){.posts-grid{grid-template-columns:1fr;}.bcard.featured{grid-column:auto;}.form-row{grid-template-columns:1fr;}.reader-body{padding:22px 20px 30px;}.reader-img,.reader-img-ph{height:210px;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:680px){.posts-grid{grid-template-columns:1fr;}.bcard.featured{grid-column:auto;}.form-row{grid-template-columns:1fr;}.reader-body{padding:22px 20px 30px;}.reader-img,.reader-img-ph{height:210px;}.footer-grid{grid-template-columns:1fr 1fr;}.cat-selector{grid-template-columns:1fr 1fr;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.gate-row{flex-direction:column;}}
 </style>
 </head>
@@ -267,14 +325,8 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 <div class="blog-search-bar">
   <div class="bsb-inner">
     <input type="text" class="bsb-input" id="searchInput" placeholder="Search articles..." oninput="doFilter()">
-    <div class="filter-wrap">
-      <button class="fbtn active" onclick="setFilter('all',this)">All</button>
-      <button class="fbtn" onclick="setFilter('Seller Tips',this)">Seller Tips</button>
-      <button class="fbtn" onclick="setFilter('Foreclosure',this)">Foreclosure</button>
-      <button class="fbtn" onclick="setFilter('Creative Finance',this)">Creative Finance</button>
-      <button class="fbtn" onclick="setFilter('NC',this)">North Carolina</button>
-      <button class="fbtn" onclick="setFilter('FL',this)">Florida</button>
-      <button class="fbtn" onclick="setFilter('TX',this)">Texas</button>
+    <div class="filter-wrap" id="filterBtns">
+      <!-- Populated by JS based on categories -->
     </div>
   </div>
 </div>
@@ -333,7 +385,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 
 <!-- ADMIN FAB -->
 <button class="admin-fab" onclick="openAdmin()">
-  <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
   Write a Post
 </button>
 
@@ -368,54 +420,68 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
         <button class="btn-pub" onclick="checkPw()">Enter</button>
       </div>
       <p class="gate-err" id="gateErr">Incorrect password. Try again.</p>
-      <p class="gate-hint">Default password: <strong>acorn2026</strong> — find it in the script to change it.</p>
+      <p class="gate-hint">Default password: <strong>acorn2026</strong></p>
     </div>
 
-    <!-- PANEL (shown after auth) -->
+    <!-- PANEL -->
     <div id="adminPanel" style="display:none;">
       <div class="admin-head">
         <h2>Blog Admin</h2>
         <div class="admin-head-r">
           <button class="atab active" id="tabWrite" onclick="switchTab('write')">✏️ Write Post</button>
-          <button class="atab" id="tabManage" onclick="switchTab('manage')">📋 Manage Posts</button>
+          <button class="atab" id="tabManage" onclick="switchTab('manage')">📋 Posts</button>
+          <button class="atab" id="tabCats" onclick="switchTab('cats')">🏷️ Categories</button>
           <button class="admin-close-btn" onclick="closeAdmin()">×</button>
         </div>
       </div>
       <div class="admin-body">
 
+        <!-- SUCCESS BAR -->
         <div class="success-bar" id="successBar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Post published! It now appears on the blog page.
+          <span id="successMsg">Post published!</span>
         </div>
 
-        <!-- WRITE TAB -->
+        <!-- ══ WRITE TAB ══ -->
         <div id="writeTab">
+
           <div class="form-row">
             <div class="fg">
               <label class="flabel">Title <em>*</em></label>
-              <input type="text" class="ainput" id="pTitle" placeholder="e.g. How to Sell Fast in Charlotte NC">
+              <input type="text" class="ainput" id="pTitle" placeholder="e.g. How to Sell Fast in Charlotte NC" oninput="onTitleInput()">
             </div>
             <div class="fg">
-              <label class="flabel">Category</label>
-              <select class="aselect" id="pCat">
-                <option>Seller Tips</option>
-                <option>Foreclosure</option>
-                <option>Creative Finance</option>
-                <option>NC</option>
-                <option>FL</option>
-                <option>TX</option>
-                <option>Market Update</option>
-                <option>Probate</option>
-                <option>Divorce</option>
-              </select>
+              <label class="flabel">Category <em>* — select one</em></label>
+              <div class="cat-selector" id="catSelector">
+                <!-- Populated by JS -->
+              </div>
+              <div class="custom-cat-wrap" id="customCatWrap">
+                <input type="text" class="ainput" id="customCatInput" placeholder="Type your custom category name...">
+              </div>
             </div>
           </div>
+
+          <!-- SLUG / URL FIELD -->
+          <div class="fg">
+            <label class="flabel">Post URL (Slug) <em>— the link people share</em></label>
+            <div class="slug-wrap">
+              <span class="slug-prefix">acornhouseacquisition.com/blog/</span>
+              <input type="text" class="ainput slug-input" id="pSlug" placeholder="my-post-title" oninput="onSlugInput()">
+            </div>
+            <div class="slug-auto">
+              Auto-generated from title &nbsp;·&nbsp;
+              <button class="slug-auto-btn" onclick="autoSlug()">Regenerate from title</button>
+            </div>
+            <div class="slug-preview" id="slugPreview"></div>
+          </div>
+
           <div class="fg">
             <label class="flabel">Short Excerpt <em>(shown on blog cards — 1–2 sentences)</em></label>
             <input type="text" class="ainput" id="pExc" placeholder="A brief summary of what this post covers...">
           </div>
+
           <div class="fg">
-            <label class="flabel">Featured Image URL <em>(paste an image link, or leave blank for a placeholder)</em></label>
+            <label class="flabel">Featured Image URL <em>(paste an image link, or leave blank)</em></label>
             <input type="url" class="ainput" id="pImg" placeholder="https://i.imgur.com/your-image.jpg" oninput="prevImg()">
             <div class="img-prev" id="imgPrev">
               <div class="img-prev-hint">
@@ -424,8 +490,9 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
               </div>
             </div>
           </div>
+
           <div class="fg">
-            <label class="flabel">Post Body <em>* — use ## Heading, ### Subheading, **bold**, - bullet point</em></label>
+            <label class="flabel">Post Body <em>* — ## Heading &nbsp; ### Subheading &nbsp; **bold** &nbsp; - bullet</em></label>
             <div class="fmt-bar">
               <button class="fmt-btn" onclick="ins('**','**')"><b>Bold</b></button>
               <button class="fmt-btn" onclick="ins('## ','')">H2</button>
@@ -437,18 +504,16 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 
 ## Start with a Heading
 
-Your intro paragraph goes here. Explain the problem your reader is facing.
+Your intro paragraph goes here.
 
-### First Point
+### A Subheading
 
 More detail here. Use **bold** for key phrases.
 
 - Bullet item one
-- Bullet item two
-- Bullet item three
-
-Keep writing — there's no limit on length."></textarea>
+- Bullet item two"></textarea>
           </div>
+
           <div class="form-actions">
             <div class="form-actions-l">
               <button class="btn-pub" onclick="publish()">Publish Post</button>
@@ -458,9 +523,27 @@ Keep writing — there's no limit on length."></textarea>
           </div>
         </div>
 
-        <!-- MANAGE TAB -->
+        <!-- ══ MANAGE POSTS TAB ══ -->
         <div id="manageTab" style="display:none;">
           <div class="manage-list" id="manageList"></div>
+        </div>
+
+        <!-- ══ CATEGORIES TAB ══ -->
+        <div id="catsTab" style="display:none;">
+          <div class="catmgr-wrap">
+            <p style="font-size:14px;color:var(--tm);margin-bottom:14px;line-height:1.6;">Manage your blog categories. Built-in categories can't be deleted. Add custom ones for your specific content.</p>
+            <div class="catmgr-list" id="catmgrList"></div>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--gm);">
+              <p style="font-size:13px;font-weight:700;color:var(--black);margin-bottom:12px;">Add a New Category</p>
+              <div class="add-cat-row">
+                <input type="text" class="add-cat-input" id="newCatInput" placeholder="e.g. Investor Tips, Rental Properties..." onkeydown="if(event.key==='Enter')addCategory()">
+                <button class="add-cat-btn" onclick="addCategory()">+ Add</button>
+              </div>
+              <div class="add-cat-color" id="newCatColorPicker">
+                <!-- color swatches rendered by JS -->
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -481,46 +564,71 @@ Keep writing — there's no limit on length."></textarea>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════════
-   CONFIG — change ADMIN_PW to your own password
-══════════════════════════════════════════════════════ */
-const ADMIN_PW   = 'acorn2026';
-const STORE_KEY  = 'acorn_blog_v1';
-const PER_PAGE   = 6;
+/* ══════════════════════════════════════════════════
+   CONFIG
+══════════════════════════════════════════════════ */
+const ADMIN_PW  = 'acorn2026';   // ← Change this
+const STORE_KEY = 'acorn_blog_v1';
+const CAT_KEY   = 'acorn_blog_cats_v1';
+const PER_PAGE  = 6;
+const BASE_URL  = 'https://acornhouseacquisition.com/blog/';
 
-/* ═══════════════════════════════════════════════════════
-   SEED POSTS — always visible, never editable/deletable
-   Replace or expand as you wish
-══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════
+   BUILT-IN CATEGORIES (never deletable)
+══════════════════════════════════════════════════ */
+const BUILTIN_CATS = [
+  { name:'Seller Tips',      color:'#22aa55', builtin:true },
+  { name:'Foreclosure',      color:'#cc4444', builtin:true },
+  { name:'Creative Finance', color:'#7c3aed', builtin:true },
+  { name:'NC',               color:'#2563eb', builtin:true },
+  { name:'FL',               color:'#0891b2', builtin:true },
+  { name:'TX',               color:'#d97706', builtin:true },
+  { name:'Market Update',    color:'#64748b', builtin:true },
+  { name:'Probate',          color:'#92400e', builtin:true },
+  { name:'Divorce',          color:'#db2777', builtin:true },
+];
+
+const COLOR_SWATCHES = ['#22aa55','#cc4444','#7c3aed','#2563eb','#0891b2','#d97706','#64748b','#92400e','#db2777','#f4b400','#059669','#dc2626'];
+
+/* ══════════════════════════════════════════════════
+   SEED POSTS (always shown, not editable)
+══════════════════════════════════════════════════ */
 const SEEDS = [
   {
-    id:'seed1', title:'5 Signs It\'s Time to Sell for Cash Instead of Listing',
+    id:'seed1', slug:'5-signs-sell-for-cash',
+    title:"5 Signs It's Time to Sell for Cash Instead of Listing",
     category:'Seller Tips', imgUrl:'',
-    excerpt:'Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.',
-    body:`## Not Every Home Belongs on the MLS\n\nThere\'s a common assumption that listing with a real estate agent is always the right move. But for many homeowners, the traditional route costs more than it saves.\n\nHere are five signs that selling for cash is the smarter path.\n\n### 1. Your Home Needs Major Repairs\n\nTraditional buyers — especially those using mortgage financing — require the home to meet minimum condition standards. If your roof is failing, the HVAC is shot, or the foundation has issues, you\'re looking at repair quotes before you ever get to market.\n\nCash buyers purchase as-is. No repairs, no inspection contingencies, no deals that collapse at the last minute.\n\n### 2. You\'ve Already Been on the Market Too Long\n\nIf your home has been listed for 60, 90, or 120+ days with no serious offers, every additional day costs you — carrying costs, mortgage payments, HOA dues, insurance. At some point, a discounted cash offer nets you more than a retail listing that never closes.\n\n### 3. You\'re Facing a Time Pressure\n\nPCS orders. Job relocation. Divorce settlement. Foreclosure auction date. These situations don\'t wait for the MLS to find the right buyer. Cash buyers can close in 7–14 days.\n\n### 4. You Inherited the Property\n\nInherited properties often come with probate complications, out-of-state ownership, and deferred maintenance. Cash buyers handle the complexity.\n\n### 5. You Have Little or No Equity\n\nIf you owe close to what your home is worth, agent commissions (5–6%) and closing costs will eat whatever margin you have. Creative solutions like subject-to financing can let you exit without bringing money to the table.\n\n## The Bottom Line\n\nA cash sale isn\'t right for everyone — but if any of these situations apply to you, it\'s worth getting an offer. There\'s no obligation, and you might be surprised what works out better.`,
+    excerpt:"Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.",
+    body:`## Not Every Home Belongs on the MLS\n\nThere's a common assumption that listing with a real estate agent is always the right move. But for many homeowners, the traditional route costs more than it saves.\n\nHere are five signs that selling for cash is the smarter path.\n\n### 1. Your Home Needs Major Repairs\n\nTraditional buyers require the home to meet minimum condition standards. Cash buyers purchase as-is — no repairs, no inspection contingencies, no deals that collapse at the last minute.\n\n### 2. You've Already Been on the Market Too Long\n\nIf your home has been listed for 60, 90, or 120+ days with no serious offers, every additional day costs you — carrying costs, mortgage payments, HOA dues, insurance.\n\n### 3. You're Facing a Time Pressure\n\nPCS orders. Job relocation. Divorce settlement. Foreclosure auction date. Cash buyers can close in 7–14 days.\n\n### 4. You Inherited the Property\n\nInherited properties often come with probate complications and deferred maintenance. Cash buyers handle the complexity.\n\n### 5. You Have Little or No Equity\n\nIf you owe close to what your home is worth, agent commissions (5–6%) will eat whatever margin you have. Subject-to financing can let you exit without bringing money to the table.\n\n## The Bottom Line\n\nA cash sale isn't right for everyone — but if any of these situations apply to you, it's worth getting an offer.`,
     date: new Date(Date.now()-7*86400000).toISOString(), readTime:'4 min read', seed:true
   },
   {
-    id:'seed2', title:'What Is a Subject-To Real Estate Deal? A Plain-English Guide',
+    id:'seed2', slug:'subject-to-real-estate-guide',
+    title:"What Is a Subject-To Real Estate Deal? A Plain-English Guide",
     category:'Creative Finance', imgUrl:'',
-    excerpt:'If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.',
-    body:`## Subject-To: Explained Simply\n\n"Subject to" is a creative real estate purchase method where a buyer takes ownership of a property **subject to the existing mortgage** — the loan stays in the seller\'s name, but the buyer takes control of the property and makes the payments going forward.\n\n### How It Works\n\n- Seller and buyer agree on terms\n- Title transfers to the buyer at closing\n- The existing mortgage remains in the seller\'s name\n- The buyer makes the mortgage payments going forward\n- The seller is released from the day-to-day burden of the property\n\n### When Does Subject-To Make Sense?\n\nThis approach is most useful when the seller has little or no equity, needs to move fast but can\'t sell for enough to cover closing costs, or the home\'s value has dropped since purchase.\n\n### What Are the Risks?\n\nThe main risk is the **due-on-sale clause** — most mortgages contain language that technically allows the lender to demand full repayment if ownership changes. In practice, lenders rarely invoke this as long as payments are being made consistently.\n\nHowever, sellers should understand: the mortgage remains in their name until paid off or refinanced. We always recommend consulting with a real estate attorney before agreeing to a subject-to transaction.\n\n## The Bottom Line\n\nSubject-to can be a powerful tool for homeowners who feel stuck. At Acorn, we handle these purchases professionally, document everything through a licensed title company, and have helped dozens of homeowners exit difficult situations cleanly.`,
+    excerpt:"If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.",
+    body:`## Subject-To: Explained Simply\n\n"Subject to" is a creative real estate purchase method where a buyer takes ownership **subject to the existing mortgage** — the loan stays in the seller's name, but the buyer makes the payments going forward.\n\n### How It Works\n\n- Seller and buyer agree on terms\n- Title transfers to the buyer at closing\n- The existing mortgage stays in the seller's name\n- The buyer makes the mortgage payments going forward\n- The seller is released from the day-to-day burden\n\n### When Does Subject-To Make Sense?\n\nThis works best when the seller has little or no equity, or the home's value has dropped since purchase.\n\n### What Are the Risks?\n\nThe main risk is the **due-on-sale clause** — most mortgages allow the lender to demand full repayment if ownership changes. In practice, lenders rarely invoke this while payments are current.\n\n## The Bottom Line\n\nSubject-to can be a powerful tool for homeowners who feel stuck. We document everything through a licensed title company and have helped dozens of homeowners exit difficult situations cleanly.`,
     date: new Date(Date.now()-14*86400000).toISOString(), readTime:'5 min read', seed:true
   },
   {
-    id:'seed3', title:'How to Stop Foreclosure in North Carolina: Your Timeline and Options',
+    id:'seed3', slug:'stop-foreclosure-north-carolina',
+    title:"How to Stop Foreclosure in North Carolina: Your Timeline and Options",
     category:'Foreclosure', imgUrl:'',
-    excerpt:'Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here\'s what to do at each stage.',
-    body:`## North Carolina Foreclosure: What You Need to Know\n\nNorth Carolina uses a **non-judicial foreclosure** process, which means it moves faster than many other states. Once the bank files, you may have as little as 60–90 days before the property is sold at auction.\n\n## Stage 1: You\'ve Missed Payments but No Notice Yet\n\nThis is when you have the most options.\n\n- **Contact your lender** — ask about forbearance, loan modification, or repayment plans\n- **Sell the home** — if you have equity, a traditional or cash sale can pay off the loan\n- **Refinance** — if your credit is still intact, a refi can restructure the debt\n\n**Cash sale advantage:** A buyer like Acorn can have a cash offer to you within 24 hours and can close in 7–14 days — giving you a clean exit before the process escalates.\n\n## Stage 2: You\'ve Received a Notice of Hearing\n\nNC law requires a Notice of Hearing before a lender can foreclose. You have the right to attend and raise defenses. You still have time to sell — contact a foreclosure attorney immediately.\n\n## Stage 3: The Clerk Has Issued the Order\n\nAfter the hearing, the clerk issues an order allowing foreclosure. You now have a **10-day window** to appeal. A cash buyer can still close in time if you act immediately.\n\n## Stage 4: After the 10-Day Period\n\nThe sale is scheduled at the courthouse. At this point, your options are limited — but a cash buyer may still be able to help depending on timing.\n\n## The Key Takeaway\n\n**Don\'t wait.** Every day you delay reduces your options. If you\'re behind on payments in NC, call us at (786) 982-8464 today.`,
+    excerpt:"Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's what to do at each stage.",
+    body:`## North Carolina Foreclosure: What You Need to Know\n\nNorth Carolina uses a **non-judicial foreclosure** process — it can move in as little as 60–90 days from the first notice.\n\n## Stage 1: You've Missed Payments but No Notice Yet\n\nThis is when you have the most options:\n\n- **Contact your lender** — ask about forbearance or loan modification\n- **Sell the home** — a cash sale can pay off the loan and potentially leave you with money\n- **Refinance** — if your credit is intact, a refi can restructure the debt\n\n## Stage 2: You've Received a Notice of Hearing\n\nYou have the right to attend the hearing and raise defenses. You still have time to sell — contact an attorney immediately.\n\n## Stage 3: The Clerk Has Issued the Order\n\nYou now have a **10-day window** to appeal. A cash buyer can still close in time if you act immediately.\n\n## Stage 4: After the 10-Day Period\n\nThe sale is scheduled at the courthouse. Options are limited — but a cash buyer may still help.\n\n## The Key Takeaway\n\n**Don't wait.** Every day you delay reduces your options. Call us at (786) 982-8464 today.`,
     date: new Date(Date.now()-21*86400000).toISOString(), readTime:'6 min read', seed:true
   }
 ];
 
-/* ═══ STATE ═══ */
-let posts=[], filtered=[], activeCat='all', page=1, editId=null, authed=false;
+/* ══════════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════════ */
+let posts=[], filtered=[], categories=[], activeCat='all', page=1, editId=null, authed=false, selectedCat='', newCatColor=COLOR_SWATCHES[0];
 
-/* ═══ STORAGE ═══ */
-function load(){
+/* ══════════════════════════════════════════════════
+   STORAGE
+══════════════════════════════════════════════════ */
+function loadPosts(){
   try{
     const s=localStorage.getItem(STORE_KEY);
     const saved=s?JSON.parse(s):[];
@@ -529,39 +637,139 @@ function load(){
   }catch{posts=[...SEEDS];}
   filtered=[...posts];
 }
-function save(){
-  localStorage.setItem(STORE_KEY,JSON.stringify(posts.filter(p=>!p.seed)));
+function savePosts(){ localStorage.setItem(STORE_KEY,JSON.stringify(posts.filter(p=>!p.seed))); }
+
+function loadCats(){
+  try{
+    const s=localStorage.getItem(CAT_KEY);
+    const custom=s?JSON.parse(s):[];
+    const builtinNames=new Set(BUILTIN_CATS.map(c=>c.name));
+    categories=[...BUILTIN_CATS,...custom.filter(c=>!builtinNames.has(c.name))];
+  }catch{ categories=[...BUILTIN_CATS]; }
+}
+function saveCats(){ localStorage.setItem(CAT_KEY,JSON.stringify(categories.filter(c=>!c.builtin))); }
+
+function getCatColor(name){
+  const c=categories.find(x=>x.name===name);
+  return c?c.color:'#999';
 }
 
-/* ═══ RENDER CARDS ═══ */
+/* ══════════════════════════════════════════════════
+   SLUG UTILITIES
+══════════════════════════════════════════════════ */
+function toSlug(str){
+  return str.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g,'')
+    .trim()
+    .replace(/\s+/g,'-')
+    .replace(/-+/g,'-')
+    .substring(0,80);
+}
+function isSlugUnique(slug, excludeId=''){
+  return !posts.some(p=>p.slug===slug && p.id!==excludeId);
+}
+function ensureUniqueSlug(slug, excludeId=''){
+  if(isSlugUnique(slug, excludeId)) return slug;
+  let i=2;
+  while(!isSlugUnique(slug+'-'+i, excludeId)) i++;
+  return slug+'-'+i;
+}
+function onTitleInput(){
+  // Auto-fill slug from title only if user hasn't manually edited it
+  const slugEl=document.getElementById('pSlug');
+  if(!slugEl.dataset.manualEdit){
+    slugEl.value=toSlug(document.getElementById('pTitle').value);
+    updateSlugPreview();
+  }
+}
+function onSlugInput(){
+  document.getElementById('pSlug').dataset.manualEdit='1';
+  // Sanitise as they type
+  const el=document.getElementById('pSlug');
+  el.value=el.value.toLowerCase().replace(/[^a-z0-9-]/g,'');
+  updateSlugPreview();
+}
+function autoSlug(){
+  const el=document.getElementById('pSlug');
+  delete el.dataset.manualEdit;
+  el.value=toSlug(document.getElementById('pTitle').value);
+  updateSlugPreview();
+}
+function updateSlugPreview(){
+  const slug=document.getElementById('pSlug').value||'your-post-slug';
+  const full=BASE_URL+slug;
+  document.getElementById('slugPreview').innerHTML=
+    `<span>${full}</span>
+     <button class="slug-copy" onclick="copySlug('${full}')">
+       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+       Copy link
+     </button>`;
+}
+function copySlug(url){
+  navigator.clipboard.writeText(url).then(()=>{
+    const btn=document.querySelector('.slug-copy');
+    if(btn){btn.textContent='✓ Copied!';setTimeout(()=>{btn.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy link';},1500);}
+  }).catch(()=>{ prompt('Copy this link:',url); });
+}
+
+/* ══════════════════════════════════════════════════
+   RENDER POSTS
+══════════════════════════════════════════════════ */
 function render(){
+  renderFilterBtns();
   const grid=document.getElementById('postsGrid');
   const start=(page-1)*PER_PAGE;
   const slice=filtered.slice(start,start+PER_PAGE);
   if(!slice.length){
     grid.innerHTML=`<div class="posts-empty">
-      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="1.5"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="currentColor"/></svg>
       <h3>No articles found</h3><p>Try a different search or filter.</p></div>`;
     document.getElementById('pagination').innerHTML='';
   } else {
     grid.innerHTML=slice.map((p,i)=>{
       const feat=i===0&&page===1&&activeCat==='all'&&!document.getElementById('searchInput').value;
       const d=new Date(p.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+      const clr=getCatColor(p.category);
+      const slug=p.slug||toSlug(p.title);
       const img=p.imgUrl
+        ?`<div class="bcard-img" style="background-image:url('${p.imgUrl}')"><span class="bcard-tag" style="background:${clr};color:#fff">${p.category}</span></div>`
         ?`<div class="bcard-img" style="background-image:url('${p.imgUrl}')"><span class="bcard-tag">${p.category}</span></div>`
-        :`<div class="bcard-img-ph"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span class="bcard-tag">${p.category}</span></div>`;
+        :`<div class="bcard-img-ph"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="currentColor"/></svg><span class="bcard-tag">${p.category}</span></div>`;
       return`<div class="bcard${feat?' featured':''}" onclick="openPost('${p.id}')">
         ${img}
         <div class="bcard-body">
-          <div class="bcard-meta"><span>${d}</span><span class="bcard-dot"></span><span>${p.readTime||'3 min read'}</span></div>
+          <div class="bcard-meta">
+            <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:${clr};flex-shrink:0;display:inline-block;"></span>${p.category}</span>
+            <span class="bcard-dot"></span><span>${d}</span>
+            <span class="bcard-dot"></span><span>${p.readTime||'3 min read'}</span>
+          </div>
           <div class="bcard-title">${p.title}</div>
           <div class="bcard-exc">${p.excerpt}</div>
-          <span class="bcard-read">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </div></div>`;
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span class="bcard-read">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span>
+            <span class="bcard-slug-badge" title="${BASE_URL+slug}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              /blog/${slug}
+            </span>
+          </div>
+        </div>
+      </div>`;
     }).join('');
     renderPages();
   }
   renderSidebar();
+}
+
+function renderFilterBtns(){
+  const used=new Set(posts.map(p=>p.category));
+  const btns=document.getElementById('filterBtns');
+  btns.innerHTML=`<button class="fbtn${activeCat==='all'?' active':''}" onclick="setFilter('all',this)">All</button>`
+    +categories.filter(c=>used.has(c.name)).map(c=>
+      `<button class="fbtn${activeCat===c.name?' active':''}" onclick="setFilter('${c.name}',this)"
+        style="${activeCat===c.name?'background:'+c.color+';border-color:'+c.color+';color:#000':''}">
+        ${c.name}
+      </button>`
+    ).join('');
 }
 
 function renderPages(){
@@ -573,67 +781,134 @@ function renderPages(){
   h+=`<button class="pg-btn" onclick="goPage(${page+1})" ${page===total?'disabled':''}>›</button>`;
   el.innerHTML=h;
 }
-
 function goPage(n){
   const t=Math.ceil(filtered.length/PER_PAGE);
   if(n<1||n>t)return;
-  page=n; render(); window.scrollTo({top:0,behavior:'smooth'});
+  page=n;render();window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* ═══ SIDEBAR ═══ */
+/* ══════════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════════ */
 function renderSidebar(){
-  // Recent
   const rec=document.getElementById('sidebarRecent');
   rec.innerHTML=posts.slice(0,5).map(p=>{
     const d=new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     const t=p.imgUrl
       ?`<div class="recent-thumb" style="background-image:url('${p.imgUrl}')"></div>`
+      ?`<div class="recent-thumb" style="background-image:url('${p.imgUrl}')"></div>`
       :`<div class="recent-thumb"><div class="recent-thumb-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.4)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div></div>`;
     return`<div class="recent-item" onclick="openPost('${p.id}')">${t}<div><div class="recent-title">${p.title}</div><div class="recent-date">${d}</div></div></div>`;
   }).join('')||'<p style="font-size:13px;color:var(--tl);">No posts yet.</p>';
 
-  // Cats
   const counts={};
   posts.forEach(p=>{counts[p.category]=(counts[p.category]||0)+1;});
-  document.getElementById('sidebarCats').innerHTML=Object.entries(counts).map(([c,n])=>
-    `<div class="cat-row${activeCat===c?' active':''}" onclick="setFilter('${c}',null)">${c}<span class="cat-count">${n}</span></div>`
-  ).join('');
+  document.getElementById('sidebarCats').innerHTML=Object.entries(counts).map(([c,n])=>{
+    const clr=getCatColor(c);
+    return`<div class="cat-row${activeCat===c?' active':''}" onclick="setFilterSidebar('${c}')">
+      <span style="display:flex;align-items:center;gap:8px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:${clr};flex-shrink:0;display:inline-block;"></span>${c}
+      </span>
+      <span class="cat-count">${n}</span>
+    </div>`;
+  }).join('');
 }
 
-/* ═══ FILTER / SEARCH ═══ */
+/* ══════════════════════════════════════════════════
+   FILTER / SEARCH
+══════════════════════════════════════════════════ */
 function setFilter(cat,btn){
-  activeCat=cat; page=1;
+  activeCat=cat;page=1;
   if(btn){document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
   applyFilter();
+}
+function setFilterSidebar(cat){
+  activeCat=cat;page=1;applyFilter();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function doFilter(){page=1;applyFilter();}
 function applyFilter(){
   const q=document.getElementById('searchInput').value.toLowerCase().trim();
   filtered=posts.filter(p=>{
     const mc=activeCat==='all'||p.category===activeCat;
-    const mq=!q||p.title.toLowerCase().includes(q)||p.excerpt.toLowerCase().includes(q)||p.body.toLowerCase().includes(q);
+    const mq=!q||p.title.toLowerCase().includes(q)||p.excerpt.toLowerCase().includes(q)||(p.body||'').toLowerCase().includes(q);
     return mc&&mq;
   });
   render();
 }
 
-/* ═══ POST READER ═══ */
+/* ══════════════════════════════════════════════════
+   POST READER — opens with URL hash
+══════════════════════════════════════════════════ */
 function openPost(id){
   const p=posts.find(x=>x.id===id);if(!p)return;
   const d=new Date(p.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  const slug=p.slug||toSlug(p.title);
+  const clr=getCatColor(p.category);
+
   document.getElementById('readerTag').textContent=p.category;
+  document.getElementById('readerTag').style.background=clr;
+  document.getElementById('readerTag').style.color='#fff';
   document.getElementById('readerTitle').textContent=p.title;
-  document.getElementById('readerMeta').innerHTML=`<span>${d}</span><span class="reader-mdot"></span><span>${p.readTime||'3 min read'}</span>`;
+
+  const fullUrl=BASE_URL+slug;
+  document.getElementById('readerMeta').innerHTML=
+    `<span>${d}</span><span class="reader-mdot"></span><span>${p.readTime||'3 min read'}</span>
+     <span class="reader-url" onclick="copyUrl('${fullUrl}',this)" title="Click to copy link">
+       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+       /blog/${slug}
+     </span>`;
+
   document.getElementById('readerImgWrap').innerHTML=p.imgUrl
     ?`<div class="reader-img" style="background-image:url('${p.imgUrl}')"></div>`
     :`<div class="reader-img-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.25)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div>`;
+
   document.getElementById('readerContent').innerHTML=md(p.body);
+
+  // Update browser URL bar (without reloading)
+  history.pushState({postId:id},'','/blog/'+slug);
+
   document.getElementById('readerOv').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeReader(){document.getElementById('readerOv').classList.remove('open');document.body.style.overflow='';}
+function closeReader(){
+  document.getElementById('readerOv').classList.remove('open');
+  document.body.style.overflow='';
+  history.pushState({},'','/blog');
+}
+function copyUrl(url, el){
+  navigator.clipboard.writeText(url).then(()=>{
+    el.classList.add('reader-url-copied');
+    el.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(()=>{
+      el.classList.remove('reader-url-copied');
+      el.innerHTML=`<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>/blog/${el.textContent.trim().replace('Copied!','').trim()}`;
+    },2000);
+  }).catch(()=>{ prompt('Copy this link:',url); });
+}
 
-/* Lightweight markdown parser */
+// Handle direct URL navigation (e.g. someone visits /blog/my-post-slug)
+function checkUrlRoute(){
+  const path=window.location.pathname;
+  const match=path.match(/\/blog\/(.+)/);
+  if(match){
+    const slug=match[1];
+    const post=posts.find(p=>(p.slug||toSlug(p.title))===slug);
+    if(post) setTimeout(()=>openPost(post.id),100);
+  }
+}
+
+// Handle browser back button
+window.addEventListener('popstate',(e)=>{
+  if(e.state&&e.state.postId){
+    openPost(e.state.postId);
+  } else {
+    document.getElementById('readerOv').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
+
+/* Markdown parser */
 function md(s){
   if(!s)return'';
   return s
@@ -651,7 +926,9 @@ function md(s){
     }).filter(Boolean).join('\n');
 }
 
-/* ═══ ADMIN ═══ */
+/* ══════════════════════════════════════════════════
+   ADMIN
+══════════════════════════════════════════════════ */
 function openAdmin(){
   document.getElementById('adminOv').classList.add('open');
   document.body.style.overflow='hidden';
@@ -659,6 +936,8 @@ function openAdmin(){
     document.getElementById('adminGate').style.display='block';
     document.getElementById('adminPanel').style.display='none';
     setTimeout(()=>document.getElementById('pwInput').focus(),80);
+  } else {
+    renderCatSelector();
   }
 }
 function closeAdmin(){document.getElementById('adminOv').classList.remove('open');document.body.style.overflow='';}
@@ -668,25 +947,50 @@ function checkPw(){
     document.getElementById('adminGate').style.display='none';
     document.getElementById('adminPanel').style.display='block';
     document.getElementById('pwInput').value='';
-  }else{
+    renderCatSelector();
+    renderColorPicker();
+    updateSlugPreview();
+  } else {
     document.getElementById('gateErr').style.display='block';
     document.getElementById('pwInput').value='';
     document.getElementById('pwInput').focus();
   }
 }
 function switchTab(t){
-  document.getElementById('tabWrite').classList.toggle('active',t==='write');
-  document.getElementById('tabManage').classList.toggle('active',t==='manage');
-  document.getElementById('writeTab').style.display=t==='write'?'block':'none';
-  document.getElementById('manageTab').style.display=t==='manage'?'block':'none';
-  if(t==='manage')renderManage();
+  ['write','manage','cats'].forEach(tab=>{
+    document.getElementById('tab'+tab.charAt(0).toUpperCase()+tab.slice(1)).classList.toggle('active',t===tab);
+    document.getElementById(tab+'Tab').style.display=t===tab?'block':'none';
+  });
+  if(t==='manage') renderManage();
+  if(t==='cats') renderCatManager();
 }
+
+/* Category selector in write form */
+function renderCatSelector(){
+  const sel=document.getElementById('catSelector');
+  sel.innerHTML=categories.map(c=>`
+    <div class="cat-opt${selectedCat===c.name?' selected':''}" onclick="selectCat('${c.name}')">
+      <span class="cat-opt-dot" style="background:${c.color}"></span>${c.name}
+    </div>`).join('')
+    +`<div class="cat-opt${selectedCat==='__custom__'?' selected':''}" onclick="selectCat('__custom__')">
+      <span class="cat-opt-dot" style="background:var(--gold-d)"></span>+ Custom
+    </div>`;
+}
+function selectCat(name){
+  selectedCat=name;
+  renderCatSelector();
+  document.getElementById('customCatWrap').classList.toggle('show', name==='__custom__');
+}
+
+/* Image preview */
 function prevImg(){
   const u=document.getElementById('pImg').value.trim();
   const el=document.getElementById('imgPrev');
   if(u){el.style.backgroundImage=`url('${u}')`;el.style.backgroundSize='cover';el.style.backgroundPosition='center';el.innerHTML='';}
   else{el.style.backgroundImage='';el.innerHTML='<div class="img-prev-hint"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.5" fill="white"/><polyline points="21 15 16 10 5 21" fill="none" stroke="white" stroke-width="1.5"/></svg>Image preview will appear here</div>';}
 }
+
+/* Format helpers */
 function ins(a,b){
   const ta=document.getElementById('pBody');
   const s=ta.selectionStart,e=ta.selectionEnd,sel=ta.value.substring(s,e);
@@ -694,68 +998,163 @@ function ins(a,b){
   ta.focus();ta.selectionStart=s+a.length;ta.selectionEnd=s+a.length+sel.length;
 }
 function wc(body){return Math.max(1,Math.round((body||'').trim().split(/\s+/).length/200))+' min read';}
+
+/* Publish */
 function publish(){
   const title=document.getElementById('pTitle').value.trim();
   const body=document.getElementById('pBody').value.trim();
   if(!title||!body){alert('Title and body are required.');return;}
-  const cat=document.getElementById('pCat').value;
+
+  let cat=selectedCat;
+  if(cat==='__custom__'){
+    cat=document.getElementById('customCatInput').value.trim();
+    if(!cat){alert('Please enter a custom category name.');return;}
+    // Add it as a new category if not already there
+    if(!categories.find(c=>c.name===cat)){
+      categories.push({name:cat,color:newCatColor,builtin:false});
+      saveCats();
+    }
+  }
+  if(!cat){alert('Please select a category.');return;}
+
+  let slug=document.getElementById('pSlug').value.trim()||toSlug(title);
+  slug=toSlug(slug); // sanitise
+  if(!slug){alert('Please enter a valid post slug/URL.');return;}
+  slug=ensureUniqueSlug(slug, editId||'');
+
   const exc=document.getElementById('pExc').value.trim()||body.substring(0,150)+'...';
   const img=document.getElementById('pImg').value.trim();
+
   if(editId){
     const i=posts.findIndex(p=>p.id===editId);
-    if(i>-1)posts[i]={...posts[i],title,category:cat,excerpt:exc,imgUrl:img,body,readTime:wc(body)};
+    if(i>-1) posts[i]={...posts[i],title,category:cat,slug,excerpt:exc,imgUrl:img,body,readTime:wc(body)};
     editId=null;document.getElementById('editLabel').textContent='';
-  }else{
-    posts.unshift({id:'p'+Date.now(),title,category:cat,excerpt:exc,imgUrl:img,body,date:new Date().toISOString(),readTime:wc(body),seed:false});
+  } else {
+    posts.unshift({id:'p'+Date.now(),title,category:cat,slug,excerpt:exc,imgUrl:img,body,date:new Date().toISOString(),readTime:wc(body),seed:false});
   }
-  save();filtered=[...posts];applyFilter();clearForm();
-  const sb=document.getElementById('successBar');sb.classList.add('show');
-  setTimeout(()=>sb.classList.remove('show'),4000);
+
+  savePosts();filtered=[...posts];applyFilter();clearForm();
+
+  const fullUrl=BASE_URL+slug;
+  const sb=document.getElementById('successBar');
+  document.getElementById('successMsg').innerHTML=`Post published! &nbsp;<span class="post-link">${fullUrl}</span> &nbsp;
+    <button onclick="copySlug('${fullUrl}')" style="background:none;border:none;color:#166534;cursor:pointer;font-size:12px;font-weight:700;text-decoration:underline;">Copy Link</button>`;
+  sb.classList.add('show');
+  setTimeout(()=>sb.classList.remove('show'),6000);
 }
+
 function clearForm(){
-  ['pTitle','pExc','pImg','pBody'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('pCat').value='Seller Tips';
-  editId=null;document.getElementById('editLabel').textContent='';prevImg();
+  ['pTitle','pExc','pImg','pBody','pSlug'].forEach(id=>document.getElementById(id).value='');
+  delete document.getElementById('pSlug').dataset.manualEdit;
+  selectedCat='';editId=null;
+  document.getElementById('editLabel').textContent='';
+  document.getElementById('customCatWrap').classList.remove('show');
+  prevImg();renderCatSelector();updateSlugPreview();
 }
+
+/* Manage list */
 function renderManage(){
   const user=posts.filter(p=>!p.seed);
   document.getElementById('manageList').innerHTML=user.length
     ?user.map(p=>{
       const d=new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      const slug=p.slug||toSlug(p.title);
+      const clr=getCatColor(p.category);
       const t=p.imgUrl
         ?`<div class="mthumb" style="background-image:url('${p.imgUrl}')"></div>`
         :`<div class="mthumb"><div class="mthumb-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.4)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div></div>`;
-      return`<div class="mrow">${t}<div class="minfo"><div class="minfo-title">${p.title}</div><div class="minfo-meta">${p.category} · ${d}</div></div>
+      return`<div class="mrow">${t}
+        <div class="minfo">
+          <div class="minfo-title">${p.title}</div>
+          <div class="minfo-meta">
+            <span class="mcat-dot" style="background:${clr}"></span>
+            <span>${p.category}</span>
+            <span>·</span><span>${d}</span>
+            <span class="minfo-slug">/blog/${slug}</span>
+          </div>
+        </div>
         <div class="mactions">
+          <button class="mact-copy" onclick="copySlug('${BASE_URL+slug}')" title="Copy link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
           <button class="mact-edit" onclick="editPost('${p.id}')">Edit</button>
           <button class="mact-del" onclick="deletePost('${p.id}')">Delete</button>
-        </div></div>`;
+        </div>
+      </div>`;
     }).join('')
     :'<div class="manage-empty">No posts yet. Go to Write Post to create your first article.</div>';
 }
+
 function editPost(id){
   const p=posts.find(x=>x.id===id);if(!p)return;
   document.getElementById('pTitle').value=p.title;
-  document.getElementById('pCat').value=p.category;
   document.getElementById('pExc').value=p.excerpt;
   document.getElementById('pImg').value=p.imgUrl||'';
   document.getElementById('pBody').value=p.body;
+  document.getElementById('pSlug').value=p.slug||toSlug(p.title);
+  document.getElementById('pSlug').dataset.manualEdit='1';
+  selectedCat=p.category;
   prevImg();editId=id;
   document.getElementById('editLabel').textContent='Editing: '+p.title.substring(0,40)+'…';
+  renderCatSelector();updateSlugPreview();
   switchTab('write');
 }
 function deletePost(id){
   if(!confirm('Delete this post permanently?'))return;
   posts=posts.filter(p=>p.id!==id);
-  save();filtered=[...posts];applyFilter();renderManage();
+  savePosts();filtered=[...posts];applyFilter();renderManage();
 }
 
-/* ═══ OFFER ═══ */
+/* ══════════════════════════════════════════════════
+   CATEGORY MANAGER
+══════════════════════════════════════════════════ */
+function renderCatManager(){
+  const counts={};
+  posts.forEach(p=>{counts[p.category]=(counts[p.category]||0)+1;});
+  document.getElementById('catmgrList').innerHTML=categories.map(c=>`
+    <div class="catmgr-row">
+      <span class="catmgr-dot" style="background:${c.color}"></span>
+      <span class="catmgr-name">${c.name}${c.builtin?' <span style="font-size:11px;color:var(--tl);font-weight:400;">(built-in)</span>':''}</span>
+      <span class="catmgr-count">${counts[c.name]||0} posts</span>
+      <button class="catmgr-del" onclick="deleteCat('${c.name}')" ${c.builtin?'disabled':''} title="${c.builtin?'Built-in categories cannot be deleted':'Delete category'}">Delete</button>
+    </div>`).join('');
+}
+function deleteCat(name){
+  if(!confirm(`Delete category "${name}"? Posts using it won't be deleted — they'll keep the category name.`))return;
+  categories=categories.filter(c=>c.name!==name);
+  saveCats();renderCatManager();renderCatSelector();render();
+}
+function renderColorPicker(){
+  document.getElementById('newCatColorPicker').innerHTML=COLOR_SWATCHES.map(c=>
+    `<div class="add-cat-color-opt${c===newCatColor?' selected':''}" style="background:${c}" onclick="selectNewCatColor('${c}')"></div>`
+  ).join('');
+}
+function selectNewCatColor(c){
+  newCatColor=c;renderColorPicker();
+}
+function addCategory(){
+  const name=document.getElementById('newCatInput').value.trim();
+  if(!name){alert('Please enter a category name.');return;}
+  if(categories.find(c=>c.name.toLowerCase()===name.toLowerCase())){alert('This category already exists.');return;}
+  categories.push({name,color:newCatColor,builtin:false});
+  saveCats();
+  document.getElementById('newCatInput').value='';
+  renderCatManager();renderCatSelector();render();
+  const sb=document.getElementById('successBar');
+  document.getElementById('successMsg').textContent=`Category "${name}" added!`;
+  sb.classList.add('show');setTimeout(()=>sb.classList.remove('show'),3000);
+}
+
+/* ══════════════════════════════════════════════════
+   OFFER POPUP
+══════════════════════════════════════════════════ */
 function openOffer(){document.getElementById('offerOv').classList.add('open');document.body.style.overflow='hidden';}
 function closeOffer(){document.getElementById('offerOv').classList.remove('open');document.body.style.overflow='';}
 
-/* ═══ INIT ═══ */
-load();render();
+/* ══════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════ */
+loadCats();loadPosts();render();checkUrlRoute();
 </script>
 </body>
 </html>
