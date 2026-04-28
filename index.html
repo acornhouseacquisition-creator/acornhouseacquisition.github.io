@@ -167,34 +167,7 @@ section{padding:88px 5%;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:15px;color:var(--tm);line-height:1.75;}
 .faq-ai{padding:0 24px 20px;border-top:1px solid var(--gm);padding-top:16px;}
 
-/* =============================================
-   TASK 3: LATEST INSIGHTS / BLOG SECTION
-   ============================================= */
-.blog-bg{background:var(--white);}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;}
-.blog-card{background:var(--gl);border-radius:var(--rl);overflow:hidden;border:1px solid var(--gm);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
-.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shl);}
-.blog-card-img{height:180px;background:var(--gm);background-size:cover;background-position:center;position:relative;}
-.blog-card-img-placeholder{height:180px;background:linear-gradient(135deg,var(--black) 0%,#2a2a2a 100%);display:flex;align-items:center;justify-content:center;}
-.blog-card-img-placeholder svg{width:40px;height:40px;fill:var(--gold);opacity:.6;}
-.blog-card-tag{position:absolute;bottom:12px;left:14px;background:var(--gold);color:var(--black);font-size:11px;font-weight:800;padding:3px 11px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
-.blog-card-body{padding:22px 20px;flex:1;display:flex;flex-direction:column;}
-.blog-card-date{font-size:12px;color:var(--tl);margin-bottom:8px;font-weight:500;}
-.blog-card-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--black);line-height:1.3;margin-bottom:10px;}
-.blog-card-excerpt{font-size:14px;color:var(--tm);line-height:1.65;flex:1;margin-bottom:18px;}
-.blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--gold-d);text-decoration:none;transition:gap .2s;}
-.blog-card-link:hover{gap:10px;}
-.blog-card-link svg{width:14px;height:14px;fill:var(--gold-d);}
-/* Loading state for dynamic fetch */
-.blog-loading{text-align:center;padding:40px;color:var(--tm);font-size:15px;}
-.blog-loading-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin:0 3px;animation:blink 1.4s infinite;}
-.blog-loading-dot:nth-child(2){animation-delay:.2s;}
-.blog-loading-dot:nth-child(3){animation-delay:.4s;}
-@keyframes blink{0%,80%,100%{opacity:.2;}40%{opacity:1;}}
-.blog-cta{text-align:center;margin-top:42px;}
-.blog-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--white);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;}
-.blog-cta a:hover{background:var(--bs);transform:translateY(-1px);}
-.blog-cta a svg{width:15px;height:15px;fill:var(--gold);}
+
 
 /* =============================================
    WHERE WE BUY — REDESIGNED
@@ -922,39 +895,6 @@ section{padding:88px 5%;}
   </div>
 </section>
 
-<!-- =============================================
-     TASK 3: LATEST INSIGHTS SECTION
-     Placed after FAQ as specified.
-     Dynamically fetches from /blog via JS.
-     Falls back to static placeholder cards if fetch fails.
-     To add new posts: update the STATIC_POSTS array in the script below,
-     OR connect to your CMS/RSS feed URL in fetchBlogPosts().
-     ============================================= -->
-<section class="blog-bg">
-  <div class="container">
-    <span class="eyebrow">Stay Informed</span>
-    <h2 class="sec-title">Latest Insights</h2>
-    <p class="sec-sub">Tips, guides, and real stories to help homeowners make smart decisions about selling.</p>
-
-    <!-- Blog cards render here — JS populates this -->
-    <div class="blog-grid" id="blog-posts-grid">
-      <!-- Loading state shown while JS fetches -->
-      <div class="blog-loading" style="grid-column:1/-1;">
-        <span class="blog-loading-dot"></span>
-        <span class="blog-loading-dot"></span>
-        <span class="blog-loading-dot"></span>
-      </div>
-    </div>
-
-    <div class="blog-cta">
-      <a href="https://acornhouseacquisition.com/blog" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><use href="#ico-arrow-right"/></svg>
-        View All Articles
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section class="about-bg">
   <div class="container">
@@ -1275,79 +1215,7 @@ function closeResult(){
   document.getElementById('cityInput').value = '';
 }
 
-/* =============================================
-   BLOG SECTION — Reads from /blog/index.json
-   
-   HOW IT WORKS:
-   Fetches /blog/index.json which lists all your posts.
-   Falls back to hardcoded posts if file not found.
-   
-   WHEN YOU PUBLISH A NEW POST:
-   1. Upload the .html file to /blog/ on GitHub
-   2. Update /blog/index.json (see format below)
-   That's the only maintenance needed.
-   ============================================= */
 
-const FALLBACK_POSTS = [
-  {
-    title: "5 Signs It's Time to Sell Your House for Cash Instead of Listing",
-    excerpt: "Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.",
-    date: 'April 21, 2026', category: 'Seller Tips', imgUrl: '',
-    url: '/blog/5-signs-sell-for-cash.html'
-  },
-  {
-    title: "What Is a Subject-To Real Estate Deal? A Plain-English Guide",
-    excerpt: "If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.",
-    date: 'April 14, 2026', category: 'Creative Finance', imgUrl: '',
-    url: '/blog/subject-to-real-estate-guide.html'
-  },
-  {
-    title: "How to Stop Foreclosure in North Carolina: Your Timeline and Options",
-    excerpt: "Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's what to do at each stage.",
-    date: 'April 7, 2026', category: 'Foreclosure', imgUrl: '',
-    url: '/blog/stop-foreclosure-north-carolina.html'
-  }
-];
-
-function renderBlogCards(posts) {
-  const grid = document.getElementById('blog-posts-grid');
-  if (!posts || !posts.length) {
-    grid.innerHTML = '<p style="color:var(--tm);text-align:center;padding:20px;grid-column:1/-1;">No posts yet. <a href="/blog.html" style="color:var(--gold-d);font-weight:600;">Visit the blog →</a></p>';
-    return;
-  }
-  grid.innerHTML = posts.slice(0, 3).map(post => {
-    const imgHtml = post.imgUrl
-      ? `<img src="${post.imgUrl}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
-      : `<svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-    return `
-    <article class="blog-card">
-      <div class="blog-card-img-placeholder">
-        ${imgHtml}
-        <span class="blog-card-tag">${post.category || 'Insights'}</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-card-date">${post.date}</div>
-        <h3 class="blog-card-title">${post.title}</h3>
-        <p class="blog-card-excerpt">${post.excerpt}</p>
-        <a href="${post.url}" class="blog-card-link">
-          Read Article
-          <svg viewBox="0 0 24 24"><use href="#ico-arrow-right"/></svg>
-        </a>
-      </div>
-    </article>`;
-  }).join('');
-}
-
-(async () => {
-  try {
-    const res = await fetch('/blog/index.json?v=' + Date.now());
-    if (!res.ok) throw new Error('no index');
-    const posts = await res.json();
-    renderBlogCards(posts.length ? posts : FALLBACK_POSTS);
-  } catch(e) {
-    renderBlogCards(FALLBACK_POSTS);
-  }
-})();
 </script>
 </body>
 </html>
