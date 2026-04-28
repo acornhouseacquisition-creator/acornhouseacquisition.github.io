@@ -1276,11 +1276,16 @@ function closeResult(){
 }
 
 /* =============================================
-   BLOG SECTION — Auto-discovers posts from /blog/ folder
+   BLOG SECTION — Reads from /blog/index.json
    
-   No manual updates needed. Every time you upload
-   a new .html file to your /blog/ folder on GitHub,
-   it automatically appears here on the homepage.
+   HOW IT WORKS:
+   Fetches /blog/index.json which lists all your posts.
+   Falls back to hardcoded posts if file not found.
+   
+   WHEN YOU PUBLISH A NEW POST:
+   1. Upload the .html file to /blog/ on GitHub
+   2. Update /blog/index.json (see format below)
+   That's the only maintenance needed.
    ============================================= */
 
 const FALLBACK_POSTS = [
@@ -1333,59 +1338,15 @@ function renderBlogCards(posts) {
   }).join('');
 }
 
-function parsePost(html, slug) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const title = doc.querySelector('h1.reader-title, .post-hero h1')?.textContent?.trim()
-    || doc.querySelector('title')?.textContent?.replace(/\|.*$/, '').trim()
-    || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  const excerpt = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
-  const dateRaw = doc.querySelector('.post-meta')?.textContent?.trim() || '';
-  const date = dateRaw.split('·')[0].trim() || '';
-  const category = doc.querySelector('.cat-badge')?.textContent?.trim() || 'Insights';
-  const imgUrl = doc.querySelector('.post-img')?.getAttribute('src') || '';
-  return { title, excerpt, date, category, imgUrl, url: `/blog/${slug}.html` };
-}
-
-async function discoverAndFetchPosts() {
-  try {
-    // Step 1: Fetch the /blog/ directory listing from GitHub Pages
-    const dirRes = await fetch('/blog/');
-    if (!dirRes.ok) throw new Error('no dir');
-    const dirHtml = await dirRes.text();
-
-    // Step 2: Extract all .html file links (except placeholder.txt etc)
-    const parser = new DOMParser();
-    const dirDoc = parser.parseFromString(dirHtml, 'text/html');
-    const links = [...dirDoc.querySelectorAll('a[href]')]
-      .map(a => a.getAttribute('href'))
-      .filter(h => h.endsWith('.html') && !h.includes('/') && h !== 'index.html')
-      .map(h => h.replace('.html', ''));
-
-    if (!links.length) throw new Error('no posts');
-
-    // Step 3: Fetch the 3 most recent post files in parallel
-    const results = await Promise.allSettled(
-      links.slice(0, 3).map(slug =>
-        fetch(`/blog/${slug}.html`)
-          .then(r => { if (!r.ok) throw new Error('404'); return r.text(); })
-          .then(html => parsePost(html, slug))
-      )
-    );
-
-    const posts = results
-      .filter(r => r.status === 'fulfilled')
-      .map(r => r.value);
-
-    return posts.length ? posts : null;
-  } catch(e) {
-    return null;
-  }
-}
-
 (async () => {
-  const posts = await discoverAndFetchPosts();
-  renderBlogCards(posts || FALLBACK_POSTS);
+  try {
+    const res = await fetch('/blog/index.json?v=' + Date.now());
+    if (!res.ok) throw new Error('no index');
+    const posts = await res.json();
+    renderBlogCards(posts.length ? posts : FALLBACK_POSTS);
+  } catch(e) {
+    renderBlogCards(FALLBACK_POSTS);
+  }
 })();
 </script>
 </body>
