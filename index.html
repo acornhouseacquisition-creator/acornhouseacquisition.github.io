@@ -1276,75 +1276,44 @@ function closeResult(){
 }
 
 /* =============================================
-   BLOG SECTION — Auto-syncs with blog.html
+   BLOG SECTION — Auto-discovers posts from /blog/ folder
    
-   HOW IT WORKS:
-   Both this page and blog.html live on the same domain,
-   so they share the same localStorage. When you publish
-   a post in the blog admin panel, it saves to localStorage
-   under the key 'acorn_blog_v1'. This page reads that
-   same key and renders the 3 most recent posts instantly.
-   
-   No API. No server. No manual updates needed.
-   Publish on blog.html → homepage updates automatically.
+   No manual updates needed. Every time you upload
+   a new .html file to your /blog/ folder on GitHub,
+   it automatically appears here on the homepage.
    ============================================= */
 
-const BLOG_STORAGE_KEY = 'acorn_blog_v1';
-
-// Seed posts — always shown as fallback if no user posts exist yet
-const SEED_POSTS = [
+const FALLBACK_POSTS = [
   {
-    id:'seed1',
-    title:"5 Signs It's Time to Sell Your House for Cash Instead of Listing",
-    excerpt:"Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.",
-    date: new Date(Date.now()-7*86400000).toISOString(),
-    category:'Seller Tips', imgUrl:'', seed:true
+    title: "5 Signs It's Time to Sell Your House for Cash Instead of Listing",
+    excerpt: "Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.",
+    date: 'April 21, 2026', category: 'Seller Tips', imgUrl: '',
+    url: '/blog/5-signs-sell-for-cash.html'
   },
   {
-    id:'seed2',
-    title:"What Is a Subject-To Real Estate Deal? A Plain-English Guide",
-    excerpt:"If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.",
-    date: new Date(Date.now()-14*86400000).toISOString(),
-    category:'Creative Finance', imgUrl:'', seed:true
+    title: "What Is a Subject-To Real Estate Deal? A Plain-English Guide",
+    excerpt: "If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.",
+    date: 'April 14, 2026', category: 'Creative Finance', imgUrl: '',
+    url: '/blog/subject-to-real-estate-guide.html'
   },
   {
-    id:'seed3',
-    title:"How to Stop Foreclosure in North Carolina: Your Timeline and Options",
-    excerpt:"Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's what to do at each stage.",
-    date: new Date(Date.now()-21*86400000).toISOString(),
-    category:'Foreclosure', imgUrl:'', seed:true
+    title: "How to Stop Foreclosure in North Carolina: Your Timeline and Options",
+    excerpt: "Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's what to do at each stage.",
+    date: 'April 7, 2026', category: 'Foreclosure', imgUrl: '',
+    url: '/blog/stop-foreclosure-north-carolina.html'
   }
 ];
 
-function loadBlogPosts() {
-  try {
-    // Read from the same localStorage key that blog.html writes to
-    const stored = localStorage.getItem(BLOG_STORAGE_KEY);
-    const userPosts = stored ? JSON.parse(stored) : [];
-    // Merge: user posts first (newest), then seeds for any gap
-    const userIds = new Set(userPosts.map(p => p.id));
-    const seeds = SEED_POSTS.filter(s => !userIds.has(s.id));
-    return [...userPosts, ...seeds];
-  } catch(e) {
-    return SEED_POSTS;
-  }
-}
-
 function renderBlogCards(posts) {
   const grid = document.getElementById('blog-posts-grid');
-  const top3 = posts.slice(0, 3);
-
-  if (!top3.length) {
-    grid.innerHTML = '<p style="color:var(--tm);text-align:center;padding:20px;grid-column:1/-1;">No posts yet. <a href="/blog" style="color:var(--gold-d);font-weight:600;">Visit the blog →</a></p>';
+  if (!posts || !posts.length) {
+    grid.innerHTML = '<p style="color:var(--tm);text-align:center;padding:20px;grid-column:1/-1;">No posts yet. <a href="/blog.html" style="color:var(--gold-d);font-weight:600;">Visit the blog →</a></p>';
     return;
   }
-
-  grid.innerHTML = top3.map(post => {
-    const d = new Date(post.date).toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
+  grid.innerHTML = posts.slice(0, 3).map(post => {
     const imgHtml = post.imgUrl
       ? `<img src="${post.imgUrl}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
       : `<svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-
     return `
     <article class="blog-card">
       <div class="blog-card-img-placeholder">
@@ -1352,10 +1321,10 @@ function renderBlogCards(posts) {
         <span class="blog-card-tag">${post.category || 'Insights'}</span>
       </div>
       <div class="blog-card-body">
-        <div class="blog-card-date">${d}</div>
+        <div class="blog-card-date">${post.date}</div>
         <h3 class="blog-card-title">${post.title}</h3>
         <p class="blog-card-excerpt">${post.excerpt}</p>
-        <a href="/blog" class="blog-card-link">
+        <a href="${post.url}" class="blog-card-link">
           Read Article
           <svg viewBox="0 0 24 24"><use href="#ico-arrow-right"/></svg>
         </a>
@@ -1364,16 +1333,60 @@ function renderBlogCards(posts) {
   }).join('');
 }
 
-// Init — reads localStorage and renders immediately
-renderBlogCards(loadBlogPosts());
+function parsePost(html, slug) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const title = doc.querySelector('h1.reader-title, .post-hero h1')?.textContent?.trim()
+    || doc.querySelector('title')?.textContent?.replace(/\|.*$/, '').trim()
+    || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const excerpt = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+  const dateRaw = doc.querySelector('.post-meta')?.textContent?.trim() || '';
+  const date = dateRaw.split('·')[0].trim() || '';
+  const category = doc.querySelector('.cat-badge')?.textContent?.trim() || 'Insights';
+  const imgUrl = doc.querySelector('.post-img')?.getAttribute('src') || '';
+  return { title, excerpt, date, category, imgUrl, url: `/blog/${slug}.html` };
+}
 
-// Also re-render if localStorage changes in another tab
-// (e.g. you publish a post in blog.html and come back to homepage)
-window.addEventListener('storage', e => {
-  if (e.key === BLOG_STORAGE_KEY) {
-    renderBlogCards(loadBlogPosts());
+async function discoverAndFetchPosts() {
+  try {
+    // Step 1: Fetch the /blog/ directory listing from GitHub Pages
+    const dirRes = await fetch('/blog/');
+    if (!dirRes.ok) throw new Error('no dir');
+    const dirHtml = await dirRes.text();
+
+    // Step 2: Extract all .html file links (except placeholder.txt etc)
+    const parser = new DOMParser();
+    const dirDoc = parser.parseFromString(dirHtml, 'text/html');
+    const links = [...dirDoc.querySelectorAll('a[href]')]
+      .map(a => a.getAttribute('href'))
+      .filter(h => h.endsWith('.html') && !h.includes('/') && h !== 'index.html')
+      .map(h => h.replace('.html', ''));
+
+    if (!links.length) throw new Error('no posts');
+
+    // Step 3: Fetch the 3 most recent post files in parallel
+    const results = await Promise.allSettled(
+      links.slice(0, 3).map(slug =>
+        fetch(`/blog/${slug}.html`)
+          .then(r => { if (!r.ok) throw new Error('404'); return r.text(); })
+          .then(html => parsePost(html, slug))
+      )
+    );
+
+    const posts = results
+      .filter(r => r.status === 'fulfilled')
+      .map(r => r.value);
+
+    return posts.length ? posts : null;
+  } catch(e) {
+    return null;
   }
-});
+}
+
+(async () => {
+  const posts = await discoverAndFetchPosts();
+  renderBlogCards(posts || FALLBACK_POSTS);
+})();
 </script>
 </body>
 </html>
