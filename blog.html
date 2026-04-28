@@ -733,8 +733,7 @@ function render(){
       const slug=p.slug||toSlug(p.title);
       const img=p.imgUrl
         ?`<div class="bcard-img" style="background-image:url('${p.imgUrl}')"><span class="bcard-tag" style="background:${clr};color:#fff">${p.category}</span></div>`
-        ?`<div class="bcard-img" style="background-image:url('${p.imgUrl}')"><span class="bcard-tag">${p.category}</span></div>`
-        :`<div class="bcard-img-ph"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="currentColor"/></svg><span class="bcard-tag">${p.category}</span></div>`;
+        :`<div class="bcard-img-ph"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="currentColor"/></svg><span class="bcard-tag" style="background:${clr};color:#fff">${p.category}</span></div>`;
       return`<div class="bcard${feat?' featured':''}" onclick="openPost('${p.id}')">
         ${img}
         <div class="bcard-body">
@@ -795,7 +794,6 @@ function renderSidebar(){
   rec.innerHTML=posts.slice(0,5).map(p=>{
     const d=new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     const t=p.imgUrl
-      ?`<div class="recent-thumb" style="background-image:url('${p.imgUrl}')"></div>`
       ?`<div class="recent-thumb" style="background-image:url('${p.imgUrl}')"></div>`
       :`<div class="recent-thumb"><div class="recent-thumb-ph"><svg viewBox="0 0 24 24" fill="rgba(244,180,0,.4)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div></div>`;
     return`<div class="recent-item" onclick="openPost('${p.id}')">${t}<div><div class="recent-title">${p.title}</div><div class="recent-date">${d}</div></div></div>`;
