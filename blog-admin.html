@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Admin | Acorn House Acquisition</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#f5f5f5;color:#111;min-height:100vh;}
+:root{--gold:#f4b400;--gold-d:#d49d00;--black:#0a0a0a;--white:#fff;--gl:#f5f5f5;--gm:#e8e8e8;--tm:#666;--tl:#999;--r:10px;--rl:16px;}
+.gate{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
+.gate-box{background:#fff;border-radius:var(--rl);padding:44px 36px;max-width:400px;width:100%;border-top:5px solid var(--gold);box-shadow:0 8px 40px rgba(0,0,0,.1);text-align:center;}
+.gate-logo{height:52px;margin-bottom:22px;}
+.gate-box h2{font-family:'Fraunces',serif;font-size:22px;margin-bottom:8px;}
+.gate-box p{font-size:14px;color:var(--tm);margin-bottom:24px;line-height:1.6;}
+.gate-input{width:100%;padding:12px 16px;border:1.5px solid var(--gm);border-radius:var(--r);font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:12px;}
+.gate-input:focus{border-color:var(--gold);}
+.gate-err{color:#cc3333;font-size:13px;margin-top:8px;display:none;}
+.gate-hint{font-size:12px;color:var(--tl);margin-top:16px;}
+header{background:#fff;border-bottom:3px solid var(--gold);padding:0 5%;position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.header-inner img{height:48px;}
+.header-right{display:flex;align-items:center;gap:12px;}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#22aa55;}
+.status-txt{font-size:13px;color:var(--tm);}
+.admin-wrap{max-width:1100px;margin:0 auto;padding:30px 20px;}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--gm);margin-bottom:28px;}
+.tab{padding:12px 24px;font-size:14px;font-weight:600;color:var(--tm);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
+.tab:hover{color:var(--black);}
+.tab.active{color:var(--gold-d);border-bottom-color:var(--gold);}
+.panel{display:none;}
+.panel.active{display:block;}
+.section-title{font-family:'Fraunces',serif;font-size:22px;color:var(--black);margin-bottom:20px;}
+.post-list{display:flex;flex-direction:column;gap:12px;}
+.post-row{background:#fff;border-radius:var(--rl);padding:16px 20px;display:flex;align-items:center;gap:16px;border:1px solid var(--gm);transition:border-color .2s;}
+.post-row:hover{border-color:rgba(244,180,0,.4);}
+.post-thumb{width:60px;height:60px;border-radius:8px;background:var(--gm);flex-shrink:0;background-size:cover;background-position:center;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.post-thumb svg{width:22px;height:22px;fill:rgba(244,180,0,.4);}
+.post-info{flex:1;min-width:0;}
+.post-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.post-meta{font-size:12px;color:var(--tl);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.cat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.post-slug{font-family:monospace;font-size:11px;color:var(--gold-d);background:#fffbee;padding:2px 7px;border-radius:4px;}
+.post-actions{display:flex;gap:8px;flex-shrink:0;}
+.btn-sm{padding:7px 14px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;border:1.5px solid;transition:all .2s;}
+.btn-edit{background:#fff;border-color:var(--gm);color:var(--tm);}
+.btn-edit:hover{border-color:var(--gold);color:var(--gold-d);}
+.btn-up,.btn-dn{background:#fff;border-color:var(--gm);color:var(--tm);padding:7px 10px;}
+.btn-up:hover,.btn-dn:hover{border-color:var(--gold);color:var(--gold-d);}
+.btn-del{background:none;border-color:#ffd0d0;color:#cc3333;}
+.btn-del:hover{background:#fff5f5;}
+.btn-view{background:#fff;border-color:var(--gm);color:var(--tm);}
+.btn-view:hover{border-color:var(--gold);color:var(--gold-d);}
+.empty-state{text-align:center;padding:50px 20px;color:var(--tl);font-size:14px;}
+.empty-state h3{font-family:'Fraunces',serif;font-size:20px;color:var(--black);margin-bottom:8px;}
+.form-card{background:#fff;border-radius:var(--rl);padding:28px;border:1px solid var(--gm);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fg.full{grid-column:1/-1;}
+.flabel{font-size:12px;font-weight:700;color:var(--black);}
+.flabel em{color:var(--tl);font-style:normal;font-weight:400;}
+.finput,.ftextarea{padding:11px 14px;border:1.5px solid var(--gm);border-radius:var(--r);font-size:14px;font-family:'DM Sans',sans-serif;color:var(--black);background:var(--gl);outline:none;transition:border-color .2s;width:100%;}
+.finput:focus,.ftextarea:focus{border-color:var(--gold);background:#fff;}
+.ftextarea{resize:vertical;min-height:80px;line-height:1.6;}
+.slug-preview{font-size:12px;color:var(--tl);margin-top:5px;font-family:monospace;}
+.slug-preview span{color:var(--gold-d);font-weight:600;}
+.img-preview{width:100%;height:140px;border-radius:var(--r);border:1.5px dashed var(--gm);background:var(--gl);display:flex;align-items:center;justify-content:center;margin-top:8px;overflow:hidden;background-size:cover;background-position:center;}
+.img-preview-hint{font-size:12px;color:var(--tl);text-align:center;}
+.form-actions{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--gm);margin-top:8px;}
+.form-actions-l{display:flex;gap:10px;align-items:center;}
+.btn-save{background:var(--gold);color:var(--black);padding:12px 28px;border-radius:var(--r);font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-save:hover{background:var(--gold-d);color:#fff;}
+.btn-save:disabled{opacity:.5;cursor:default;}
+.btn-cancel{background:none;border:1.5px solid var(--gm);color:var(--tm);padding:11px 22px;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-cancel:hover{border-color:var(--gold);color:var(--gold-d);}
+.edit-lbl{font-size:12px;color:var(--tl);font-style:italic;}
+.saving{display:none;align-items:center;gap:8px;font-size:13px;color:var(--tm);}
+.saving.show{display:flex;}
+.spinner{width:16px;height:16px;border:2px solid var(--gm);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.cat-selector{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.cat-btn{padding:7px 14px;border-radius:100px;font-size:13px;font-weight:600;border:1.5px solid var(--gm);background:var(--gl);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;color:var(--tm);}
+.cat-btn:hover{border-color:var(--gold);}
+.cat-btn.selected{color:#fff;}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--black);color:#fff;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:all .3s;z-index:9999;pointer-events:none;max-width:90vw;text-align:center;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.error{background:#cc3333;}
+.toast.success{background:#166534;}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr;}.post-actions{flex-wrap:wrap;}}
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition" class="gate-logo">
+    <h2>Blog Admin</h2>
+    <p>This area is for authorized administrators only.</p>
+    <input type="password" class="gate-input" id="pwInput" placeholder="Enter password..." onkeydown="if(event.key==='Enter')checkPw()">
+    <button class="btn-save" style="width:100%;" onclick="checkPw()">Sign In</button>
+    <p class="gate-err" id="gateErr">Incorrect password. Try again.</p>
+    <p class="gate-hint">Authorized administrators only.</p>
+  </div>
+</div>
+
+<div id="adminWrap" style="display:none;">
+  <header>
+    <div class="header-inner">
+      <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition">
+      <div class="header-right">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-txt" id="statusTxt">Connecting...</span>
+        <a href="/blog.html" target="_blank" style="font-size:13px;color:var(--tm);text-decoration:none;border:1px solid var(--gm);padding:6px 14px;border-radius:7px;">View Blog</a>
+      </div>
+    </div>
+  </header>
+  <div class="admin-wrap">
+    <div class="tabs">
+      <button class="tab active" id="tabPosts" onclick="switchTab('posts')">All Posts</button>
+      <button class="tab" id="tabNew" onclick="switchTab('new')">Add New Post</button>
+    </div>
+    <div class="panel active" id="panelPosts">
+      <h2 class="section-title">All Posts</h2>
+      <div class="post-list" id="postList"></div>
+    </div>
+    <div class="panel" id="panelNew">
+      <h2 class="section-title" id="formTitle">Add New Post</h2>
+      <div class="form-card">
+        <div class="form-grid">
+          <div class="fg"><label class="flabel">Title <em>*</em></label><input type="text" class="finput" id="fTitle" placeholder="e.g. How to Sell Fast in Charlotte NC" oninput="onTitleInput()"></div>
+          <div class="fg"><label class="flabel">Category <em>*</em></label><div class="cat-selector" id="catSelector"></div></div>
+          <div class="fg full"><label class="flabel">Post URL Slug <em>* auto-generated</em></label><input type="text" class="finput" id="fSlug" placeholder="my-post-title" oninput="onSlugInput()" style="font-family:monospace;font-size:13px;"><div class="slug-preview" id="slugPreview"></div></div>
+          <div class="fg full"><label class="flabel">Short Excerpt <em>* shown on blog cards</em></label><textarea class="ftextarea" id="fExcerpt" placeholder="A 1-2 sentence summary..." style="min-height:70px;"></textarea></div>
+          <div class="fg"><label class="flabel">Display Date <em>*</em></label><input type="text" class="finput" id="fDate" placeholder="April 28, 2026"></div>
+          <div class="fg"><label class="flabel">Read Time</label><input type="text" class="finput" id="fReadTime" placeholder="4 min read"></div>
+          <div class="fg full"><label class="flabel">Featured Image URL <em>optional</em></label><input type="url" class="finput" id="fImg" placeholder="https://i.imgur.com/your-image.jpg" oninput="previewImg()"><div class="img-preview" id="imgPreview"><div class="img-preview-hint">Image preview appears here</div></div></div>
+          <div class="fg full"><label class="flabel">Post File URL <em>* path to the .html file</em></label><input type="text" class="finput" id="fUrl" placeholder="/blog/my-post-title.html" style="font-family:monospace;font-size:13px;"></div>
+        </div>
+        <div class="form-actions">
+          <div class="form-actions-l">
+            <button class="btn-save" id="saveBtn" onclick="savePost()">Save Post</button>
+            <button class="btn-cancel" onclick="cancelEdit()">Cancel</button>
+            <div class="saving" id="savingIndicator"><div class="spinner"></div><span>Saving to GitHub...</span></div>
+          </div>
+          <span class="edit-lbl" id="editLbl"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const ADMIN_PW='acorn2026';
+const GH_TOKEN='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';
+const GH_OWNER='acornhouseacquisition';
+const GH_REPO='acornhouseacquisition.github.io';
+const JSON_PATH='blog/index.json';
+const API_BASE=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${JSON_PATH}`;
+const CAT_COLORS={'Seller Tips':'#22aa55','Foreclosure':'#cc4444','Creative Finance':'#7c3aed','NC':'#2563eb','FL':'#0891b2','TX':'#d97706','Market Update':'#64748b','Probate':'#92400e','Divorce':'#db2777','No Equity':'#059669'};
+const CATEGORIES=Object.keys(CAT_COLORS);
+let posts=[],fileSha='',editIdx=-1,selectedCat='',slugManual=false;
+
+function checkPw(){
+  if(document.getElementById('pwInput').value===ADMIN_PW){
+    document.getElementById('gate').style.display='none';
+    document.getElementById('adminWrap').style.display='block';
+    init();
+  } else {
+    document.getElementById('gateErr').style.display='block';
+    document.getElementById('pwInput').value='';
+    document.getElementById('pwInput').focus();
+  }
+}
+
+async function init(){
+  renderCatSelector();
+  document.getElementById('fDate').value=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('fReadTime').value='4 min read';
+  await fetchPosts();
+}
+
+async function fetchPosts(){
+  setStatus('loading');
+  try{
+    const res=await fetch(API_BASE,{headers:{'Authorization':'token '+GH_TOKEN,'Accept':'application/vnd.github.v3+json'}});
+    if(!res.ok)throw new Error('GitHub API '+res.status);
+    const data=await res.json();
+    fileSha=data.sha;
+    posts=JSON.parse(atob(data.content.replace(/\n/g,'')));
+    setStatus('ok');
+    renderPostList();
+  }catch(e){
+    setStatus('error');
+    showToast('Could not connect to GitHub: '+e.message,'error');
+  }
+}
+
+async function saveToGitHub(){
+  const content=btoa(unescape(encodeURIComponent(JSON.stringify(posts,null,2))));
+  const res=await fetch(API_BASE,{method:'PUT',headers:{'Authorization':'token '+GH_TOKEN,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify({message:'Blog admin update',content,sha:fileSha})});
+  if(!res.ok){const e=await res.json();throw new Error(e.message||'Save failed');}
+  const data=await res.json();
+  fileSha=data.content.sha;
+}
+
+function setStatus(s){
+  const d=document.getElementById('statusDot'),t=document.getElementById('statusTxt');
+  if(s==='ok'){d.style.background='#22aa55';t.textContent='Connected';}
+  else if(s==='loading'){d.style.background='#f4b400';t.textContent='Loading...';}
+  else{d.style.background='#cc3333';t.textContent='Connection error';}
+}
+
+function renderPostList(){
+  const el=document.getElementById('postList');
+  if(!posts.length){el.innerHTML='<div class="empty-state"><h3>No posts yet</h3><p>Click "Add New Post" to create your first article.</p></div>';return;}
+  el.innerHTML=posts.map((p,i)=>{
+    const clr=CAT_COLORS[p.category]||'#999';
+    const thumb=p.imgUrl?`<div class="post-thumb" style="background-image:url('${p.imgUrl}')"></div>`:`<div class="post-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="currentColor"/></svg></div>`;
+    return`<div class="post-row">${thumb}
+      <div class="post-info">
+        <div class="post-title">${p.title}</div>
+        <div class="post-meta">
+          <span style="display:inline-flex;align-items:center;gap:5px;"><span class="cat-dot" style="background:${clr}"></span>${p.category}</span>
+          <span>·</span><span>${p.date}</span>
+          <span class="post-slug">${p.slug||''}</span>
+        </div>
+      </div>
+      <div class="post-actions">
+        <button class="btn-sm btn-up" onclick="movePost(${i},-1)" ${i===0?'disabled':''}>↑</button>
+        <button class="btn-sm btn-dn" onclick="movePost(${i},1)" ${i===posts.length-1?'disabled':''}>↓</button>
+        <a href="${p.url}" target="_blank" class="btn-sm btn-view" style="text-decoration:none;display:inline-flex;align-items:center;">View</a>
+        <button class="btn-sm btn-edit" onclick="editPost(${i})">Edit</button>
+        <button class="btn-sm btn-del" onclick="deletePost(${i})">Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function movePost(i,dir){
+  const j=i+dir;if(j<0||j>=posts.length)return;
+  [posts[i],posts[j]]=[posts[j],posts[i]];
+  renderPostList();await pushSave('Order updated');
+}
+
+async function deletePost(i){
+  if(!confirm(`Delete "${posts[i].title}"?\nThis removes it from the blog page. The .html file on GitHub stays.`))return;
+  posts.splice(i,1);renderPostList();await pushSave('Post deleted');
+}
+
+function editPost(i){
+  editIdx=i;const p=posts[i];
+  document.getElementById('fTitle').value=p.title||'';
+  document.getElementById('fSlug').value=p.slug||'';
+  document.getElementById('fExcerpt').value=p.excerpt||'';
+  document.getElementById('fDate').value=p.date||'';
+  document.getElementById('fReadTime').value=p.readTime||'';
+  document.getElementById('fImg').value=p.imgUrl||'';
+  document.getElementById('fUrl').value=p.url||'';
+  selectedCat=p.category||'';slugManual=true;
+  previewImg();renderCatSelector();updateSlugPreview();
+  document.getElementById('formTitle').textContent='Edit Post';
+  document.getElementById('editLbl').textContent='Editing: '+p.title.substring(0,40)+'...';
+  switchTab('new');window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function cancelEdit(){
+  editIdx=-1;slugManual=false;selectedCat='';
+  ['fTitle','fSlug','fExcerpt','fImg','fUrl'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fDate').value=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('fReadTime').value='4 min read';
+  document.getElementById('formTitle').textContent='Add New Post';
+  document.getElementById('editLbl').textContent='';
+  previewImg();renderCatSelector();updateSlugPreview();switchTab('posts');
+}
+
+async function savePost(){
+  const title=document.getElementById('fTitle').value.trim();
+  const slug=document.getElementById('fSlug').value.trim();
+  const excerpt=document.getElementById('fExcerpt').value.trim();
+  const date=document.getElementById('fDate').value.trim();
+  const url=document.getElementById('fUrl').value.trim();
+  if(!title||!slug||!excerpt||!date||!selectedCat||!url){showToast('Please fill in all required fields.','error');return;}
+  const entry={slug,title,excerpt,date,dateISO:new Date(date).toISOString(),category:selectedCat,readTime:document.getElementById('fReadTime').value.trim()||'3 min read',imgUrl:document.getElementById('fImg').value.trim(),url};
+  if(editIdx>=0){posts[editIdx]=entry;}else{posts.unshift(entry);}
+  await pushSave(editIdx>=0?'Post updated':'Post added');
+  cancelEdit();
+}
+
+async function pushSave(msg){
+  const btn=document.getElementById('saveBtn');
+  const sav=document.getElementById('savingIndicator');
+  btn.disabled=true;sav.classList.add('show');
+  try{
+    await saveToGitHub();
+    showToast('✓ '+msg+' — live on your blog within 2 minutes!','success');
+    renderPostList();
+  }catch(e){
+    showToast('Save failed: '+e.message,'error');
+    await fetchPosts();
+  }finally{btn.disabled=false;sav.classList.remove('show');}
+}
+
+function toSlug(s){return s.toLowerCase().replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').replace(/-+/g,'-').substring(0,80);}
+function onTitleInput(){
+  if(!slugManual){
+    const s=toSlug(document.getElementById('fTitle').value);
+    document.getElementById('fSlug').value=s;
+    document.getElementById('fUrl').value=s?'/blog/'+s+'.html':'';
+    updateSlugPreview();
+  }
+}
+function onSlugInput(){
+  slugManual=true;
+  const el=document.getElementById('fSlug');
+  el.value=el.value.toLowerCase().replace(/[^a-z0-9-]/g,'');
+  document.getElementById('fUrl').value=el.value?'/blog/'+el.value+'.html':'';
+  updateSlugPreview();
+}
+function updateSlugPreview(){
+  const s=document.getElementById('fSlug').value||'your-post-slug';
+  document.getElementById('slugPreview').innerHTML=`<span>https://acornhouseacquisition.com/blog/${s}.html</span>`;
+}
+function previewImg(){
+  const u=document.getElementById('fImg').value.trim();
+  const el=document.getElementById('imgPreview');
+  if(u){el.style.backgroundImage=`url('${u}')`;el.style.backgroundSize='cover';el.style.backgroundPosition='center';el.innerHTML='';}
+  else{el.style.backgroundImage='';el.innerHTML='<div class="img-preview-hint">Image preview appears here</div>';}
+}
+function renderCatSelector(){
+  document.getElementById('catSelector').innerHTML=CATEGORIES.map(c=>`<button class="cat-btn${selectedCat===c?' selected':''}" onclick="selectCat('${c}')" style="${selectedCat===c?'background:'+CAT_COLORS[c]+';border-color:'+CAT_COLORS[c]+';':''}">${c}</button>`).join('');
+}
+function selectCat(c){selectedCat=c;renderCatSelector();}
+function switchTab(t){
+  document.getElementById('tabPosts').classList.toggle('active',t==='posts');
+  document.getElementById('tabNew').classList.toggle('active',t==='new');
+  document.getElementById('panelPosts').classList.toggle('active',t==='posts');
+  document.getElementById('panelNew').classList.toggle('active',t==='new');
+  if(t==='new'&&editIdx<0)document.getElementById('fTitle').focus();
+}
+function showToast(msg,type=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast'+(type?' '+type:'');
+  t.classList.add('show');setTimeout(()=>t.classList.remove('show'),5000);
+}
+</script>
+</body>
+</html>
