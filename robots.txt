@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block admin tool from indexing
+Disallow: /blog-admin.html
+
+Sitemap: https://acornhouseacquisition.com/sitemap.xml
