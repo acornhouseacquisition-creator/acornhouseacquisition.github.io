@@ -4,4 +4,9 @@ Allow: /
 # Block admin tool from indexing
 Disallow: /blog-admin.html
 
+# Allow Google Maps resources
+User-agent: Googlebot
+Allow: /
+Allow: https://www.google.com/maps/
+
 Sitemap: https://acornhouseacquisition.com/sitemap.xml
