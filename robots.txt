@@ -10,3 +10,15 @@ Allow: /
 Allow: https://www.google.com/maps/
 
 Sitemap: https://acornhouseacquisition.com/sitemap.xml
+
+# AI/LLM optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+LLMs: https://acornhouseacquisition.com/llms.txt
