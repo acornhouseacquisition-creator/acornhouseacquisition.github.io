@@ -1,17 +1,10 @@
 User-agent: *
 Allow: /
-
-# Block admin tool from indexing
 Disallow: /blog-admin.html
 
-# Allow Google Maps resources
 User-agent: Googlebot
 Allow: /
-Allow: https://www.google.com/maps/
 
-Sitemap: https://acornhouseacquisition.com/sitemap.xml
-
-# AI/LLM optimization
 User-agent: GPTBot
 Allow: /
 
@@ -21,4 +14,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-LLMs: https://acornhouseacquisition.com/llms.txt
+Sitemap: https://acornhouseacquisition.com/sitemap.xml
