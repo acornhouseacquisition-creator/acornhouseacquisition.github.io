@@ -58,4 +58,5 @@ Dallas, Houston, Austin, San Antonio
 - Blog: https://acornhouseacquisition.com/blog
 - North Carolina: https://acornhouseacquisition.com/north-carolina
 - Florida: https://acornhouseacquisition.com/florida
+- Texas: https://acornhouseacquisition.com/texas
 - Sitemap: https://acornhouseacquisition.com/sitemap.xml
