@@ -350,6 +350,29 @@ section{padding:88px 5%;}
   nav .nav-phone{display:none;}
   nav .nav-blog{display:none;}
 }
+
+/* ── TEAM SECTION ─────────────────────────────────────── */
+.team-bg{background:var(--black);padding:88px 5%;}
+.team-header{text-align:center;max-width:660px;margin:0 auto 52px;}
+.team-header .sec-title{color:#fff;}
+.team-sub{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-top:10px;}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+.team-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s;display:flex;flex-direction:column;}
+.team-card:hover{transform:translateY(-5px);border-color:rgba(244,180,0,.4);}
+.team-img-wrap{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:rgba(255,255,255,.06);}
+.team-img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s;}
+.team-card:hover .team-img{transform:scale(1.05);}
+.team-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);padding:22px 12px 10px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.team-info{padding:14px 14px 18px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.team-name{font-family:"Fraunces",serif;font-size:16px;font-weight:700;color:#fff;line-height:1.2;}
+.team-role{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.8px;line-height:1.4;}
+.team-bio{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;flex:1;}
+.team-markets{display:flex;gap:5px;margin-top:4px;flex-wrap:wrap;}
+.team-market{background:rgba(244,180,0,.12);color:var(--gold);font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px;border:1px solid rgba(244,180,0,.25);}
+@media(max-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:380px){.team-grid{grid-template-columns:1fr;}}
+
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sell Your House Fast As-Is | Acorn House Acquisition">
@@ -1027,6 +1050,87 @@ section{padding:88px 5%;}
 </div>
 
 <!-- FAQ -->
+
+
+<!-- TEAM SECTION -->
+<section class="team-bg">
+  <div class="container">
+    <div class="team-header">
+      <span class="eyebrow" style="color:var(--gold);">The People Behind Every Offer</span>
+      <h2 class="sec-title">Meet the Acorn House Team</h2>
+      <p class="team-sub">Real people. Real expertise. Every offer is made by experienced professionals who know the NC, FL, and TX markets — no call centers, no algorithms.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="https://i.imgur.com/Lj3pFj2.jpg" alt="Felicia Savga CEO" loading="lazy" class="team-img">
+          <div class="team-badge">CEO</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Felicia Savga</h3>
+          <div class="team-role">Chief Executive Officer</div>
+          <p class="team-bio">Master's in Business, University of Monaco. Oversees every acquisition and ensures every homeowner gets a fair offer and professional experience.</p>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span><span class="team-market">TX</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="https://i.imgur.com/65x2l5z.jpg" alt="Daniel Ghinda Acquisition Manager" loading="lazy" class="team-img">
+          <div class="team-badge">Acquisitions</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Daniel Ghinda</h3>
+          <div class="team-role">Acquisition Manager &amp; Creative Finance Specialist</div>
+          <p class="team-bio">Your first point of contact. Daniel evaluates your property, structures creative financing solutions, and presents a fair cash offer with no pressure.</p>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="https://i.imgur.com/CwNavo6.jpg" alt="John Cole Acquisition Manager" loading="lazy" class="team-img">
+          <div class="team-badge">Acquisitions</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">John Cole</h3>
+          <div class="team-role">Acquisition Manager</div>
+          <p class="team-bio">Specializes in complex situations — foreclosure, inherited properties, divorce sales, and military relocations. Finds solutions where others see dead ends.</p>
+          <div class="team-markets"><span class="team-market">TX</span><span class="team-market">NC</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="https://i.imgur.com/5afT6qt.jpg" alt="Catherine Grey Transaction Coordinator" loading="lazy" class="team-img">
+          <div class="team-badge">Operations</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Catherine Grey</h3>
+          <div class="team-role">Operator &amp; Transaction Coordinator</div>
+          <p class="team-bio">Manages every transaction from signed contract to close. Coordinates with title companies and keeps your closing on track — every time.</p>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span><span class="team-market">TX</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="https://i.imgur.com/0xIYQ8W.jpg" alt="Russell Smith Acquisition Manager" loading="lazy" class="team-img">
+          <div class="team-badge">Acquisitions</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Russell Smith</h3>
+          <div class="team-role">Acquisition Manager</div>
+          <p class="team-bio">Works directly with sellers to evaluate properties and structure offers. Brings deep market knowledge to every deal in NC and TX.</p>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">TX</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="faq-bg">
   <div class="container">
     <span class="eyebrow">Got Questions?</span>
