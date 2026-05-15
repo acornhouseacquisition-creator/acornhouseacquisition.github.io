@@ -45,8 +45,8 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .nav-phone{font-size:14px;font-weight:600;color:var(--black);text-decoration:none;}
 
 /* SVG ICONS — same as index.html */
-.ico-wrap{width:48px;height:48px;background:var(--black);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-.ico-wrap svg{width:26px;height:26px;fill:var(--gold);}
+.ico-wrap{width:52px;height:52px;background:var(--black);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.ico-wrap svg{width:28px;height:28px;fill:var(--gold);}
 .ico-wrap-gold{background:var(--gold);}
 .ico-wrap-gold svg{fill:var(--black);}
 .ico-wrap-sm{width:36px;height:36px;border-radius:10px;background:var(--black);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -54,7 +54,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 
 /* HERO */
 .hero{background:var(--black);padding:80px 5%;}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 480px;gap:52px;align-items:center;}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 580px;gap:48px;align-items:center;}
 .hero-video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55);border:2px solid rgba(244,180,0,.25);background:#000;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,180,0,.15);border:1px solid rgba(244,180,0,.35);color:var(--gold);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
 .hero h1{font-family:"Fraunces",serif;font-size:clamp(28px,4.2vw,54px);color:#fff;font-weight:900;line-height:1.1;margin-bottom:16px;letter-spacing:-.5px;max-width:680px;}
@@ -68,6 +68,745 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .hero-cred{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:10px 16px;border-radius:10px;font-size:13px;color:rgba(255,255,255,.8);font-weight:600;}
 .hero-cred svg{width:16px;height:16px;fill:var(--gold);flex-shrink:0;}
 
+/* TRUST BAR */
+.trust-bar{background:var(--gold);padding:13px 5%;}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--black);}
+.trust-item svg{width:15px;height:15px;fill:var(--black);}
+.trust-div{width:1px;height:15px;background:rgba(0,0,0,.2);}
+
+/* SECTION */
+section{padding:80px 5%;}
+.container{max-width:1200px;margin:0 auto;}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px;}
+.sec-title{font-family:"Fraunces",serif;font-size:clamp(24px,3.2vw,40px);color:var(--black);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.sec-sub{font-size:16px;color:var(--tm);line-height:1.7;max-width:620px;}
+
+/* CREDIBILITY BLOCKS */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.cred-text p{font-size:17px;color:#333;line-height:1.82;margin-bottom:16px;}
+.cred-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cstat{border-radius:16px;padding:26px 22px;text-align:center;}
+.cstat-dark{background:var(--black);}
+.cstat-light{background:var(--gl);border-bottom:4px solid var(--gold);}
+.cstat-n{font-family:"Fraunces",serif;font-size:38px;font-weight:900;line-height:1;}
+.cstat-dark .cstat-n{color:var(--gold);}
+.cstat-light .cstat-n{color:var(--black);}
+.cstat-l{font-size:12px;font-weight:600;margin-top:6px;}
+.cstat-dark .cstat-l{color:rgba(255,255,255,.5);}
+.cstat-light .cstat-l{color:var(--tm);}
+
+/* HOW WE WORK */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:44px;}
+.how-card{background:#fff;border-radius:var(--rl);padding:28px 24px;border:1.5px solid var(--gm);transition:all .25s;position:relative;overflow:hidden;}
+.how-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-d));}
+.how-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:var(--gold);}
+.how-card h3{font-family:"Fraunces",serif;font-size:18px;color:var(--black);margin-bottom:10px;}
+.how-card p{font-size:14px;color:var(--tm);line-height:1.75;}
+
+/* WHAT WE BRING */
+.bring-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:40px;}
+.bring-item{display:flex;align-items:flex-start;gap:11px;padding:15px 16px;background:#fff;border-radius:12px;border:1.5px solid var(--gm);transition:all .2s;}
+.bring-item:hover{border-color:var(--gold);transform:translateY(-2px);}
+.bring-check{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.bring-check svg{width:12px;height:12px;fill:none;stroke:var(--black);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+.bring-text{font-size:14px;color:var(--black);font-weight:600;line-height:1.5;}
+
+/* TRANSACTIONS */
+.tx-bg{background:var(--black);}
+.tx-header{text-align:center;margin-bottom:44px;}
+.tx-header .sec-title{color:#fff;}
+.tx-header .sec-sub{color:rgba(255,255,255,.5);margin:0 auto;}
+.tx-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.tx-tab{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:"DM Sans",sans-serif;}
+.tx-tab.active,.tx-tab:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+.tx-panel{display:none;}
+.tx-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;}
+.tx-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 16px;transition:all .25s;position:relative;overflow:hidden;}
+.tx-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);opacity:.7;}
+.tx-card:hover{border-color:rgba(244,180,0,.45);transform:translateY(-3px);background:rgba(255,255,255,.07);}
+.tx-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.tx-badge{font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:100px;}
+.tx-badge.cash{background:rgba(46,125,50,.25);color:#81c784;}
+.tx-date{font-size:11px;color:rgba(255,255,255,.35);}
+.tx-city{font-family:"Fraunces",serif;font-size:16px;color:#fff;font-weight:700;margin-bottom:8px;}
+.tx-meta{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.4);}
+.tx-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.tx-disclaimer{text-align:center;margin-top:28px;font-size:12px;color:rgba(255,255,255,.28);max-width:700px;margin-left:auto;margin-right:auto;line-height:1.65;}
+
+/* TITLE COMPANIES */
+.title-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:40px;}
+.title-card{background:#fff;border:1.5px solid var(--gm);border-radius:18px;padding:26px 22px;transition:all .25s;position:relative;overflow:hidden;}
+.title-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-d));}
+.title-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.12);border-color:var(--gold);}
+.title-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.title-icon{width:48px;height:48px;background:var(--black);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.15);}
+.title-icon svg{width:24px;height:24px;fill:var(--gold);}
+.title-name{font-family:"Fraunces",serif;font-size:16px;color:var(--black);font-weight:700;line-height:1.2;}
+.title-state{font-size:11px;color:var(--gold-d);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-top:2px;}
+.title-desc{font-size:13px;color:var(--tm);line-height:1.65;margin-bottom:12px;}
+.title-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.title-tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;background:var(--gl);color:var(--tm);border:1px solid var(--gm);}
+.title-tag.green{background:rgba(46,125,50,.08);color:#2e7d32;border-color:rgba(46,125,50,.2);}
+
+/* REVIEWS */
+.reviews-bg{background:var(--black);padding:80px 5%;}
+.reviews-header{text-align:center;margin-bottom:44px;}
+.reviews-header .sec-title{color:#fff;}
+.reviews-stars{display:flex;align-items:center;justify-content:center;gap:5px;margin:14px 0 8px;}
+.reviews-stars svg{width:20px;height:20px;fill:var(--gold);}
+.reviews-label{font-size:13px;color:rgba(255,255,255,.55);font-weight:600;text-align:center;margin-bottom:4px;}
+.reviews-sub{font-size:14px;color:rgba(255,255,255,.45);text-align:center;margin-bottom:0;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:8px;}
+.rev-card{border-radius:10px;overflow:hidden;cursor:pointer;position:relative;border:1px solid rgba(255,255,255,.07);transition:all .25s;}
+.rev-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 14px 36px rgba(0,0,0,.5);border-color:rgba(244,180,0,.5);}
+.rev-card img{width:100%;height:auto;display:block;}
+.rev-card-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;transition:background .25s;pointer-events:none;}
+.rev-card:hover .rev-card-overlay{background:rgba(0,0,0,.18);}
+.rev-expand{width:36px;height:36px;background:rgba(244,180,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;transform:scale(.8);transition:all .25s;}
+.rev-card:hover .rev-expand{opacity:1;transform:scale(1);}
+.rev-expand svg{width:16px;height:16px;fill:var(--black);}
+.review-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9998;justify-content:center;align-items:center;padding:20px;}
+.review-lightbox.open{display:flex;}
+.review-lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lb-close{position:fixed;top:18px;right:22px;color:#fff;font-size:28px;cursor:pointer;z-index:9999;background:rgba(244,180,0,.9);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:1;transition:background .2s;}
+.lb-close:hover{background:var(--gold);}
+
+/* TEAM */
+.team-bg{background:var(--black);padding:80px 5%;}
+.team-header{text-align:center;margin-bottom:48px;}
+.team-header .sec-title{color:#fff;}
+.team-header .sec-sub{color:rgba(255,255,255,.5);margin:0 auto;}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1200px;margin:0 auto;}
+.t-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s;}
+.t-card:hover{transform:translateY(-5px);border-color:rgba(244,180,0,.4);}
+.t-img-wrap{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:rgba(255,255,255,.06);}
+.t-img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s;}
+.t-card:hover .t-img{transform:scale(1.05);}
+.t-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);padding:22px 12px 10px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.t-info{padding:14px 14px 18px;}
+.t-name{font-family:"Fraunces",serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:3px;}
+.t-role{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px;line-height:1.4;}
+.t-bio{font-size:12px;color:rgba(255,255,255,.45);line-height:1.65;}
+
+/* FAQ */
+.faq-wrap{max-width:820px;margin:44px auto 0;}
+.faq-item{background:#fff;border-radius:var(--rl);margin-bottom:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.faq-q{width:100%;background:none;border:none;padding:18px 20px;text-align:left;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:600;color:var(--black);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.faq-q:hover{background:#fffbee;}
+.faq-icon{width:26px;height:26px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s;}
+.faq-icon svg{width:14px;height:14px;fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;transition:transform .25s;}
+.faq-item.open .faq-icon svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-ai{padding:0 20px 18px;font-size:15px;color:var(--tm);line-height:1.75;border-top:1px solid var(--gm);padding-top:14px;}
+
+/* CONTACT */
+.contact-bg{background:var(--black);padding:80px 5%;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1080px;margin:0 auto;align-items:center;}
+.contact-left h2{font-family:"Fraunces",serif;font-size:clamp(22px,3vw,36px);color:#fff;font-weight:700;margin-bottom:12px;line-height:1.2;}
+.contact-left p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:22px;}
+.c-detail{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;color:rgba(255,255,255,.7);}
+.c-detail a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
+.c-detail a:hover{color:var(--gold);}
+.c-icon{width:36px;height:36px;background:rgba(244,180,0,.1);border:1px solid rgba(244,180,0,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.c-icon svg{width:18px;height:18px;fill:var(--gold);}
+.contact-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:30px 26px;border-top:4px solid var(--gold);}
+.contact-box h3{font-family:"Fraunces",serif;font-size:20px;color:#fff;margin-bottom:5px;}
+.contact-box p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:20px;}
+.btn-gold{background:var(--gold);color:var(--black);padding:14px 20px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;width:100%;display:block;text-align:center;text-decoration:none;}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);}
+
+/* DISCLOSURE */
+.disclosure{background:#f8f8f8;border-top:1px solid var(--gm);padding:44px 5%;}
+.disclosure-inner{max-width:900px;margin:0 auto;}
+.disc-title{font-size:12px;font-weight:800;color:var(--black);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.disc-title svg{width:16px;height:16px;fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
+.disclosure p{font-size:12px;color:#999;line-height:1.8;margin-bottom:10px;}
+.disclosure p strong{color:#777;}
+
+/* FOOTER */
+.footer-bg{background:var(--black);padding:40px 5% 20px;border-top:3px solid rgba(244,180,0,.3);}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:12px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;}
+.footer-links a{color:rgba(255,255,255,.4);font-size:13px;text-decoration:none;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.2);text-align:center;max-width:1200px;margin:0 auto;}
+
+/* POPUP */
+.pop-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9999;justify-content:center;align-items:center;padding:20px;}
+.pop-overlay.open{display:flex;}
+.pop-box{background:#fff;border-radius:var(--rl);padding:30px 26px;max-width:540px;width:100%;position:relative;max-height:92vh;overflow-y:auto;border-top:5px solid var(--gold);}
+.pop-close{position:absolute;top:10px;right:12px;background:none;border:none;cursor:pointer;font-size:26px;color:#999;}
+.pop-box h2{font-family:"Fraunces",serif;font-size:22px;color:var(--black);margin-bottom:4px;}
+.pop-box > p{font-size:14px;color:var(--tm);margin-bottom:18px;}
+
+/* STICKY */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--black);border-top:3px solid var(--gold);padding:11px 5%;display:flex;align-items:center;justify-content:space-between;z-index:150;gap:12px;transform:translateY(100%);transition:transform .3s;}
+.sticky-bar.visible{transform:translateY(0);}
+.sticky-bar p{color:rgba(255,255,255,.8);font-size:14px;}
+.btn-sm{background:var(--gold);color:var(--black);padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;white-space:nowrap;}
+
+@media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-video-wrap{max-width:580px;}.cred-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:660px){.team-grid{grid-template-columns:repeat(2,1fr);}.nav-phone{display:none;}.trust-div{display:none;}}
+@media(max-width:380px){.team-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- SVG SYMBOLS — same as index.html -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ico-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="ico-house" viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></symbol>
+    <symbol id="ico-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></symbol>
+    <symbol id="ico-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-dollar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="900" fill="white" font-family="Arial">$</text></symbol>
+    <symbol id="ico-building" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1" fill="currentColor"/><rect x="7" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="7" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="10" y="17" width="4" height="4" fill="white" opacity=".5"/></symbol>
+    <symbol id="ico-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></symbol>
+    <symbol id="ico-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></symbol>
+    <symbol id="ico-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="ico-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 3.13a4 4 0 010 7.75" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="ico-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="ico-expand" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+    <symbol id="ico-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" style="display:flex;align-items:center;"><img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition" style="height:44px;width:auto;display:block;"></a>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="tel:+17869828464" class="nav-phone">(786) 982-8464</a>
+      <button class="nav-cta" onclick="openPopup()">Get Cash Offer</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg width="14" height="14"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        Verified Track Record
+      </div>
+      <h1>Built on <span class="acc">Proven Results.</span><br>Trusted by Agents,<br>Sellers &amp; Partners.</h1>
+      <p class="hero-sub">Acorn House Acquisition has operated for over five years — closing on-market and off-market transactions across six states through licensed U.S. title companies with professionalism and integrity.</p>
+      <div class="hero-checks">
+        <div class="hero-check"><div class="hc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>On-market MLS listings &amp; off-market acquisitions</div>
+        <div class="hero-check"><div class="hc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Cash &amp; creative finance — we structure what others can't</div>
+        <div class="hero-check"><div class="hc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Licensed title company on every single closing</div>
+        <div class="hero-check"><div class="hc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Agent-friendly — commissions honored, no exceptions</div>
+        <div class="hero-check"><div class="hc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>5+ years in operation — consistent, proven performance</div>
+      </div>
+      <div class="hero-creds">
+        <div class="hero-cred"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.8"/></svg>5+ Years Operating</div>
+        <div class="hero-cred"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1" fill="currentColor"/><rect x="7" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="7" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="13" width="3" height="3" fill="white" opacity=".7"/></svg>6 States Active</div>
+        <div class="hero-cred"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>8 Title Partners</div>
+        <div class="hero-cred"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></svg>On &amp; Off Market</div>
+      </div>
+    </div>
+    <div class="hero-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/39XYYSXwO9I?si=ApKGr48Lk_K9i8UR&autoplay=1&mute=1&loop=1&playlist=39XYYSXwO9I&rel=0&modestbranding=1&playsinline=1"
+        title="Acorn House Acquisition"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+      </iframe>
+    </div>
+  </div>
+</div>
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></svg>
+      On-Market &amp; Off-Market
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      Licensed Title Companies
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg>
+      NC &middot; FL &middot; TX &amp; Beyond
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      Agent-Friendly
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></svg>
+      5+ Years Operating
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="cred-grid">
+      <div class="cred-text">
+        <span class="eyebrow">About Acorn House Acquisition</span>
+        <h2 class="sec-title">We Buy on Your Terms — On-Market or Off.</h2>
+        <p>Acorn House Acquisition is a principal real estate investment company specializing in cash and creative finance acquisitions. We buy both on-market MLS listings and off-market opportunities — whatever path gets the deal closed for the seller.</p>
+        <p>We work with homeowners who need a fast, clean exit — and with real estate agents and wholesale partners who have deals that traditional buyers can't or won't close. Our experienced Transaction Coordinator and Acquisition Managers are highly responsive and committed to smooth, efficient closings.</p>
+        <p>Every transaction we close goes through a licensed title company with a full HUD/ALTA settlement statement. We regularly work with vetted partners, investors, and title companies to ensure every deal is handled with professionalism and integrity.</p>
+      </div>
+      <div class="cred-stats">
+        <div class="cstat cstat-dark">
+          <div class="cstat-n">5+</div>
+          <div class="cstat-l">Years Operating</div>
+        </div>
+        <div class="cstat cstat-light">
+          <div class="cstat-n">6</div>
+          <div class="cstat-l">States Active</div>
+        </div>
+        <div class="cstat cstat-light">
+          <div class="cstat-n">8</div>
+          <div class="cstat-l">Title Partners</div>
+        </div>
+        <div class="cstat cstat-dark">
+          <div class="cstat-n">100%</div>
+          <div class="cstat-l">Licensed Title Closings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section style="background:var(--gl);">
+  <div class="container">
+    <span class="eyebrow">Our Process</span>
+    <h2 class="sec-title">What Makes Us Easy to Work With</h2>
+    <p class="sec-sub">Whether you are a homeowner, a real estate agent, or a wholesale partner — here is exactly what working with Acorn House Acquisition looks like.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></svg></div>
+        <h3>Clear Communication</h3>
+        <p>We respond fast and stay in contact every step of the way. Our acquisition managers and transaction coordinator are highly responsive — no waiting, no guessing.</p>
+      </div>
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Clean Contracts</h3>
+        <p>Straightforward purchase agreements with no unusual contingencies. We are happy to use your state's standard real estate contract if preferred.</p>
+      </div>
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Flexible Timelines</h3>
+        <p>We close on your schedule — as fast as 7 days or as long as needed. We work around the seller's situation, not the other way around.</p>
+      </div>
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>On-Market &amp; Off-Market</h3>
+        <p>We actively pursue MLS listings and off-market opportunities. If you have a listing or an off-market lead — bring it to us. We close both.</p>
+      </div>
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>No Retrades</h3>
+        <p>When we sign, we close at that number — no retrades without documented justification. Our reputation depends on this and we take it seriously.</p>
+      </div>
+      <div class="how-card">
+        <div class="ico-wrap"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Agent-Friendly</h3>
+        <p>We respect agent relationships and honor commissions on every represented transaction. We structure deals creatively to make closings happen that traditional buyers can't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSACTIONS -->
+<section class="tx-bg">
+  <div class="container">
+    <div class="tx-header">
+      <span class="eyebrow" style="color:var(--gold);">Closing History</span>
+      <h2 class="sec-title">Proven Transactions — Recent Activity</h2>
+      <p class="sec-sub">A selection of recent closings across our active markets — cash purchases and creative finance acquisitions, both on-market and off-market, all closed through licensed U.S. title companies. Seller and agent details kept confidential.</p>
+    </div>
+    <div class="tx-tabs">
+      <button class="tx-tab active" onclick="showTab('all',this)">All States</button>
+      <button class="tx-tab" onclick="showTab('fl',this)">Florida</button>
+      <button class="tx-tab" onclick="showTab('nc',this)">North Carolina</button>
+      <button class="tx-tab" onclick="showTab('tx',this)">Texas</button>
+      <button class="tx-tab" onclick="showTab('other',this)">Other States</button>
+    </div>
+
+    <div id="tab-all" class="tx-panel active">
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Apr 2025</span></div><div class="tx-city">Davenport, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">May 2025</span></div><div class="tx-city">Cape Coral, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">Winter Haven, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">North Port, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Crestview, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Tavares, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Navarre, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Jacksonville, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Auburndale, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Winter Garden, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Core Title Services &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">New Port Richey, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; RTR Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Crestview, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Florida Open Title &middot; Florida</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Kannapolis, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Kannapolis, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Gastonia, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Stanfield, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Gastonia, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Creedmoor, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Mooresville, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC &middot; NC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Apr 2025</span></div><div class="tx-city">Haslet, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency &middot; TX</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">Corpus Christi, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency &middot; TX</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Heartland, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency &middot; TX</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">San Antonio, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency &middot; TX</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">Alvarado, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency &middot; TX</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Feb 2025</span></div><div class="tx-city">Semmes, AL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Delta South Title &middot; Alabama</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Simpsonville, SC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title &middot; South Carolina</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Buckeye, AZ</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title &middot; Arizona</div></div>
+    </div>
+
+    <div id="tab-fl" class="tx-panel">
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Apr 2025</span></div><div class="tx-city">Davenport, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">May 2025</span></div><div class="tx-city">Cape Coral, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">Winter Haven, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">North Port, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Crestview, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Tavares, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Navarre, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Jacksonville, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Crestview, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Florida Open Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Auburndale, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Marina Title</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Winter Garden, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Core Title Services</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">New Port Richey, FL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; RTR Title</div></div>
+    </div>
+
+    <div id="tab-nc" class="tx-panel">
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Kannapolis, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jul 2025</span></div><div class="tx-city">Kannapolis, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Aug 2025</span></div><div class="tx-city">Gastonia, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Stanfield, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Gastonia, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Creedmoor, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Mooresville, NC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Merritt Law, PLLC</div></div>
+    </div>
+
+    <div id="tab-tx" class="tx-panel">
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Apr 2025</span></div><div class="tx-city">Haslet, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Jun 2025</span></div><div class="tx-city">Corpus Christi, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Heartland, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">San Antonio, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Nov 2025</span></div><div class="tx-city">Alvarado, TX</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Champion Title Agency</div></div>
+    </div>
+
+    <div id="tab-other" class="tx-panel">
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Feb 2025</span></div><div class="tx-city">Semmes, AL</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Delta South Title &middot; Alabama</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Sep 2025</span></div><div class="tx-city">Simpsonville, SC</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title &middot; South Carolina</div></div>
+      <div class="tx-card"><div class="tx-top"><span class="tx-badge cash">Cash</span><span class="tx-date">Oct 2025</span></div><div class="tx-city">Buckeye, AZ</div><div class="tx-meta"><div class="tx-dot"></div>Closed &middot; Closed Title &middot; Arizona</div></div>
+    </div>
+
+    <p class="tx-disclaimer">Transactions shown represent recent activity only. Property addresses, seller names, and agent details are kept strictly confidential to protect all parties. All closings completed through licensed U.S. title companies with full HUD/ALTA settlement documentation. Provided for credibility purposes only — does not constitute an offer or guarantee of future performance.</p>
+  </div>
+</section>
+
+<!-- TITLE COMPANIES -->
+<section style="background:#fff;">
+  <div class="container">
+    <span class="eyebrow">Our Title Partners</span>
+    <h2 class="sec-title">Licensed Title Companies We Close Through</h2>
+    <p class="sec-sub">Every transaction is closed through a licensed, vetted title company with full HUD/ALTA settlement documentation. We have established working relationships across all our active markets.</p>
+    <div class="title-grid">
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5L12 2z" fill="currentColor"/><polyline points="9 12 11 14 15 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><div class="title-name">Marina Title</div><div class="title-state">Florida — Statewide</div></div>
+        </div>
+        <div class="title-desc">Attorney-owned and operated since 2014. Investor-friendly title company experienced with subject-to, wholesale, cash, and creative finance closings throughout all of Florida. Offices in Miami and Naples with mobile closers statewide.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Attorney-Owned</span>
+          <span class="title-tag">Since 2014</span>
+          <span class="title-tag">Investor-Friendly</span>
+          <span class="title-tag">Statewide FL</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div><div class="title-name">Merritt Law, PLLC</div><div class="title-state">North Carolina — Kannapolis</div></div>
+        </div>
+        <div class="title-desc">NC real estate and estate planning law firm based in Kannapolis. Relationship-based approach with dedicated communication throughout every closing. Handles investor closings across the Charlotte Metro and beyond.</div>
+        <div class="title-tags">
+          <span class="title-tag green">NC Licensed Attorney</span>
+          <span class="title-tag">Real Estate Law</span>
+          <span class="title-tag">Charlotte Metro</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1" fill="currentColor"/><rect x="7" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="7" width="3" height="3" fill="white" opacity=".7"/><rect x="7" y="13" width="3" height="3" fill="white" opacity=".7"/><rect x="14" y="13" width="3" height="3" fill="white" opacity=".7"/></svg></div>
+          <div><div class="title-name">Champion Title Agency</div><div class="title-state">Texas — Granbury &amp; DFW</div></div>
+        </div>
+        <div class="title-desc">Escrow-officer-owned title company with 20+ years of experience. Known for fast responses, e-closing options, and mobile notaries across multiple Texas counties. Highly rated by agents and investors.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Escrow-Officer Owned</span>
+          <span class="title-tag">20+ Years</span>
+          <span class="title-tag">E-Closing</span>
+          <span class="title-tag">Mobile Notary</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div>
+          <div><div class="title-name">Closed Title</div><div class="title-state">FL &middot; SC &middot; AZ</div></div>
+        </div>
+        <div class="title-desc">Multi-state title company experienced with creative finance and investor closings across Florida, South Carolina, and Arizona. Handles subject-to, novation, and assignment transactions.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Multi-State</span>
+          <span class="title-tag">Creative Finance</span>
+          <span class="title-tag">Investor Transactions</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></svg></div>
+          <div><div class="title-name">RTR Title</div><div class="title-state">Florida</div></div>
+        </div>
+        <div class="title-desc">Florida-based title and escrow company handling residential and investment property closings. Full escrow services with experienced title professionals for buyers, sellers, and investors throughout FL.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Florida Licensed</span>
+          <span class="title-tag">Residential &amp; Investment</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="900" fill="white" font-family="Arial">$</text></svg></div>
+          <div><div class="title-name">Core Title Services</div><div class="title-state">Florida</div></div>
+        </div>
+        <div class="title-desc">Florida title and escrow services for residential and investment transactions. Full settlement services including HUD/ALTA preparation, title insurance, and escrow management for investor deals.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Florida Licensed</span>
+          <span class="title-tag">Full Settlement Services</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div>
+          <div><div class="title-name">Delta South Title</div><div class="title-state">Alabama &amp; Southeast</div></div>
+        </div>
+        <div class="title-desc">Alabama-based title company serving the Southeast region with full title insurance, escrow, and closing services for residential and investment transactions including creative finance structures.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Alabama Licensed</span>
+          <span class="title-tag">Southeast Region</span>
+          <span class="title-tag">Creative Finance</span>
+        </div>
+      </div>
+      <div class="title-card">
+        <div class="title-card-top">
+          <div class="title-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></svg></div>
+          <div><div class="title-name">Florida Open Title</div><div class="title-state">Florida — Panhandle</div></div>
+        </div>
+        <div class="title-desc">Florida Panhandle title company experienced with investor and creative finance closings. Full escrow and settlement services for residential investment transactions in Northwest Florida.</div>
+        <div class="title-tags">
+          <span class="title-tag green">Florida Licensed</span>
+          <span class="title-tag">NW Florida</span>
+          <span class="title-tag">Investor Experience</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--tm);margin-top:20px;text-align:center;">We are also happy to use your preferred title company or state-standard real estate contracts when you have an established relationship.</p>
+  </div>
+</section>
+
+<!-- WHAT WE BRING -->
+<section style="background:var(--gl);">
+  <div class="container">
+    <span class="eyebrow">Why Agents &amp; Sellers Choose Us</span>
+    <h2 class="sec-title">What We Bring to Every Transaction</h2>
+    <div class="bring-grid">
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Clear, responsive communication throughout</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Clean contracts — no unusual contingencies</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Flexible closing timelines — we work around you</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">On-market and off-market — we close both</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Licensed title company on every single closing</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Full HUD/ALTA settlement statements every deal</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">No retrades without documented justification</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Agent commissions honored on all represented deals</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Cash &amp; creative finance — we structure what others can't</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">Properly registered U.S. LLCs in operation</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">5+ years of consistent performance</div></div>
+      <div class="bring-item"><div class="bring-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bring-text">All parties kept strictly confidential</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div class="container">
+    <div class="reviews-header">
+      <span class="eyebrow" style="color:var(--gold);">Real Feedback</span>
+      <h2 class="sec-title">What Agents &amp; Sellers Say About Us</h2>
+      <div class="reviews-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="reviews-label">Verified Reviews from Agents, Sellers &amp; Partners</div>
+      <div class="reviews-sub">Click any review to expand it</div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/QRu058V.jpg')"><img src="https://i.imgur.com/QRu058V.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/3tIGXdB.jpg')"><img src="https://i.imgur.com/3tIGXdB.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/Y5P3DYS.jpg')"><img src="https://i.imgur.com/Y5P3DYS.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/kwXkHhk.jpg')"><img src="https://i.imgur.com/kwXkHhk.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/DrUuyt2.jpg')"><img src="https://i.imgur.com/DrUuyt2.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/YmsQDfd.jpg')"><img src="https://i.imgur.com/YmsQDfd.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/XCKs5TC.jpg')"><img src="https://i.imgur.com/XCKs5TC.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/7GzNV4n.jpg')"><img src="https://i.imgur.com/7GzNV4n.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/iw8ICzP.jpg')"><img src="https://i.imgur.com/iw8ICzP.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/ToGyIH4.jpg')"><img src="https://i.imgur.com/ToGyIH4.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/O6bz3yx.jpg')"><img src="https://i.imgur.com/O6bz3yx.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/n2ei1ya.jpg')"><img src="https://i.imgur.com/n2ei1ya.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/Q22sPoW.jpg')"><img src="https://i.imgur.com/Q22sPoW.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+      <div class="rev-card" onclick="openLb('https://i.imgur.com/Nqn2JB3.jpg')"><img src="https://i.imgur.com/Nqn2JB3.jpg" alt="Review" loading="lazy"><div class="rev-card-overlay"><div class="rev-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+<!-- LIGHTBOX -->
+<div class="review-lightbox" id="lbOverlay" onclick="closeLb()">
+  <span class="lb-close" onclick="closeLb()">&times;</span>
+  <img id="lbImg" src="" alt="Review">
+</div>
+
+<!-- TEAM -->
+<section class="team-bg">
+  <div class="container">
+    <div class="team-header">
+      <span class="eyebrow" style="color:var(--gold);">The People Behind Every Offer</span>
+      <h2 class="sec-title">Meet the Acorn House Team</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,.5);margin:0 auto;">Every offer is made and every closing is managed by experienced professionals. You will always have a real person to reach — responsive, knowledgeable, and committed to smooth deals.</p>
+    </div>
+    <div class="team-grid">
+      <div class="t-card"><div class="t-img-wrap"><img src="https://i.imgur.com/Lj3pFj2.jpg" alt="Felicia Savga CEO" loading="lazy" class="t-img"><div class="t-badge">CEO</div></div><div class="t-info"><div class="t-name">Felicia Savga</div><div class="t-role">Chief Executive Officer</div><div class="t-bio">Master's in Business, University of Monaco. Oversees every acquisition and ensures every agent and seller receives a professional experience.</div></div></div>
+      <div class="t-card"><div class="t-img-wrap"><img src="https://i.imgur.com/65x2l5z.jpg" alt="Daniel Ghinda" loading="lazy" class="t-img"><div class="t-badge">Acquisitions</div></div><div class="t-info"><div class="t-name">Daniel Ghinda</div><div class="t-role">Acquisition Manager &amp; Creative Finance Specialist</div><div class="t-bio">First point of contact. Evaluates properties, structures creative finance solutions, and presents fair offers with no pressure.</div></div></div>
+      <div class="t-card"><div class="t-img-wrap"><img src="https://i.imgur.com/CwNavo6.jpg" alt="John Cole" loading="lazy" class="t-img"><div class="t-badge">Acquisitions</div></div><div class="t-info"><div class="t-name">John Cole</div><div class="t-role">Acquisition Manager</div><div class="t-bio">Specializes in foreclosure, inherited properties, divorce sales, and military relocations. Finds solutions where others see dead ends.</div></div></div>
+      <div class="t-card"><div class="t-img-wrap"><img src="https://i.imgur.com/0xIYQ8W.jpg" alt="Russell Smith" loading="lazy" class="t-img"><div class="t-badge">Acquisitions</div></div><div class="t-info"><div class="t-name">Russell Smith</div><div class="t-role">Acquisition Manager</div><div class="t-bio">Works with sellers and agents to evaluate properties and structure offers. Deep market knowledge across NC and TX.</div></div></div>
+      <div class="t-card"><div class="t-img-wrap"><img src="https://i.imgur.com/5afT6qt.jpg" alt="Catherine Grey" loading="lazy" class="t-img"><div class="t-badge">Operations</div></div><div class="t-info"><div class="t-name">Catherine Grey</div><div class="t-role">Operator &amp; Transaction Coordinator</div><div class="t-bio">Manages every transaction from signed contract to close. Coordinates with title companies and keeps closings on track every time.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--gl);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="sec-title">FAQ — For Sellers &amp; Agents</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is Acorn House Acquisition a licensed real estate broker?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">No. Acorn House Acquisition LLC is a principal real estate investment company. We purchase properties for our own account and are not a licensed real estate broker or agent. All closings are completed through licensed U.S. title companies in full compliance with applicable state laws.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you buy on-market listings as well as off-market properties?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Yes. We actively pursue both on-market MLS listings and off-market opportunities. If you have a listing or an off-market opportunity, contact our acquisitions team at transactions@acornhouseacquisition.com or call (786) 982-8464.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do you close transactions and what title companies do you use?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Every transaction is closed through a licensed title company. We have established relationships with Marina Title, Merritt Law PLLC, Champion Title Agency, Closed Title, RTR Title, Core Title Services, Delta South Title, and Florida Open Title. HUD/ALTA settlement statements are prepared by escrow on every transaction. We are happy to use your preferred title company.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How fast can you close?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">We can close in as little as 7 days. Creative finance transactions typically close in 14-21 days. We work around the seller's timeline and can accommodate longer closings when needed. For foreclosure situations we can often close before the auction date.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you work with real estate agents and honor commissions?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Yes. We actively work with real estate agents and brokers, respect agent relationships, and honor commissions on every represented transaction. We can structure deals creatively to make closings happen that traditional buyers cannot close. Agents can reach us at transactions@acornhouseacquisition.com.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you provide proof of funds?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Yes. We provide proof of funds and bank statements directly to title companies and counterparties as required. Contact us at transactions@acornhouseacquisition.com to request proof of funds documentation for your specific deal.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What states do you buy in?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Our primary markets are North Carolina, Florida, and Texas. We have also closed in Alabama, South Carolina, and Arizona. If you have a deal outside our core markets, reach out — we can often find a solution.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you retrade after signing a purchase agreement?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">No. When both parties sign, we close at that number. We do not retrade based on market fluctuations or change of mind. If a material undisclosed issue is discovered during due diligence, we address it transparently with all parties.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How are you structured legally?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Acorn House Acquisition operates through properly registered U.S. limited liability companies with valid operating agreements. We act as the principal buyer in all transactions. Entity documents and signing authority are provided directly to title companies as required. Legal counsel is engaged when transaction structure requires it.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I send a deal or request more information?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">For deal submissions: transactions@acornhouseacquisition.com. For general inquiries: info@acornhouseacquisition.com or call (786) 982-8464. Our acquisition managers respond within hours.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <span class="eyebrow" style="color:var(--gold);">Work With Us</span>
+      <h2>Ready to Work Together?</h2>
+      <p>Whether you are a homeowner who needs a fast exit, an agent with a deal that needs creative structuring, or a wholesale partner — we respond fast and we close.</p>
+      <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><a href="tel:+17869828464">(786) 982-8464</a></div>
+      <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></svg></div><a href="mailto:info@acornhouseacquisition.com">info@acornhouseacquisition.com</a></div>
+      <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></svg></div><a href="mailto:transactions@acornhouseacquisition.com">transactions@acornhouseacquisition.com</a></div>
+      <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div><span>19825-B North Cove Rd #1041, Cornelius, NC 28031</span></div>
+      <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div><span>5342 Clark Rd #1273, Sarasota, FL 34233</span></div>
+    </div>
+    <div class="contact-box">
+      <h3>Send Us a Deal or Inquiry</h3>
+      <p>We respond within hours. No spam, no pressure.</p>
+      <script src="https://webforms.closeiocdn.com/webforms.js" type="module" defer></script>
+      <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLOSURE -->
+<div class="disclosure">
+  <div class="disclosure-inner">
+    <div class="disc-title">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;"><circle cx="12" cy="12" r="10" stroke="var(--black)" fill="none"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2.5"/></svg>
+      Important Disclosures
+    </div>
+    <p><strong>Principal Buyer Disclosure.</strong> Acorn House Acquisition LLC is a principal real estate investment company. We purchase properties directly for our own account and are not a licensed real estate broker, agent, or representative of any buyer or seller. Nothing on this page constitutes real estate brokerage, agency, or representation.</p>
+    <p><strong>Transaction Information.</strong> All transactions referenced on this page are shown for credibility and illustrative purposes only. Property addresses, seller names, and agent details have been omitted to protect the confidentiality of all parties. Results may vary depending on market conditions, transaction structure, property type, and other factors. Past performance does not guarantee future results.</p>
+    <p><strong>No Solicitation.</strong> All parties referenced in or implied by the transactions shown have expressly requested privacy. Unauthorized contact, solicitation, or communication with any past or present sellers, agents, or counterparties referenced on this page is strictly prohibited and may result in legal action.</p>
+    <p><strong>Legal Compliance.</strong> All closings are completed through licensed U.S. title companies in accordance with applicable state laws. Acorn House Acquisition operates through properly registered U.S. limited liability companies. Legal counsel is engaged when transaction structure requires it. This page does not constitute an offer, solicitation, partnership proposal, or guarantee of future performance.</p>
+    <p style="margin-bottom:0;">&copy; 2026 Acorn House Acquisition LLC. All rights reserved. Unauthorized reproduction or distribution of the information on this page is strictly prohibited.</p>
+  </div>
+</div>
+
+<div class="footer-bg">
+  <div class="footer-inner">
+    <a href="/index.html" style="display:flex;align-items:center;"><img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition" style="height:44px;width:auto;display:block;"></a>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/north-carolina.html">North Carolina</a>
+      <a href="/florida.html">Florida</a>
+      <a href="/texas.html">Texas</a>
+      <a href="/blog.html">Blog</a>
+      <a href="tel:+17869828464">(786) 982-8464</a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 Acorn House Acquisition LLC &middot; Principal buyer — not a licensed real estate broker &middot; All closings through licensed title companies</p>
+</div>
+
+<div id="globalPopup" class="pop-overlay" onclick="if(event.target===this)closePopup()">
+  <div class="pop-box">
+    <button class="pop-close" onclick="closePopup()">&times;</button>
+    <h2>Get Your Cash Offer</h2>
+    <p>Free. No obligation. We respond within hours.</p>
+    <script src="https://webforms.closeiocdn.com/webforms.js" type="module" defer></script>
+    <close-form id="form_032rFzZ3OYlehOHmS6NN9e"></close-form>
+  </div>
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p><strong>Ready to work together?</strong> We close fast and we perform.</p>
+  <button class="btn-sm" onclick="openPopup()">Contact Us &rarr;</button>
+</div>
+
+<script>
+function openPopup(){document.getElementById("globalPopup").classList.add("open");document.body.style.overflow="hidden";}
+function closePopup(){document.getElementById("globalPopup").classList.remove("open");document.body.style.overflow="";}
+window.addEventListener("scroll",()=>{document.getElementById("stickyBar").classList.toggle("visible",window.scrollY>600);});
+function toggleFaq(btn){const item=btn.parentElement;const open=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>{i.classList.remove("open");i.querySelector(".faq-a").style.maxHeight=null;});if(!open){item.classList.add("open");item.querySelector(".faq-a").style.maxHeight=item.querySelector(".faq-a").scrollHeight+"px";}}
+function showTab(tab,el){document.querySelectorAll(".tx-panel").forEach(p=>p.classList.remove("active"));document.querySelectorAll(".tx-tab").forEach(t=>t.classList.remove("active"));document.getElementById("tab-"+tab).classList.add("active");el.classList.add("active");}
+function openLb(src){document.getElementById("lbImg").src=src;document.getElementById("lbOverlay").classList.add("open");document.body.style.overflow="hidden";}
+function closeLb(){document.getElementById("lbOverlay").classList.remove("open");document.body.style.overflow="";}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLb();closePopup();}});
+// Force video autoplay on load
+window.addEventListener('load',function(){
+  var v=document.getElementById('credVideo');
+  if(v){v.src=v.src;}
+});
+</script>
+</body>
+</html>
 /* TRUST BAR */
 .trust-bar{background:var(--gold);padding:13px 5%;}
 .trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;}
