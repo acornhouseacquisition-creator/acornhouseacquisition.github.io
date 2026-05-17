@@ -56,7 +56,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 /* HERO */
 .hero{background:var(--black);padding:80px 5%;}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 580px;gap:48px;align-items:center;}
-.hero-video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55);border:2px solid rgba(244,180,0,.25);background:#000;}
+.hero-video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:0 0 16px 16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55);border:2px solid rgba(244,180,0,.25);background:#000;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,180,0,.15);border:1px solid rgba(244,180,0,.35);color:var(--gold);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
 .hero h1{font-family:"Fraunces",serif;font-size:clamp(28px,4.2vw,54px);color:#fff;font-weight:900;line-height:1.1;margin-bottom:16px;letter-spacing:-.5px;max-width:680px;}
 .hero h1 .acc{color:var(--gold);}
@@ -251,6 +251,32 @@ section{padding:80px 5%;}
 @media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-video-wrap{max-width:580px;}.cred-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:660px){.team-grid{grid-template-columns:repeat(2,1fr);}.nav-phone{display:none;}.trust-div{display:none;}}
 @media(max-width:380px){.team-grid{grid-template-columns:1fr;}}
+
+/* AGENT BANNER */
+.agent-banner{background:linear-gradient(135deg,#1a0000,#2d0000);border-top:3px solid #e53935;border-bottom:3px solid #e53935;padding:18px 5%;overflow:hidden;position:relative;}
+.agent-banner::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(229,57,53,.03) 0px,rgba(229,57,53,.03) 1px,transparent 1px,transparent 60px);pointer-events:none;}
+.agent-banner-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.agent-banner-icon{width:44px;height:44px;background:#e53935;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:pulse-red 2s ease-in-out infinite;}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(229,57,53,.6);}50%{box-shadow:0 0 0 10px rgba(229,57,53,0);}}
+.agent-banner-icon svg{width:22px;height:22px;fill:#fff;}
+.agent-banner-text{text-align:center;}
+.agent-banner-main{font-family:"Fraunces",serif;font-size:clamp(17px,2.5vw,24px);font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1.2;}
+.agent-banner-main span{color:#ff5252;}
+.agent-banner-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:5px;font-weight:500;}
+.agent-banner-badge{background:#e53935;color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;animation:badge-bounce .6s ease-in-out infinite alternate;}
+@keyframes badge-bounce{from{transform:translateY(-2px);}to{transform:translateY(2px);}}
+
+/* AGENT HERO BANNER */
+.agent-hero-banner{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#b71c1c,#d32f2f);border-radius:12px 12px 0 0;padding:14px 18px;position:relative;overflow:hidden;}
+.agent-hero-banner::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 8px);pointer-events:none;}
+.ahb-pulse{width:12px;height:12px;background:#ff5252;border-radius:50%;flex-shrink:0;animation:ahb-pulse 1.5s ease-in-out infinite;}
+@keyframes ahb-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,82,82,.7);transform:scale(1);}50%{box-shadow:0 0 0 8px rgba(255,82,82,0);transform:scale(1.1);}}
+.ahb-text{display:flex;flex-direction:column;gap:2px;flex:1;}
+.ahb-main{font-family:"Fraunces",serif;font-size:clamp(13px,1.4vw,16px);font-weight:800;color:#fff;line-height:1.2;}
+.ahb-main em{color:#ffcdd2;font-style:normal;font-weight:900;}
+.ahb-sub{font-size:11px;color:rgba(255,255,255,.7);font-weight:500;}
+.ahb-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:100px;white-space:nowrap;letter-spacing:.3px;animation:ahb-bounce .7s ease-in-out infinite alternate;flex-shrink:0;}
+@keyframes ahb-bounce{from{transform:translateY(-2px);}to{transform:translateY(2px);}}
 </style>
 </head>
 <body>
@@ -310,7 +336,16 @@ section{padding:80px 5%;}
         <div class="hero-cred"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="currentColor"/><rect x="9" y="13" width="6" height="8" rx="1" fill="white" opacity=".5"/></svg>On &amp; Off Market</div>
       </div>
     </div>
-    <div class="hero-video-wrap">
+    <div>
+      <div class="agent-hero-banner">
+        <div class="ahb-pulse"></div>
+        <div class="ahb-text">
+          <span class="ahb-main">Realtors Are Paid on <em>Every</em> Closing.</span>
+          <span class="ahb-sub">Commission protected &amp; paid through title — no exceptions.</span>
+        </div>
+        <div class="ahb-badge">&#10003; Guaranteed</div>
+      </div>
+      <div class="hero-video-wrap">
       <iframe
         src="https://www.youtube.com/embed/39XYYSXwO9I?si=ApKGr48Lk_K9i8UR&autoplay=1&mute=1&loop=1&playlist=39XYYSXwO9I&rel=0&modestbranding=1&playsinline=1"
         title="Acorn House Acquisition"
@@ -351,6 +386,21 @@ section{padding:80px 5%;}
     </div>
   </div>
 </div>
+
+<!-- AGENT BANNER -->
+<div class="agent-banner">
+  <div class="agent-banner-inner">
+    <div class="agent-banner-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="agent-banner-text">
+      <div class="agent-banner-main">With Acorn House Acquisition, <span>Realtors Are Paid on Every Closing.</span></div>
+      <div class="agent-banner-sub">No exceptions. Your commission is protected and paid directly through title at closing — guaranteed.</div>
+    </div>
+    <div class="agent-banner-badge">&#10003; Commission Guaranteed</div>
+  </div>
+</div>
+
 
 <!-- ABOUT -->
 <section style="background:#fff;">
