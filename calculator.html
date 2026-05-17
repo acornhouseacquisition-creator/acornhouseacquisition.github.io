@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offer Calculator | Acorn House Acquisition</title>
+<meta name="description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimate calculator from Acorn House Acquisition.">
+<link rel="canonical" href="https://acornhouseacquisition.com/calculator.html">
+<link rel="icon" type="image/png" href="https://i.imgur.com/KmGo5Sc.png">
+<meta name="robots" content="index, follow">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-86LCKN773Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-86LCKN773Z');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the cash offer calculator work?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Enter the After Repair Value (ARV) of your property and the estimated repair costs. Our calculator instantly shows your estimated cash offer. The final offer is confirmed after an in-person property review."}
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Subject To purchase?",
+          "acceptedAnswer": {"@type": "Answer", "text": "A Subject To purchase means Acorn House Acquisition takes ownership of your property while your existing mortgage stays in place. We take over the payments going forward. This allows sellers with little or no equity to exit without bringing cash to the closing table."}
+        },
+        {
+          "@type": "Question",
+          "name": "What is seller financing in real estate?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Seller financing means the seller acts as the lender. Instead of the buyer getting a bank loan, the buyer makes monthly payments directly to the seller. Acorn House Acquisition offers seller financing options with flexible down payment percentages and interest rates that adjust based on your down payment."}
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can Acorn House Acquisition close?",
+          "acceptedAnswer": {"@type": "Answer", "text": "We can close cash transactions in as little as 7 days. Subject To and seller financing transactions typically close in 14 to 21 days. We work around the seller's timeline and can accommodate faster closings for foreclosure situations."}
+        },
+        {
+          "@type": "Question",
+          "name": "Are there fees or commissions when selling to Acorn House Acquisition?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Zero fees, zero commissions, and we cover all closing costs. The offer we make is exactly what you receive at closing — nothing deducted and nothing hidden."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do you buy houses in any condition?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. We buy homes in any condition — no repairs needed. Foundation issues, roof damage, fire damage, deferred maintenance — leave everything as-is and we handle everything after closing."}
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Acorn House Acquisition",
+      "description": "Principal real estate investment company buying homes with cash and creative finance across NC, FL, and TX. On-market and off-market acquisitions.",
+      "url": "https://acornhouseacquisition.com/calculator.html",
+      "telephone": "+17869828464",
+      "email": "info@acornhouseacquisition.com",
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "19825-B North Cove Rd #1041", "addressLocality": "Cornelius", "addressRegion": "NC", "postalCode": "28031", "addressCountry": "US"},
+        {"@type": "PostalAddress", "streetAddress": "5342 Clark Rd #1273", "addressLocality": "Sarasota", "addressRegion": "FL", "postalCode": "34233", "addressCountry": "US"}
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+          "author": {"@type": "Person", "name": "Michael R."},
+          "reviewBody": "We didn't have much equity and couldn't sell the traditional way. Acorn worked out a solution by taking over the payments and we were able to move on without bringing money to closing."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+          "author": {"@type": "Person", "name": "Sarah M."},
+          "reviewBody": "Acorn closed in 11 days when my agent couldn't find a buyer in 90 days. The process was smooth and professional from start to finish."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+          "author": {"@type": "Person", "name": "James T."},
+          "reviewBody": "I was facing foreclosure and Acorn closed before the auction date. They saved my credit and I walked away with cash. Highly recommend."
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+:root{--gold:#f4b400;--gold-d:#d49d00;--gold-l:#ffd84d;--gold-dim:rgba(244,180,0,.12);--black:#0a0a0a;--card:#141414;--card2:#1a1a1a;--border:rgba(255,255,255,.08);--tm:rgba(255,255,255,.5);--ts:rgba(255,255,255,.28);--green:#81c784;--red:#ef9a9a;--r:14px;--rl:18px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-inner a img{height:44px;width:auto;display:block;}
+.nav-cta{background:var(--gold);color:var(--black);padding:9px 20px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-decoration:none;}
+.nav-cta:hover{background:var(--gold-l);}
+.nav-phone{font-size:14px;font-weight:600;color:rgba(255,255,255,.65);text-decoration:none;}
+.nav-phone:hover{color:var(--gold);}
+
+/* HERO */
+.hero{padding:60px 5% 44px;text-align:center;position:relative;}
+.hero::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(circle,rgba(244,180,0,.07) 0%,transparent 65%);pointer-events:none;z-index:0;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold-dim);border:1px solid rgba(244,180,0,.22);color:var(--gold);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(26px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:12px;position:relative;}
+.hero h1 span{color:var(--gold);}
+.hero-sub{font-size:16px;color:var(--tm);max-width:500px;margin:0 auto 12px;line-height:1.65;}
+.hero-disc{font-size:11px;color:var(--ts);max-width:520px;margin:0 auto;line-height:1.6;}
+
+/* PAGE LAYOUT — 2 column */
+.page-wrap{max-width:1380px;margin:0 auto;padding:0 5% 80px;display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;}
+
+/* LEFT — TABS + CALC */
+.calc-col{}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;padding:4px;margin-bottom:24px;}
+.tab{padding:13px 10px;border-radius:12px;text-align:center;cursor:pointer;transition:all .22s;border:none;background:transparent;color:var(--tm);font-family:"DM Sans",sans-serif;font-size:13px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:5px;}
+.tab:hover{color:#fff;background:rgba(255,255,255,.05);}
+.tab.active{background:var(--gold);color:var(--black);}
+.tab-icon{font-size:20px;}
+.tab-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;}
+
+/* PANELS */
+.calc-panel{display:none;animation:fadeUp .28s ease;}
+.calc-panel.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:24px 22px;margin-bottom:14px;}
+.card-title{font-family:"Fraunces",serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:9px;}
+.card-title-icon{width:30px;height:30px;background:var(--gold-dim);border:1px solid rgba(244,180,0,.22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+
+/* FIELDS */
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg1{grid-template-columns:1fr;}
+.fg3{grid-template-columns:1fr 1fr 1fr;}
+.f{display:flex;flex-direction:column;gap:5px;margin-bottom:4px;}
+.f label{font-size:11px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.8px;}
+.f input,.f textarea{background:var(--card2);border:1.5px solid var(--border);border-radius:9px;padding:11px 13px;font-size:14px;color:#fff;font-family:"DM Sans",sans-serif;transition:border-color .18s;outline:none;width:100%;}
+.f input:focus,.f textarea:focus{border-color:rgba(244,180,0,.45);}
+.f input::placeholder,.f textarea::placeholder{color:var(--ts);}
+.f textarea{resize:vertical;min-height:72px;}
+.hint{font-size:11px;color:var(--ts);margin-top:2px;}
+
+/* SLIDER */
+.slider-val{font-family:"Fraunces",serif;font-size:22px;font-weight:900;color:var(--gold);text-align:center;margin:6px 0;}
+.slider-lbls{display:flex;justify-content:space-between;font-size:10px;color:var(--ts);margin-bottom:5px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;background:rgba(255,255,255,.1);border-radius:100px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;box-shadow:0 0 0 4px rgba(244,180,0,.18);}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:15px;background:var(--gold);color:var(--black);border:none;border-radius:11px;font-family:"Fraunces",serif;font-size:17px;font-weight:900;cursor:pointer;transition:all .2s;margin-top:16px;letter-spacing:-.2px;}
+.calc-btn:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(244,180,0,.3);}
+
+/* RESULTS */
+.results{display:none;margin-top:14px;}
+.results.show{display:block;animation:fadeUp .35s ease;}
+.res-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.res-head{background:linear-gradient(135deg,var(--card2),#0e0e0e);padding:18px 22px;border-bottom:1px solid var(--border);}
+.res-head h3{font-size:13px;color:var(--tm);font-weight:600;margin-bottom:4px;}
+.res-offer{font-family:"Fraunces",serif;font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--gold);line-height:1;}
+.res-offer small{font-size:14px;color:var(--tm);font-weight:400;}
+.res-body{padding:18px 22px;}
+.res-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.res-row:last-child{border-bottom:none;}
+.res-lbl{font-size:13px;color:var(--tm);}
+.res-val{font-size:14px;font-weight:700;color:#fff;}
+.res-val.gold{color:var(--gold);}
+.res-val.green{color:var(--green);}
+.res-val.red{color:var(--red);}
+.res-box{background:rgba(244,180,0,.05);border:1px solid rgba(244,180,0,.14);border-radius:10px;padding:14px;margin-top:12px;}
+.res-box-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;}
+.res-total{border-top:1px solid rgba(244,180,0,.18);margin-top:8px;padding-top:10px;display:flex;justify-content:space-between;align-items:center;}
+.res-total-lbl{font-size:13px;font-weight:700;color:#fff;}
+.res-total-val{font-family:"Fraunces",serif;font-size:17px;font-weight:900;color:var(--gold);}
+.balloon{background:rgba(239,83,80,.08);border:1px solid rgba(239,83,80,.18);border-radius:9px;padding:11px 14px;font-size:12px;color:var(--red);margin-top:12px;display:none;align-items:center;gap:8px;}
+.rule-badge{display:inline-block;padding:3px 9px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-top:6px;}
+.rule-a{background:rgba(239,83,80,.15);color:var(--red);}
+.rule-b{background:rgba(255,167,38,.12);color:#ffb74d;}
+.rule-c{background:rgba(76,175,80,.12);color:#81c784;}
+.disc-note{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:9px;padding:12px 14px;margin-top:12px;}
+.disc-note p{font-size:11px;color:var(--ts);line-height:1.65;}
+
+/* CTA */
+.cta-section{display:none;margin-top:14px;}
+.cta-section.show{display:block;animation:fadeUp .4s ease;}
+.cta-card{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid rgba(244,180,0,.18);border-radius:var(--rl);padding:24px 22px;position:relative;overflow:hidden;}
+.cta-card::before{content:"";position:absolute;top:-30px;right:-30px;width:180px;height:180px;background:radial-gradient(circle,rgba(244,180,0,.07),transparent 70%);pointer-events:none;}
+.cta-card h3{font-family:"Fraunces",serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:6px;}
+.cta-card p{font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:18px;}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.cta-btn{width:100%;padding:15px;background:var(--gold);color:var(--black);border:none;border-radius:11px;font-family:"Fraunces",serif;font-size:16px;font-weight:900;cursor:pointer;transition:all .2s;margin-top:8px;letter-spacing:-.2px;animation:cta-pulse 2s ease-in-out infinite;}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(244,180,0,.4);}50%{box-shadow:0 0 0 10px rgba(244,180,0,0);}}
+.cta-btn:hover{background:var(--gold-l);transform:translateY(-2px);animation:none;box-shadow:0 8px 28px rgba(244,180,0,.35);}
+.cta-disc{font-size:11px;color:var(--ts);text-align:center;margin-top:8px;line-height:1.5;}
+
+/* SUCCESS */
+.success-msg{display:none;text-align:center;padding:22px;}
+.success-msg.show{display:block;animation:fadeUp .4s ease;}
+.success-msg h3{font-family:"Fraunces",serif;font-size:20px;color:var(--gold);margin-bottom:8px;}
+.success-msg p{font-size:14px;color:var(--tm);}
+
+/* ── SIDEBAR ────────────────────────────────── */
+.sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:88px;}
+
+/* Agent */
+.sb-agent{background:linear-gradient(160deg,#140800,#1e0c00);border:1px solid rgba(244,180,0,.22);border-radius:var(--rl);overflow:hidden;}
+.sb-agent-top{background:linear-gradient(135deg,var(--gold),#e6a800);padding:16px 18px;}
+.sb-agent-top h3{font-family:"Fraunces",serif;font-size:16px;font-weight:900;color:var(--black);line-height:1.2;}
+.sb-agent-top p{font-size:11px;color:rgba(0,0,0,.6);margin-top:3px;font-weight:600;}
+.sb-agent-body{padding:16px 18px;}
+.sb-chk{display:flex;align-items:flex-start;gap:8px;margin-bottom:9px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.45;}
+.sb-chk-dot{width:16px;height:16px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--black);flex-shrink:0;margin-top:1px;}
+.sb-link-gold{display:block;background:var(--gold);color:var(--black);text-align:center;padding:11px;border-radius:9px;font-weight:800;font-size:13px;text-decoration:none;margin-top:12px;transition:all .2s;font-family:"Fraunces",serif;}
+.sb-link-gold:hover{background:var(--gold-l);}
+
+/* Contact */
+.sb-contact{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.sb-head{background:var(--card2);padding:14px 18px;border-bottom:1px solid var(--border);}
+.sb-head h3{font-family:"Fraunces",serif;font-size:15px;font-weight:700;color:#fff;}
+.sb-head p{font-size:11px;color:var(--tm);margin-top:2px;}
+.sb-body{padding:14px 18px;}
+.sb-item{display:flex;align-items:center;gap:9px;margin-bottom:10px;font-size:12px;color:rgba(255,255,255,.72);}
+.sb-item a{color:rgba(255,255,255,.72);text-decoration:none;transition:color .18s;word-break:break-all;}
+.sb-item a:hover{color:var(--gold);}
+.sb-ico{width:28px;height:28px;background:var(--gold-dim);border:1px solid rgba(244,180,0,.18);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.sb-link-outline{display:block;text-align:center;padding:10px;border-radius:9px;font-weight:700;font-size:13px;text-decoration:none;margin-top:10px;transition:all .2s;border:1.5px solid var(--gold);color:var(--gold);}
+.sb-link-outline:hover{background:var(--gold);color:var(--black);}
+
+/* Blog */
+.sb-blog{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.sb-blog-post{display:flex;flex-direction:column;gap:3px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:background .18s;}
+.sb-blog-post:last-child{border-bottom:none;}
+.sb-blog-post:hover{background:rgba(255,255,255,.03);}
+.sb-cat{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold-d);}
+.sb-blog-title{font-size:12px;font-weight:600;color:rgba(255,255,255,.78);line-height:1.35;}
+.sb-arrow{font-size:10px;color:var(--ts);}
+
+/* Track record */
+.sb-cred{background:linear-gradient(160deg,#080f08,#0d180d);border:1px solid rgba(76,175,80,.18);border-radius:var(--rl);overflow:hidden;}
+.sb-cred .sb-head{border-bottom:1px solid rgba(76,175,80,.12);}
+.sb-stat{display:flex;align-items:center;justify-content:space-between;padding:9px 18px;border-bottom:1px solid rgba(255,255,255,.04);}
+.sb-stat:last-of-type{border-bottom:none;}
+.sb-stat-lbl{font-size:11px;color:var(--tm);}
+.sb-stat-val{font-family:"Fraunces",serif;font-size:15px;font-weight:900;color:var(--green);}
+.sb-cred-link{display:block;text-align:center;padding:10px 18px;border-top:1px solid rgba(76,175,80,.12);font-size:12px;font-weight:700;color:var(--green);text-decoration:none;transition:background .18s;}
+.sb-cred-link:hover{background:rgba(76,175,80,.06);}
+
+/* MASTER DISC */
+.master-disc{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-top:16px;}
+.master-disc p{font-size:11px;color:var(--ts);line-height:1.7;}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:28px 5%;text-align:center;}
+.footer img{height:38px;margin-bottom:10px;}
+.footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{color:var(--ts);font-size:12px;text-decoration:none;transition:color .18s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.18);}
+
+@media(max-width:960px){
+  .page-wrap{grid-template-columns:1fr;}
+  .sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .sb-agent{grid-column:span 2;}
+}
+@media(max-width:600px){
+  .sidebar{grid-template-columns:1fr;}
+  .sb-agent{grid-column:span 1;}
+  .fg{grid-template-columns:1fr;}
+  .fg3{grid-template-columns:1fr 1fr;}
+  .cta-grid{grid-template-columns:1fr;}
+  .nav-phone{display:none;}
+}
+
+/* CONTACT UNDER CALC */
+.calc-contact{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);margin-top:14px;overflow:hidden;}
+.calc-contact-head{background:var(--card2);padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.calc-contact-head h3{font-family:"Fraunces",serif;font-size:17px;font-weight:700;color:#fff;}
+.calc-contact-head p{font-size:13px;color:var(--tm);}
+.calc-contact-body{padding:20px 22px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.cc-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.cc-item:nth-last-child(-n+2){border-bottom:none;}
+.cc-icon{width:38px;height:38px;background:rgba(244,180,0,.1);border:1px solid rgba(244,180,0,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cc-icon svg{width:18px;height:18px;fill:var(--gold);}
+.cc-text{display:flex;flex-direction:column;gap:2px;}
+.cc-label{font-size:10px;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:.8px;}
+.cc-val{font-size:13px;color:rgba(255,255,255,.8);}
+.cc-val a{color:rgba(255,255,255,.8);text-decoration:none;transition:color .18s;}
+.cc-val a:hover{color:var(--gold);}
+.calc-contact-btns{padding:16px 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid var(--border);}
+.cc-btn-call{background:var(--gold);color:var(--black);text-align:center;padding:12px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;transition:all .2s;font-family:"Fraunces",serif;display:block;}
+.cc-btn-call:hover{background:var(--gold-l);}
+.cc-btn-email{background:transparent;border:1.5px solid rgba(244,180,0,.4);color:var(--gold);text-align:center;padding:12px;border-radius:9px;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;display:block;}
+.cc-btn-email:hover{background:var(--gold-dim);border-color:var(--gold);}
+@media(max-width:640px){.calc-contact-inner{grid-template-columns:1fr;}.calc-contact-left{border-right:none;border-bottom:1px solid var(--border);}}
+
+/* CONTACT UNDER CALC */
+.cc-divider{display:flex;align-items:center;gap:14px;margin:24px 0 0;}
+.cc-divider-line{flex:1;height:1px;background:var(--border);}
+.cc-divider-text{font-size:12px;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;}
+.calc-contact{margin-top:0;}
+.calc-contact-inner{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-top:14px;}
+.calc-contact-left{padding:28px 24px;border-right:1px solid var(--border);background:linear-gradient(160deg,var(--card2),var(--card));}
+.cc-title{font-family:"Fraunces",serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:10px;}
+.cc-sub{font-size:13px;color:var(--tm);line-height:1.75;margin-bottom:20px;}
+.cc-features{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+.cc-feat{display:flex;align-items:flex-start;gap:12px;}
+.cc-feat-icon{width:36px;height:36px;background:var(--gold-dim);border:1px solid rgba(244,180,0,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cc-feat-icon svg{width:18px;height:18px;fill:var(--gold);}
+.cc-feat-label{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.cc-feat-desc{font-size:12px;color:var(--tm);}
+.cc-cred-link{font-size:13px;font-weight:700;color:var(--gold);text-decoration:none;transition:opacity .18s;display:inline-block;}
+.cc-cred-link:hover{opacity:.75;}
+.calc-contact-right{padding:22px 22px;display:flex;flex-direction:column;gap:4px;}
+.cc-item{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.cc-item:last-of-type{border-bottom:none;}
+.cc-icon{width:36px;height:36px;background:rgba(244,180,0,.08);border:1px solid rgba(244,180,0,.15);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.cc-icon svg{width:17px;height:17px;fill:var(--gold);}
+.cc-text{display:flex;flex-direction:column;gap:2px;}
+.cc-label{font-size:10px;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:.7px;}
+.cc-val{font-size:13px;color:rgba(255,255,255,.8);line-height:1.45;}
+.cc-val a{color:rgba(255,255,255,.8);text-decoration:none;transition:color .18s;}
+.cc-val a:hover{color:var(--gold);}
+.cc-btn-call{display:block;background:var(--gold);color:var(--black);text-align:center;padding:11px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;margin-top:12px;transition:all .2s;font-family:"Fraunces",serif;}
+.cc-btn-call:hover{background:var(--gold-l);}
+.cc-btn-email{display:block;border:1.5px solid rgba(244,180,0,.35);color:var(--gold);text-align:center;padding:10px;border-radius:9px;font-weight:700;font-size:13px;text-decoration:none;margin-top:8px;transition:all .2s;}
+.cc-btn-email:hover{background:var(--gold-dim);border-color:var(--gold);}
+
+/* ABOUT SECTION — matches index.html */
+.calc-about{background:#fff;padding:52px 0;margin-top:0;}
+.about-inner{max-width:none;}
+.about-eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px;}
+.about-title{font-family:"Fraunces",serif;font-size:clamp(22px,3vw,36px);color:#0a0a0a;font-weight:700;line-height:1.15;margin-bottom:24px;}
+.about-grid-calc{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.about-text-calc p{font-size:16px;color:#555;line-height:1.8;margin-bottom:18px;}
+.about-text-calc strong{color:#0a0a0a;font-weight:700;}
+.about-quote-calc{background:#f5f5f5;border-left:4px solid var(--gold-d);border-radius:0 12px 12px 0;padding:18px 20px;margin-top:20px;margin-bottom:20px;}
+.about-quote-calc p{font-size:14px;color:#333;font-style:italic;line-height:1.7;margin-bottom:6px;}
+.about-quote-calc span{font-size:12px;color:#888;font-weight:600;}
+.about-reviews{display:flex;flex-direction:column;gap:14px;}
+.about-rev-card{background:#f5f5f5;border-radius:14px;padding:18px 18px;border-bottom:3px solid var(--gold-d);position:relative;}
+.about-rev-stars{color:var(--gold-d);font-size:14px;margin-bottom:6px;}
+.about-rev-text{font-size:14px;color:#444;line-height:1.7;font-style:italic;margin-bottom:8px;}
+.about-rev-author{font-size:12px;font-weight:700;color:#888;}
+.about-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.astat-c{background:#0a0a0a;border-radius:12px;padding:18px 14px;text-align:center;}
+.astat-c-n{font-family:"Fraunces",serif;font-size:28px;font-weight:900;color:var(--gold);line-height:1;}
+.astat-c-l{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;margin-top:5px;}
+.about-cred-link{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:var(--gold-d);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+.about-cred-link:hover{border-color:var(--gold-d);}
+@media(max-width:680px){.about-grid-calc{grid-template-columns:1fr;}.about-stats-row{grid-template-columns:repeat(3,1fr);}}
+
+/* FAQ SECTION */
+.calc-faq{padding:40px 0 0;}
+.calc-faq-title{font-family:"Fraunces",serif;font-size:clamp(20px,2.8vw,30px);color:#fff;font-weight:700;margin-bottom:6px;}
+.calc-faq-sub{font-size:14px;color:var(--tm);margin-bottom:24px;}
+.faq-item-calc{background:var(--card);border-radius:12px;margin-bottom:10px;overflow:hidden;border:1px solid var(--border);}
+.faq-q-calc{width:100%;background:none;border:none;padding:16px 18px;text-align:left;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .18s;}
+.faq-q-calc:hover{background:rgba(255,255,255,.04);}
+.faq-ico{width:22px;height:22px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--black);flex-shrink:0;transition:transform .25s;}
+.faq-item-calc.open .faq-ico{transform:rotate(45deg);}
+.faq-a-calc{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-ai-calc{padding:0 18px 15px;font-size:14px;color:var(--tm);line-height:1.75;border-top:1px solid var(--border);padding-top:12px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html"><img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition"></a>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="tel:+17869828464" class="nav-phone">(786) 982-8464</a>
+      <a href="/index.html" class="nav-cta">Get Cash Offer</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">&#9889; Instant Offer Estimate</div>
+  <h1>Explore Your <span>Cash or Creative</span><br>Offer Options</h1>
+  <p class="hero-sub">Cash Offers, Subject To, and Seller Financing — calculated instantly. Free and no-obligation.</p>
+  <p class="hero-disc">&#9888; All figures are estimates only. Final offers subject to full property review, title, and underwriting. Not a binding agreement.</p>
+</div>
+
+<div class="page-wrap">
+
+  <!-- LEFT COLUMN: CALCULATOR -->
+  <div class="calc-col">
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('cash',this)">
+        <span class="tab-icon">&#128181;</span>
+        <span class="tab-label">Cash Offer</span>
+      </button>
+      <button class="tab" onclick="switchTab('subto',this)">
+        <span class="tab-icon">&#127968;</span>
+        <span class="tab-label">Subject To</span>
+      </button>
+      <button class="tab" onclick="switchTab('sf',this)">
+        <span class="tab-icon">&#128196;</span>
+        <span class="tab-label">Seller Financing</span>
+      </button>
+    </div>
+
+    <!-- CASH PANEL -->
+    <div id="panel-cash" class="calc-panel active">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon">&#128181;</span> Cash Offer Calculator</div>
+        <div class="f"><label>Property Address *</label><input type="text" id="c-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
+        <div class="fg" style="margin-top:12px;">
+          <div class="f"><label>After Repair Value (ARV) *</label><input type="number" id="c-arv" placeholder="200000" oninput="liveCalcCash()"><span class="hint">Estimated value after all repairs</span></div>
+          <div class="f"><label>Estimated Repairs *</label><input type="number" id="c-repairs" placeholder="20000" oninput="liveCalcCash()"><span class="hint">Total cost to bring to market</span></div>
+        </div>
+        <div class="f" style="margin-top:12px;"><label>Repair Description</label><textarea id="c-rdesc" placeholder="e.g. Roof, HVAC, kitchen remodel, flooring..."></textarea></div>
+        <button class="calc-btn" onclick="doCash()">&#9889; Calculate My Cash Offer</button>
+      </div>
+
+      <div id="cash-results" class="results">
+        <div class="res-card">
+          <div class="res-head">
+            <h3>Estimated Cash Offer</h3>
+            <div class="res-offer" id="c-offer-big">$0 <small>estimate</small></div>
+          </div>
+          <div class="res-body">
+            <div class="res-row"><span class="res-lbl">After Repair Value (ARV)</span><span class="res-val gold" id="c-r-arv">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Repairs</span><span class="res-val red" id="c-r-repairs">—</span></div>
+            <div class="res-row" style="border-top:2px solid rgba(244,180,0,.18);margin-top:4px;padding-top:14px;">
+              <span class="res-lbl" style="color:#fff;font-weight:700;font-size:14px;">Estimated Offer Price</span>
+              <span class="res-val gold" style="font-size:17px;" id="c-r-offer">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="disc-note"><p>&#9888; Estimate only. Final offer may vary after property inspection, title review, and market verification. Not a binding agreement.</p></div>
+      </div>
+
+      <div id="cash-cta" class="cta-section">
+        <div class="cta-card">
+          <h3>Want to Receive Your Offer?</h3>
+          <p>Submit your info and tell us what you are looking for. We will send a written offer within 24 hours.</p>
+          <div class="cta-grid">
+            <div class="f"><label>Name *</label><input type="text" id="c-name" placeholder="John Smith"></div>
+            <div class="f"><label>Email *</label><input type="email" id="c-email" placeholder="john@email.com"></div>
+            <div class="f"><label>Phone</label><input type="tel" id="c-phone" placeholder="(555) 000-0000"></div>
+            <div class="f"><label>Best Time to Call</label><input type="text" id="c-time" placeholder="Afternoons, weekends..."></div>
+          </div>
+          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="c-notes" placeholder="Tell us your situation, timeline, what you need at closing..."></textarea></div>
+          <button class="cta-btn" onclick="doSubmit('cash')">&#9993; Receive My Cash Offer by Email</button>
+          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+        </div>
+      </div>
+      <div id="cash-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
+    </div>
+
+    <!-- SUBJECT TO PANEL -->
+    <div id="panel-subto" class="calc-panel">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon">&#127968;</span> Subject To Calculator</div>
+        <div class="f"><label>Property Address *</label><input type="text" id="s-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
+        <div class="fg" style="margin-top:12px;">
+          <div class="f"><label>Selling Price *</label><input type="number" id="s-price" placeholder="250000" oninput="liveCalcSubTo()"></div>
+          <div class="f"><label>Existing Mortgage Balance *</label><input type="number" id="s-bal" placeholder="200000" oninput="liveCalcSubTo()"></div>
+          <div class="f"><label>Interest Rate (%)</label><input type="number" id="s-rate" placeholder="4.5" step="0.1" oninput="liveCalcSubTo()"></div>
+          <div class="f"><label>Current Monthly Payment</label><input type="number" id="s-pmt" placeholder="1200" oninput="liveCalcSubTo()"></div>
+          <div class="f"><label>Estimated Monthly Rent</label><input type="number" id="s-rent" placeholder="1500" oninput="liveCalcSubTo()"><span class="hint">What this property can rent for</span></div>
+        </div>
+        <button class="calc-btn" onclick="doSubTo()">&#127968; Calculate Subject To Offer</button>
+      </div>
+
+      <div id="subto-results" class="results">
+        <div class="res-card">
+          <div class="res-head">
+            <h3>Subject To Deal Structure</h3>
+            <span id="s-rule-badge" class="rule-badge rule-a">Rule A</span>
+          </div>
+          <div class="res-body">
+            <div class="res-row"><span class="res-lbl">Selling Price</span><span class="res-val gold" id="s-r-price">—</span></div>
+            <div class="res-row"><span class="res-lbl">Existing Mortgage Balance</span><span class="res-val" id="s-r-bal">—</span></div>
+            <div class="res-row"><span class="res-lbl">Equity Spread</span><span class="res-val" id="s-r-diff">—</span></div>
+            <div class="res-row"><span class="res-lbl">Monthly Payment (taken over)</span><span class="res-val" id="s-r-pmt">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Monthly Rent</span><span class="res-val green" id="s-r-rent">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Cash Flow</span><span class="res-val green" id="s-r-cf">—</span></div>
+            <div class="res-box">
+              <div class="res-box-row"><span class="res-lbl">&#128101; Agent Commission</span><span class="res-val gold" id="s-r-agent">—</span></div>
+              <div class="res-box-row"><span class="res-lbl">&#128176; Cash to Seller</span><span class="res-val green" id="s-r-seller">—</span></div>
+              <div class="res-box-row"><span class="res-lbl">&#128196; Seller Financing Portion</span><span class="res-val" id="s-r-sf">—</span></div>
+              <div class="res-total"><span class="res-total-lbl">Total Cash Needed at Closing</span><span class="res-total-val" id="s-r-total">—</span></div>
+            </div>
+            <div class="balloon" id="s-balloon">&#128204; Seller Financing Balloon Payment Due in 7 Years</div>
+          </div>
+        </div>
+        <div class="disc-note"><p>&#9888; Subject-to structures are estimates based on inputs. Final terms depend on lender, title, existing loan, and property condition. Not a binding agreement.</p></div>
+      </div>
+
+      <div id="subto-cta" class="cta-section">
+        <div class="cta-card">
+          <h3>Want a Better Offer?</h3>
+          <p>Tell us what terms you are looking for. Creative financing may allow for stronger offers.</p>
+          <div class="cta-grid">
+            <div class="f"><label>Name *</label><input type="text" id="s-name" placeholder="John Smith"></div>
+            <div class="f"><label>Email *</label><input type="email" id="s-email" placeholder="john@email.com"></div>
+            <div class="f"><label>Phone</label><input type="tel" id="s-phone" placeholder="(555) 000-0000"></div>
+            <div class="f"><label>Best Time to Call</label><input type="text" id="s-time" placeholder="Afternoons, weekends..."></div>
+          </div>
+          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="s-notes" placeholder="How much do you need at closing? Timeline? Other circumstances..."></textarea></div>
+          <button class="cta-btn" onclick="doSubmit('subto')">&#9993; Receive My Subject To Offer</button>
+          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+        </div>
+      </div>
+      <div id="subto-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
+    </div>
+
+    <!-- SELLER FINANCING PANEL -->
+    <div id="panel-sf" class="calc-panel">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon">&#128196;</span> Seller Financing Calculator</div>
+        <div class="f"><label>Property Address *</label><input type="text" id="f-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
+        <div class="fg" style="margin-top:12px;">
+          <div class="f"><label>Selling Price *</label><input type="number" id="f-price" placeholder="250000" oninput="liveCalcSF()"></div>
+          <div class="f"><label>Estimated Monthly Rent</label><input type="number" id="f-rent" placeholder="1800" oninput="liveCalcSF()"></div>
+        </div>
+        <div class="f" style="margin-top:12px;">
+          <label>Down Payment — <span id="f-dp-lbl" style="color:var(--gold);">0%</span></label>
+          <input type="range" id="f-slider" min="0" max="20" value="0" oninput="liveCalcSF()">
+          <div class="slider-lbls"><span>0% — No Down</span><span>20% — 0% Interest</span></div>
+          <span class="hint">At 0% down: 5% interest rate. At 20% down: 0% (principal only). Rate adjusts proportionally.</span>
+        </div>
+        <button class="calc-btn" onclick="doSF()">&#128196; Calculate Seller Financing</button>
+      </div>
+
+      <div id="sf-results" class="results">
+        <div class="res-card">
+          <div class="res-head">
+            <h3>Seller Financing Structure</h3>
+            <div class="res-offer" id="f-pmt-big">$0 <small>/month</small></div>
+          </div>
+          <div class="res-body">
+            <div class="res-row"><span class="res-lbl">Selling Price</span><span class="res-val gold" id="f-r-price">—</span></div>
+            <div class="res-row"><span class="res-lbl">Down Payment</span><span class="res-val green" id="f-r-dp">—</span></div>
+            <div class="res-row"><span class="res-lbl">Loan Amount</span><span class="res-val" id="f-r-loan">—</span></div>
+            <div class="res-row"><span class="res-lbl">Interest Rate</span><span class="res-val" id="f-r-rate">—</span></div>
+            <div class="res-row"><span class="res-lbl">Loan Term</span><span class="res-val">30 Years</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Monthly Payment</span><span class="res-val gold" id="f-r-pmt">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Monthly Rent</span><span class="res-val green" id="f-r-rent">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated Cash Flow</span><span class="res-val green" id="f-r-cf">—</span></div>
+            <div class="res-box">
+              <div class="res-total"><span class="res-total-lbl">Total Needed at Closing</span><span class="res-total-val" id="f-r-total">—</span></div>
+            </div>
+            <div class="balloon" style="display:flex;margin-top:12px;">&#128204; Loan structured over 30 years. Final terms subject to negotiation and approval.</div>
+          </div>
+        </div>
+        <div class="disc-note"><p>&#9888; Seller financing estimates are indicative only. Final structure subject to seller approval, title, and signed agreement. Not a binding agreement.</p></div>
+      </div>
+
+      <div id="sf-cta" class="cta-section">
+        <div class="cta-card">
+          <h3>Want a Better Offer?</h3>
+          <p>Tell us what terms you are looking for. Creative financing may allow for stronger, more flexible offers.</p>
+          <div class="cta-grid">
+            <div class="f"><label>Name *</label><input type="text" id="f-name" placeholder="John Smith"></div>
+            <div class="f"><label>Email *</label><input type="email" id="f-email" placeholder="john@email.com"></div>
+            <div class="f"><label>Phone</label><input type="tel" id="f-phone" placeholder="(555) 000-0000"></div>
+            <div class="f"><label>Best Time to Call</label><input type="text" id="f-time" placeholder="Afternoons, weekends..."></div>
+          </div>
+          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="f-notes" placeholder="What you need at closing, preferred timeline, any other terms..."></textarea></div>
+          <button class="cta-btn" onclick="doSubmit('sf')">&#9993; Receive My Seller Financing Offer</button>
+          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+        </div>
+      </div>
+      <div id="sf-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="calc-about" style="background:#fff;border-radius:var(--rl);padding:28px 26px;margin-top:14px;">
+      <span class="about-eyebrow">About Acorn House Acquisition</span>
+      <h2 class="about-title">We Buy Houses Fast — Cash or Creative Finance.</h2>
+      <div class="about-grid-calc">
+        <div class="about-text-calc">
+          <p>We are a group of real estate investors helping homeowners sell their properties quickly and without stress.</p>
+          <p>We buy houses using both <strong>cash offers</strong> and <strong>creative solutions</strong>, depending on what works best for your situation.</p>
+          <p>Our main markets are <strong>Florida, North Carolina, and Texas</strong>, where we have helped hundreds of homeowners successfully sell and move forward with their lives.</p>
+          <p>Our team includes highly trained and professional <strong>transaction coordinators</strong> who make sure everything is handled properly from start to finish. We have been operating in this business for many years and have closed over <strong>100 transactions</strong> through licensed title companies.</p>
+          <div class="about-quote-calc">
+            <p>"We didn't have much equity and couldn't sell the traditional way. Acorn worked out a solution by taking over the payments, and we were able to move on without bringing money to closing."</p>
+            <span>— Michael R., Florida</span>
+          </div>
+          <div class="about-stats-row">
+            <div class="astat-c"><div class="astat-c-n">5+</div><div class="astat-c-l">Years Operating</div></div>
+            <div class="astat-c"><div class="astat-c-n">6</div><div class="astat-c-l">States Active</div></div>
+            <div class="astat-c"><div class="astat-c-n">100%</div><div class="astat-c-l">Licensed Title</div></div>
+          </div>
+          <a href="/credibility.html" class="about-cred-link">View Our Full Track Record &rarr;</a>
+        </div>
+        <div>
+          <div class="about-reviews">
+            <div class="about-rev-card">
+              <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="about-rev-text">"Acorn closed in 11 days when my agent couldn't find a buyer in 90 days. The process was smooth and professional from start to finish. Zero fees, exactly as promised."</div>
+              <div class="about-rev-author">Sarah M. &mdash; Gastonia, NC</div>
+            </div>
+            <div class="about-rev-card">
+              <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="about-rev-text">"I was facing foreclosure and Acorn closed before the auction date. They saved my credit and I walked away with peace of mind. Highly recommend to anyone in a tough situation."</div>
+              <div class="about-rev-author">James T. &mdash; Jacksonville, FL</div>
+            </div>
+            <div class="about-rev-card">
+              <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="about-rev-text">"As a Realtor, I sent Acorn a listing I couldn't move. They closed in 3 weeks, honored my full commission, and kept me in the loop the entire time. Great people to work with."</div>
+              <div class="about-rev-author">Tyler H. &mdash; Agent, Charlotte, NC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT UNDER CALCULATOR -->
+    <div class="calc-contact" style="margin-top:14px;">
+      <div class="cc-divider">
+        <span class="cc-divider-line"></span>
+        <span class="cc-divider-text">Talk Directly to Our Team</span>
+        <span class="cc-divider-line"></span>
+      </div>
+      <div class="calc-contact-inner">
+        <div class="calc-contact-left">
+          <h3 class="cc-title">We Respond Within Hours</h3>
+          <p class="cc-sub">Have a question about the calculator, a deal to submit, or just want to talk through your options — our acquisitions team picks up the phone.</p>
+          <div class="cc-features">
+            <div class="cc-feat">
+              <div class="cc-feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+              <div><div class="cc-feat-label">5 Team Members Ready</div><div class="cc-feat-desc">Acquisition managers &amp; transaction coordinator</div></div>
+            </div>
+            <div class="cc-feat">
+              <div class="cc-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+              <div><div class="cc-feat-label">Same-Day Response</div><div class="cc-feat-desc">Usually within 1–2 hours during business hours</div></div>
+            </div>
+          </div>
+          <a href="/credibility.html" class="cc-cred-link">See Why Agents &amp; Sellers Trust Us &rarr;</a>
+        </div>
+        <div class="calc-contact-right">
+          <div class="cc-item">
+            <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+            <div class="cc-text"><span class="cc-label">Call or Text</span><span class="cc-val"><a href="tel:+17869828464">(786) 982-8464</a></span></div>
+          </div>
+          <div class="cc-item">
+            <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
+            <div class="cc-text"><span class="cc-label">Email</span><span class="cc-val"><a href="mailto:info@acornhouseacquisition.com">info@acornhouseacquisition.com</a></span></div>
+          </div>
+          <div class="cc-item">
+            <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div>
+            <div class="cc-text"><span class="cc-label">North Carolina Office</span><span class="cc-val">19825-B North Cove Rd #1041<br>Cornelius, NC 28031</span></div>
+          </div>
+          <div class="cc-item">
+            <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div>
+            <div class="cc-text"><span class="cc-label">Florida Office</span><span class="cc-val">5342 Clark Rd #1273<br>Sarasota, FL 34233</span></div>
+          </div>
+          <a href="tel:+17869828464" class="cc-btn-call">Call Us Now</a>
+          <a href="mailto:info@acornhouseacquisition.com" class="cc-btn-email">Send Us an Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="calc-faq" style="margin-top:28px;">
+      <div class="cc-divider" style="margin-bottom:20px;">
+        <span class="cc-divider-line"></span>
+        <span class="cc-divider-text">Common Questions</span>
+        <span class="cc-divider-line"></span>
+      </div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">How does the cash offer calculator work?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Enter the After Repair Value (ARV) of your property and the estimated repair costs. Our calculator instantly shows your estimated cash offer. The final offer is confirmed after an in-person property review and is not binding until signed by both parties.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">What is a Subject To purchase?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">A Subject To purchase means Acorn House Acquisition takes ownership of your property while your existing mortgage stays in place. We take over the payments going forward. This allows sellers with little or no equity to exit without bringing cash to the closing table — all closed through a licensed title company.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">What is seller financing?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Seller financing means the seller acts as the lender. Instead of getting a bank loan, the buyer makes monthly payments directly to the seller. We offer flexible down payment options from 0% to 20%, with interest rates that adjust proportionally — from 5% at 0% down to 0% at 20% down.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">How fast can you close?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">We can close cash transactions in as little as 7 days. Subject To and seller financing transactions typically close in 14 to 21 days. We work around the seller's timeline and can accommodate faster closings for foreclosure situations.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">Are there fees or commissions when selling to Acorn?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Zero fees, zero commissions, and we cover all closing costs. The offer we make is exactly what you receive at closing — nothing deducted, nothing hidden. If you are represented by a real estate agent, we honor their commission in full.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">Do you buy houses in any condition?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Yes. We buy homes in any condition — no repairs needed. Foundation issues, roof damage, fire damage, deferred maintenance — leave everything as-is and we handle everything after closing. No staging, no showings, no open houses.</div></div></div>
+    </div>
+
+    <!-- MASTER DISCLAIMER -->
+    <div class="master-disc">
+      <p><strong>Important Disclosures:</strong> All calculations are estimates only and do not constitute a binding offer or agreement. Final offer terms are subject to in-person inspection, title review, property condition, market conditions, insurance, taxes, existing liens, and full underwriting review. Cash offer, subject-to, and seller financing structures may change after due diligence. Acorn House Acquisition LLC is a principal real estate investment company and is not a licensed real estate broker. By submitting your information you agree to be contacted by our acquisitions team.</p>
+    </div>
+
+  </div><!-- end calc-col -->
+
+  <!-- RIGHT COLUMN: SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- AGENT BANNER -->
+    <div class="sb-agent">
+      <div class="sb-agent-top">
+        <h3>&#127968; Are You a Real Estate Agent?</h3>
+        <p>We protect your commission. Every closing.</p>
+      </div>
+      <div class="sb-agent-body">
+        <div class="sb-chk"><div class="sb-chk-dot">&#10003;</div>Commission paid at closing — guaranteed</div>
+        <div class="sb-chk"><div class="sb-chk-dot">&#10003;</div>On-market and off-market deals</div>
+        <div class="sb-chk"><div class="sb-chk-dot">&#10003;</div>Creative structures that save your listings</div>
+        <div class="sb-chk"><div class="sb-chk-dot">&#10003;</div>Fast response — same day</div>
+        <div class="sb-chk"><div class="sb-chk-dot">&#10003;</div>No retrades — we close at agreed price</div>
+        <a href="mailto:transactions@acornhouseacquisition.com" class="sb-link-gold">Submit a Deal &rarr;</a>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="sb-contact">
+      <div class="sb-head"><h3>Talk to Our Team</h3><p>We respond within hours.</p></div>
+      <div class="sb-body">
+        <div class="sb-item"><div class="sb-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><a href="tel:+17869828464">(786) 982-8464</a></div>
+        <div class="sb-item"><div class="sb-ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></svg></div><a href="mailto:info@acornhouseacquisition.com">info@acornhouseacquisition.com</a></div>
+        <div class="sb-item"><div class="sb-ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor"/><polyline points="2 4 12 13 22 4" fill="none" stroke="white" stroke-width="1.5"/></svg></div><a href="mailto:transactions@acornhouseacquisition.com">transactions@acornhouseacquisition.com</a></div>
+        <div class="sb-item"><div class="sb-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="white" opacity=".7"/></svg></div><span>Cornelius, NC &amp; Sarasota, FL</span></div>
+        <a href="tel:+17869828464" class="sb-link-outline">Call Us Now</a>
+      </div>
+    </div>
+
+    <!-- BLOG -->
+    <div class="sb-blog">
+      <div class="sb-head"><h3>&#128218; Helpful Resources</h3></div>
+      <a href="/blog/how-to-stop-foreclosure-north-carolina.html" class="sb-blog-post">
+        <span class="sb-cat">Foreclosure &middot; NC</span>
+        <span class="sb-blog-title">How to Stop Foreclosure Fast in NC</span>
+        <span class="sb-arrow">Read &rarr;</span>
+      </a>
+      <a href="/blog/subject-to-real-estate-guide.html" class="sb-blog-post">
+        <span class="sb-cat">Creative Finance</span>
+        <span class="sb-blog-title">What Is a Subject-To Purchase?</span>
+        <span class="sb-arrow">Read &rarr;</span>
+      </a>
+      <a href="/blog/cash-buyer-vs-agent-charlotte-nc.html" class="sb-blog-post">
+        <span class="sb-cat">Selling Options &middot; NC</span>
+        <span class="sb-blog-title">Cash Buyer vs. Agent in Charlotte NC</span>
+        <span class="sb-arrow">Read &rarr;</span>
+      </a>
+      <a href="/blog/5-signs-sell-for-cash.html" class="sb-blog-post">
+        <span class="sb-cat">Seller Tips</span>
+        <span class="sb-blog-title">5 Signs You Should Sell for Cash</span>
+        <span class="sb-arrow">Read &rarr;</span>
+      </a>
+    </div>
+
+    <!-- TRACK RECORD -->
+    <div class="sb-cred">
+      <div class="sb-head"><h3>&#9989; Proven Track Record</h3></div>
+      <div class="sb-stat"><span class="sb-stat-lbl">Years in Operation</span><span class="sb-stat-val">5+</span></div>
+      <div class="sb-stat"><span class="sb-stat-lbl">States Active</span><span class="sb-stat-val">6</span></div>
+      <div class="sb-stat"><span class="sb-stat-lbl">Title Partners</span><span class="sb-stat-val">8</span></div>
+      <div class="sb-stat"><span class="sb-stat-lbl">Licensed Closings</span><span class="sb-stat-val">100%</span></div>
+      <a href="/credibility.html" class="sb-cred-link">View Full Track Record &rarr;</a>
+    </div>
+
+  </aside>
+
+</div><!-- end page-wrap -->
+
+<div class="footer">
+  <img src="https://i.imgur.com/KmGo5Sc.png" alt="Acorn House Acquisition">
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/credibility.html">Why Work With Us</a>
+    <a href="/north-carolina.html">North Carolina</a>
+    <a href="/blog.html">Blog</a>
+    <a href="tel:+17869828464">(786) 982-8464</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Acorn House Acquisition LLC &middot; All calculator results are estimates only &middot; Not a binding agreement</p>
+</div>
+
+<script>
+// UTILS
+const $=id=>document.getElementById(id);
+const num=id=>parseFloat($(id).value)||0;
+const fmt=n=>n<0?'-$'+Math.abs(Math.round(n)).toLocaleString():'$'+Math.round(n).toLocaleString();
+
+function switchTab(tab,el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.calc-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  $('panel-'+tab).classList.add('active');
+}
+
+function showResults(prefix){
+  $(prefix+'-results').classList.add('show');
+  $(prefix+'-cta').classList.add('show');
+  setTimeout(()=>$(prefix+'-results').scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+
+// ── CASH ──────────────────────────────────────
+function liveCalcCash(){
+  const arv=num('c-arv'),repairs=num('c-repairs');
+  if(!arv)return;
+  const offer=Math.max(arv*0.65-repairs,0);
+  $('c-offer-big').innerHTML=fmt(offer)+' <small>estimate</small>';
+}
+
+function doCash(){
+  const addr=$('c-addr').value.trim();
+  const arv=num('c-arv'),repairs=num('c-repairs');
+  if(!addr){alert('Please enter the property address.');return;}
+  if(!arv){alert('Please enter the After Repair Value (ARV).');return;}
+  const offer=Math.max(arv*0.65-repairs,0);
+  $('c-r-arv').textContent=fmt(arv);
+  $('c-r-repairs').textContent='-'+fmt(repairs);
+  $('c-r-offer').textContent=fmt(offer);
+  $('c-offer-big').innerHTML=fmt(offer)+' <small>estimate</small>';
+  showResults('cash');
+}
+
+// ── SUBJECT TO ────────────────────────────────
+function liveCalcSubTo(){}
+
+function doSubTo(){
+  const addr=$('s-addr').value.trim();
+  const price=num('s-price'),bal=num('s-bal'),pmt=num('s-pmt'),rent=num('s-rent');
+  if(!addr){alert('Please enter the property address.');return;}
+  if(!price||!bal){alert('Please enter the Selling Price and Mortgage Balance.');return;}
+  const diff=price-bal;
+  const t25=price*0.025,t5=price*0.05;
+  let agent=0,seller=0,sf=0,rule='A';
+  if(diff<=t25){agent=Math.max(diff,0);seller=0;sf=0;rule='A';}
+  else if(diff<=t5){agent=t25;seller=diff-t25;sf=0;rule='B';}
+  else{agent=t25;seller=t25;sf=diff-t25-t25;rule='C';}
+  const cf=rent-pmt,total=agent+seller;
+  $('s-r-price').textContent=fmt(price);
+  $('s-r-bal').textContent=fmt(bal);
+  $('s-r-diff').textContent=fmt(diff);
+  $('s-r-pmt').textContent=pmt?fmt(pmt)+'/mo':'—';
+  $('s-r-rent').textContent=rent?fmt(rent)+'/mo':'—';
+  $('s-r-cf').textContent=rent&&pmt?fmt(cf)+'/mo':'—';
+  $('s-r-agent').textContent=fmt(agent);
+  $('s-r-seller').textContent=fmt(seller);
+  $('s-r-sf').textContent=sf>0?fmt(sf):'$0';
+  $('s-r-total').textContent=fmt(total);
+  const badge=$('s-rule-badge');
+  badge.textContent='Rule '+rule;
+  badge.className='rule-badge rule-'+rule.toLowerCase();
+  $('s-balloon').style.display=sf>0?'flex':'none';
+  showResults('subto');
+}
+
+// ── SELLER FINANCING ──────────────────────────
+function liveCalcSF(){
+  const dp=parseInt($('f-slider').value)||0;
+  $('f-dp-lbl').textContent=dp+'%';
+  const price=num('f-price');
+  if(!price)return;
+  const res=calcSFMath(price,dp);
+  $('f-pmt-big').innerHTML=fmt(res.monthly)+' <small>/month</small>';
+}
+
+function calcSFMath(price,dpPct){
+  const dp=price*(dpPct/100);
+  const loan=price-dp;
+  const rate=5*(1-dpPct/20);
+  let monthly;
+  if(rate===0){monthly=loan/(30*12);}
+  else{const r=rate/100/12,n=360;monthly=loan*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);}
+  return{dp,loan,rate,monthly};
+}
+
+function doSF(){
+  const addr=$('f-addr').value.trim();
+  const price=num('f-price'),rent=num('f-rent');
+  const dpPct=parseInt($('f-slider').value)||0;
+  if(!addr){alert('Please enter the property address.');return;}
+  if(!price){alert('Please enter the Selling Price.');return;}
+  const r=calcSFMath(price,dpPct);
+  const cf=rent-r.monthly;
+  $('f-r-price').textContent=fmt(price);
+  $('f-r-dp').textContent=fmt(r.dp)+' ('+dpPct+'%)';
+  $('f-r-loan').textContent=fmt(r.loan);
+  $('f-r-rate').textContent=r.rate.toFixed(2)+'%'+(r.rate===0?' — Principal Only':'');
+  $('f-r-pmt').textContent=fmt(r.monthly)+'/mo';
+  $('f-r-rent').textContent=rent?fmt(rent)+'/mo':'—';
+  $('f-r-cf').textContent=rent?fmt(cf)+'/mo':'—';
+  $('f-r-total').textContent=fmt(r.dp);
+  $('f-pmt-big').innerHTML=fmt(r.monthly)+' <small>/month</small>';
+  showResults('sf');
+}
+
+// ── SUBMIT ────────────────────────────────────
+function doSubmit(type){
+  const p=type==='cash'?'c':type==='subto'?'s':'f';
+  const name=$(p+'-name').value.trim();
+  const email=$(p+'-email').value.trim();
+  if(!name||!email){alert('Please enter your name and email address.');return;}
+  $(type+'-cta').style.display='none';
+  $(type+'-success').classList.add('show');
+  console.log('Submitted:',{type,name,email});
+}
+
+// Init slider label
+liveCalcSF();
+</script>
+</body>
+</html>
