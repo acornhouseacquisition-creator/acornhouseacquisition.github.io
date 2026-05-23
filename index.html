@@ -373,6 +373,30 @@ section{padding:88px 5%;}
 @media(max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:380px){.team-grid{grid-template-columns:1fr;}}
 
+
+
+/* ── ANY CONDITION SECTION ────────────────────────── */
+.distress-bg{background:var(--gl);padding:88px 5%;}
+.distress-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.distress-img-col{position:relative;}
+.distress-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;filter:brightness(.9);}
+.distress-img-placeholder{width:100%;aspect-ratio:4/5;border-radius:20px;background:linear-gradient(160deg,#1a0e00,#2d1a00,#0a0a0a);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;}
+.distress-img-placeholder::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 50%);}
+.distress-badge{position:absolute;top:20px;left:20px;background:var(--gold);color:var(--black);font-size:12px;font-weight:800;padding:8px 16px;border-radius:100px;letter-spacing:.5px;z-index:2;}
+.distress-text-col{}
+.distress-conditions{display:flex;flex-direction:column;gap:10px;margin:28px 0;}
+.dcond{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1.5px solid var(--gm);transition:all .2s;}
+.dcond:hover{border-color:var(--gold);transform:translateX(4px);}
+.dcond-icon{width:36px;height:36px;background:var(--black);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.dcond-icon svg{width:18px;height:18px;fill:var(--gold);}
+.dcond-text strong{display:block;font-size:14px;font-weight:700;color:var(--black);margin-bottom:2px;}
+.dcond-text span{font-size:13px;color:var(--tm);}
+.distress-pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px;}
+.dpill{display:flex;align-items:center;gap:6px;background:var(--gl);border:1.5px solid var(--gm);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--black);font-weight:500;transition:all .18s;}
+.dpill:hover{border-color:var(--gold);background:#fffbee;}
+.dpill-dot{width:7px;height:7px;background:var(--gold-d);border-radius:50%;flex-shrink:0;}
+@media(max-width:900px){.distress-inner{grid-template-columns:1fr;gap:36px;}.distress-img-col{max-width:480px;margin:0 auto;width:100%;}}
+
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sell Your House Fast As-Is | Acorn House Acquisition">
@@ -552,7 +576,7 @@ section{padding:88px 5%;}
     </div>
     <div class="nav-right">
       <!-- TASK 2: Blog link in nav -->
-      <a href="https://acornhouseacquisition.com/blog" class="nav-blog" target="_blank" rel="noopener">Visit Our Blog</a>
+      <a href="https://acornhouseacquisition.com/blog.html" class="nav-blog" target="_blank" rel="noopener">Visit Our Blog</a>
       <a href="tel:+17869828464" class="nav-phone">
         <svg><use href="#ico-phone"/></svg>
         (786) 982-8464
@@ -746,12 +770,12 @@ section{padding:88px 5%;}
           </div>
         </div>
         <div class="where-cities">
-          <a href="/sell-my-house-charlotte-nc" class="where-city-pill">Charlotte <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-raleigh-nc" class="where-city-pill">Raleigh <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-asheville-nc" class="where-city-pill">Asheville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-greensboro-nc" class="where-city-pill">Greensboro <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-winston-salem-nc" class="where-city-pill">Winston-Salem <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-fayetteville-nc" class="where-city-pill">Fayetteville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-charlotte-nc.html" class="where-city-pill">Charlotte <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-raleigh-nc.html" class="where-city-pill">Raleigh <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-asheville-nc.html" class="where-city-pill">Asheville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-greensboro-nc.html" class="where-city-pill">Greensboro <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-winston-salem-nc.html" class="where-city-pill">Winston-Salem <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fayetteville-nc.html" class="where-city-pill">Fayetteville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
         </div>
         <div class="where-panel-footer">
           <div class="where-radius-note">
@@ -777,15 +801,15 @@ section{padding:88px 5%;}
           </div>
         </div>
         <div class="where-cities">
-          <a href="/sell-my-house-miami-fl" class="where-city-pill">Miami <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-tampa-fl" class="where-city-pill">Tampa <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-orlando-fl" class="where-city-pill">Orlando <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-jacksonville-fl" class="where-city-pill">Jacksonville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-fort-lauderdale-fl" class="where-city-pill">Fort Lauderdale <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-sarasota-fl" class="where-city-pill">Sarasota <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-pensacola-fl" class="where-city-pill">Pensacola <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-tallahassee-fl" class="where-city-pill">Tallahassee <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-fort-myers-fl" class="where-city-pill">Fort Myers <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-miami-fl.html" class="where-city-pill">Miami <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-tampa-fl.html" class="where-city-pill">Tampa <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-orlando-fl.html" class="where-city-pill">Orlando <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-jacksonville-fl.html" class="where-city-pill">Jacksonville <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-lauderdale-fl.html" class="where-city-pill">Fort Lauderdale <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-sarasota-fl.html" class="where-city-pill">Sarasota <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-pensacola-fl.html" class="where-city-pill">Pensacola <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-tallahassee-fl.html" class="where-city-pill">Tallahassee <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-myers-fl.html" class="where-city-pill">Fort Myers <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
         </div>
         <div class="where-panel-footer">
           <div class="where-radius-note">
@@ -811,12 +835,12 @@ section{padding:88px 5%;}
           </div>
         </div>
         <div class="where-cities">
-          <a href="/sell-my-house-houston-tx" class="where-city-pill">Houston <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-dallas-tx" class="where-city-pill">Dallas <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-austin-tx" class="where-city-pill">Austin <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-san-antonio-tx" class="where-city-pill">San Antonio <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-fort-worth-tx" class="where-city-pill">Fort Worth <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <a href="/sell-my-house-corpus-christi-tx" class="where-city-pill">Corpus Christi <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-houston-tx.html" class="where-city-pill">Houston <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-dallas-tx.html" class="where-city-pill">Dallas <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-austin-tx.html" class="where-city-pill">Austin <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-san-antonio-tx.html" class="where-city-pill">San Antonio <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-fort-worth-tx.html" class="where-city-pill">Fort Worth <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/sell-my-house-corpus-christi-tx.html" class="where-city-pill">Corpus Christi <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
         </div>
         <div class="where-panel-footer">
           <div class="where-radius-note">
@@ -974,6 +998,69 @@ section{padding:88px 5%;}
   </div>
 </div>
 
+
+<!-- ANY CONDITION -->
+<section class="distress-bg">
+  <div class="distress-inner">
+
+    <div class="distress-img-col">
+      <div class="distress-img-placeholder">
+        🏚️
+      </div>
+      <div class="distress-badge">&#10003; We Buy This</div>
+    </div>
+
+    <div class="distress-text-col">
+      <span class="eyebrow">Any Condition. Any Situation.</span>
+      <h2 class="sec-title">We Specifically Look for<br>Distressed Properties.</h2>
+      <p class="sec-sub" style="margin-bottom:0;">Most buyers walk away from damaged, difficult, or distressed homes. We look for them. No repairs, no cleaning, no staging — we buy your property exactly as it is.</p>
+
+      <div class="distress-conditions">
+        <div class="dcond">
+          <div class="dcond-icon"><svg viewBox="0 0 24 24"><path d="M12 2c0 0-5 5-5 10a5 5 0 0010 0c0-2-1-4-2-5 0 2-1 3-2 3-1 0-1-3 1-5 0 0-1 3 1 4 0-2 1-4 1-5 0 0 2 4 2 6a3 3 0 01-6 0c0-3 2-6 2-6z" fill="currentColor"/></svg></div>
+          <div class="dcond-text"><strong>Fire & Storm Damage</strong><span>Partial or total damage — we buy as-is, leave everything behind</span></div>
+        </div>
+        <div class="dcond">
+          <div class="dcond-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div class="dcond-text"><strong>Major Repairs Needed</strong><span>Roof, foundation, HVAC, electrical — no repairs required from you</span></div>
+        </div>
+        <div class="dcond">
+          <div class="dcond-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" fill="currentColor"/></svg></div>
+          <div class="dcond-text"><strong>Water, Mold & Flood</strong><span>Flood damage, mold issues, structural water problems — we close</span></div>
+        </div>
+        <div class="dcond">
+          <div class="dcond-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="dcond-text"><strong>Code Violations & Liens</strong><span>Unpermitted work, tax liens, HOA issues, violations — we handle it</span></div>
+        </div>
+      </div>
+
+      <p style="font-size:13px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">We also help with any situation:</p>
+      <div class="distress-pills">
+        <div class="dpill"><div class="dpill-dot"></div>Facing Foreclosure</div>
+        <div class="dpill"><div class="dpill-dot"></div>Behind on Payments</div>
+        <div class="dpill"><div class="dpill-dot"></div>Divorce</div>
+        <div class="dpill"><div class="dpill-dot"></div>Inherited Property</div>
+        <div class="dpill"><div class="dpill-dot"></div>Probate</div>
+        <div class="dpill"><div class="dpill-dot"></div>Relocating</div>
+        <div class="dpill"><div class="dpill-dot"></div>Military PCS</div>
+        <div class="dpill"><div class="dpill-dot"></div>Tired Landlord</div>
+        <div class="dpill"><div class="dpill-dot"></div>Problem Tenants</div>
+        <div class="dpill"><div class="dpill-dot"></div>Little or No Equity</div>
+        <div class="dpill"><div class="dpill-dot"></div>Behind on Taxes</div>
+        <div class="dpill"><div class="dpill-dot"></div>Downsizing</div>
+        <div class="dpill"><div class="dpill-dot"></div>Bankruptcy</div>
+        <div class="dpill"><div class="dpill-dot"></div>Expired Listing</div>
+        <div class="dpill"><div class="dpill-dot"></div>Estate Sale</div>
+      </div>
+
+      <button class="btn-gold" onclick="openPopup()" style="padding:14px 28px;font-size:15px;">
+        Get My Free Cash Offer &rarr;
+      </button>
+    </div>
+
+  </div>
+</section>
+
 <!-- WHY CHOOSE -->
 <section class="why-bg">
   <div class="container">
@@ -1004,6 +1091,7 @@ section{padding:88px 5%;}
     </div>
   </div>
 </section>
+
 
 <!-- COMPARISON -->
 <div class="comp-bg">
@@ -1084,7 +1172,7 @@ section{padding:88px 5%;}
           <h3 class="team-name">Daniel Ghinda</h3>
           <div class="team-role">Acquisition Manager &amp; Creative Finance Specialist</div>
           <p class="team-bio">Your first point of contact. Daniel evaluates your property, structures creative financing solutions, and presents a fair cash offer with no pressure.</p>
-          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span><span class="team-market">TX</span></div>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span></div>
         </div>
       </div>
 
@@ -1123,7 +1211,7 @@ section{padding:88px 5%;}
           <h3 class="team-name">Russell Smith</h3>
           <div class="team-role">Acquisition Manager</div>
           <p class="team-bio">Works directly with sellers to evaluate properties and structure offers. Brings deep market knowledge to every deal in NC and TX.</p>
-          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">FL</span></div>
+          <div class="team-markets"><span class="team-market">NC</span><span class="team-market">TX</span></div>
         </div>
       </div>
 
@@ -1215,6 +1303,8 @@ section{padding:88px 5%;}
   </div>
 </div>
 
+
+
 <!-- FOOTER -->
 <div class="footer-bg">
   <div class="footer-grid">
@@ -1234,13 +1324,13 @@ section{padding:88px 5%;}
       <button onclick="scrollTop()">About Us</button>
       <button onclick="scrollTop()">FAQ</button>
       <!-- TASK 2: Blog link also in footer -->
-      <a href="https://acornhouseacquisition.com/blog" target="_blank" rel="noopener">Visit Our Blog</a>
+      <a href="https://acornhouseacquisition.com/blog.html" target="_blank" rel="noopener">Visit Our Blog</a>
     </div>
     <div class="footer-col">
       <h4>Service Areas</h4>
-      <a href="/florida">Florida</a>
-      <a href="/north-carolina">North Carolina</a>
-      <a href="/texas">Texas</a>
+      <a href="/florida.html">Florida</a>
+      <a href="/north-carolina.html">North Carolina</a>
+      <a href="/texas.html">Texas</a>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
