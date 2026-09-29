@@ -1,17 +1,21 @@
+# Acorn House Acquisition: all search engines and AI assistants are welcome.
+
+# Search engines and AI assistants (named explicitly so it's clear they're allowed)
 User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
 Allow: /
 Disallow: /blog-admin.html
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
 
 Sitemap: https://www.acornhouseacquisition.com/sitemap.xml
