@@ -1,7 +1,7 @@
 # Acorn House Acquisition — llms.txt
 # https://www.acornhouseacquisition.com
 
-> We buy houses fast for cash in North Carolina, Florida, and Texas. No repairs, no fees, no commissions. Fair cash offer within 24 hours — close in as little as 7 days.
+> We buy houses fast for cash in North Carolina and Florida. No repairs, no fees, no commissions. Fair cash offer within 24 hours — close in as little as 7 days.
 
 ## Company
 
@@ -34,9 +34,6 @@ Eastern NC: Greenville, Rocky Mount, Goldsboro, Wilson
 ### Florida
 Sarasota, Tampa, Miami, Orlando, Jacksonville, Fort Lauderdale, Fort Myers
 
-### Texas
-Dallas, Houston, Austin, San Antonio
-
 ## How It Works
 
 1. Contact us — call (786) 982-8464 or submit the form at acornhouseacquisition.com
@@ -51,7 +48,7 @@ Dallas, Houston, Austin, San Antonio
 - Zero repairs required
 - Zero showings or open houses
 - Close in 7-21 days or on your timeline
-- 100+ homes purchased across NC, FL, and TX
+- 100+ homes purchased across NC and FL
 
 ## Content
 
