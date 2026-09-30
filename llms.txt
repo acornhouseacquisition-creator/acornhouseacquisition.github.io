@@ -1,63 +1,68 @@
-# Acorn House Acquisition — llms.txt
-# https://www.acornhouseacquisition.com
+# Acorn House Acquisition
 
-> We buy houses fast for cash in North Carolina and Florida. No repairs, no fees, no commissions. Fair cash offer within 24 hours — close in as little as 7 days.
+> We buy houses for cash in North Carolina and Florida, as-is and in any condition. No repairs, no commissions, and we pay the normal closing costs. Written cash offer within 24 hours; close in as little as 7 days.
 
-## Company
-
-Acorn House Acquisition LLC is a real estate investment company that purchases residential properties directly from homeowners. We are not a licensed real estate brokerage. We buy properties as-is, handle all paperwork, and close through licensed title companies.
+Acorn House Acquisition LLC is a real estate investment company that buys residential properties directly from homeowners. We are not a licensed real estate brokerage. Every sale closes through a licensed title company or closing attorney.
 
 - Phone: (786) 982-8464
 - Email: info@acornhouseacquisition.com
-- NC Office: 19825-B North Cove Rd #1041, Cornelius, NC 28031
-- FL Office: 5342 Clark Rd #1273, Sarasota, FL 34233
+- NC office: 19825-B North Cove Rd #1041, Cornelius, NC 28031
+- FL office: 5342 Clark Rd #1273, Sarasota, FL 34233
 
-## Services
+## Main pages
 
-- Cash home purchases (as-is, any condition)
-- Subject-to purchases (for homeowners with little or no equity)
-- Foreclosure prevention (we can close before auction dates)
-- Inherited and probate property purchases
-- Landlord exit solutions (tenant-damaged properties purchased as-is)
-- Divorce and estate sales
+- [Home](https://www.acornhouseacquisition.com/): how selling to us works, FAQs
+- [North Carolina](https://www.acornhouseacquisition.com/north-carolina.html): every NC area we buy in
+- [Florida](https://www.acornhouseacquisition.com/florida.html): every Florida area we buy in
+- [Track record and reviews](https://www.acornhouseacquisition.com/credibility.html): recent closings, title companies, team
+- [Offer calculator](https://www.acornhouseacquisition.com/calculator.html): estimate a cash, subject-to or seller-finance offer
+- [Blog](https://www.acornhouseacquisition.com/blog.html): guides for homeowners
 
-## Markets Served
+## Situations we help with
 
-### North Carolina (Primary Market)
-Charlotte Metro: Charlotte, Cornelius, Huntersville, Matthews, Mint Hill, Pineville, Davidson, Concord, Kannapolis, Gastonia, Belmont, Monroe, Indian Trail, Mooresville, Statesville
-Research Triangle: Raleigh, Cary, Apex, Durham, Chapel Hill, Clayton, Smithfield
-Piedmont Triad: Greensboro, High Point, Winston-Salem, Kernersville
-Western NC: Asheville, Hendersonville, Hickory, Morganton, Waynesville
-Coastal NC: Wilmington, Jacksonville, New Bern, Fayetteville
-Eastern NC: Greenville, Rocky Mount, Goldsboro, Wilson
+- Cash purchases, as-is, any condition
+- Foreclosure: we can often close before the auction date
+- Inherited and probate homes
+- Landlords with damaged rentals or problem tenants
+- Divorce sales
+- Little or no equity (subject-to purchases)
 
-### Florida
-Sarasota, Tampa, Miami, Orlando, Jacksonville, Fort Lauderdale, Fort Myers
+## North Carolina areas
 
-## How It Works
+- Charlotte Metro: [Charlotte](https://www.acornhouseacquisition.com/sell-my-house-charlotte-nc.html), [Cornelius](https://www.acornhouseacquisition.com/sell-my-house-cornelius-nc.html), [Huntersville](https://www.acornhouseacquisition.com/sell-my-house-huntersville-nc.html), [Mooresville](https://www.acornhouseacquisition.com/sell-my-house-mooresville-nc.html), [Davidson](https://www.acornhouseacquisition.com/sell-my-house-davidson-nc.html), [Matthews](https://www.acornhouseacquisition.com/sell-my-house-matthews-nc.html), [Mint Hill](https://www.acornhouseacquisition.com/sell-my-house-mint-hill-nc.html), [Concord](https://www.acornhouseacquisition.com/sell-my-house-concord-nc.html), [Gastonia](https://www.acornhouseacquisition.com/sell-my-house-gastonia-nc.html), [Monroe](https://www.acornhouseacquisition.com/sell-my-house-monroe-nc.html), [Statesville](https://www.acornhouseacquisition.com/sell-my-house-statesville-nc.html)
+- Research Triangle: [Raleigh](https://www.acornhouseacquisition.com/sell-my-house-raleigh-nc.html), [Cary](https://www.acornhouseacquisition.com/sell-my-house-cary-nc.html), [Apex](https://www.acornhouseacquisition.com/sell-my-house-apex-nc.html), [Durham](https://www.acornhouseacquisition.com/sell-my-house-durham-nc.html), [Chapel Hill](https://www.acornhouseacquisition.com/sell-my-house-chapel-hill-nc.html), [Clayton](https://www.acornhouseacquisition.com/sell-my-house-clayton-nc.html)
+- Piedmont Triad: [Greensboro](https://www.acornhouseacquisition.com/sell-my-house-greensboro-nc.html), [High Point](https://www.acornhouseacquisition.com/sell-my-house-high-point-nc.html), [Winston-Salem](https://www.acornhouseacquisition.com/sell-my-house-winston-salem-nc.html), [Kernersville](https://www.acornhouseacquisition.com/sell-my-house-kernersville-nc.html)
+- Western NC: [Asheville](https://www.acornhouseacquisition.com/sell-my-house-asheville-nc.html), [Hendersonville](https://www.acornhouseacquisition.com/sell-my-house-hendersonville-nc.html), [Hickory](https://www.acornhouseacquisition.com/sell-my-house-hickory-nc.html), [Morganton](https://www.acornhouseacquisition.com/sell-my-house-morganton-nc.html), [Waynesville](https://www.acornhouseacquisition.com/sell-my-house-waynesville-nc.html)
+- Eastern & Coastal NC: [Wilmington](https://www.acornhouseacquisition.com/sell-my-house-wilmington-nc.html), [Jacksonville](https://www.acornhouseacquisition.com/sell-my-house-jacksonville-nc.html), [New Bern](https://www.acornhouseacquisition.com/sell-my-house-new-bern-nc.html), [Fayetteville](https://www.acornhouseacquisition.com/sell-my-house-fayetteville-nc.html), [Greenville](https://www.acornhouseacquisition.com/sell-my-house-greenville-nc.html), [Rocky Mount](https://www.acornhouseacquisition.com/sell-my-house-rocky-mount-nc.html), [Goldsboro](https://www.acornhouseacquisition.com/sell-my-house-goldsboro-nc.html), [Wilson](https://www.acornhouseacquisition.com/sell-my-house-wilson-nc.html)
 
-1. Contact us — call (786) 982-8464 or submit the form at acornhouseacquisition.com
-2. Property evaluation — we assess the home within 24 hours
-3. Cash offer — written offer with no obligation
-4. Closing — we close through a licensed title company in as little as 7 days
+## Florida areas
 
-## Key Facts
+- Florida: [Sarasota](https://www.acornhouseacquisition.com/sell-my-house-sarasota-fl.html), [Tampa](https://www.acornhouseacquisition.com/sell-my-house-tampa-fl.html), [Orlando](https://www.acornhouseacquisition.com/sell-my-house-orlando-fl.html), [Fort Myers](https://www.acornhouseacquisition.com/sell-my-house-fort-myers-fl.html), [Pensacola](https://www.acornhouseacquisition.com/sell-my-house-pensacola-fl.html), [Tallahassee](https://www.acornhouseacquisition.com/sell-my-house-tallahassee-fl.html)
 
-- Zero agent commissions
-- Zero closing costs (we pay them)
-- Zero repairs required
-- Zero showings or open houses
-- Close in 7-21 days or on your timeline
-- 100+ homes purchased across NC and FL
+## Guides
 
-## Content
+- [How to Sell a House As-Is in Florida When Buyers Can’t Get Insurance](https://www.acornhouseacquisition.com/blog/sell-house-as-is-florida-old-roof-insurance.html): Old roof or failed 4-point inspection killed your Florida sale? What as-is means under Florida law, why buyers can't get insurance, and your 4 options.
+- [How Much Do Cash Home Buyers Really Pay in North Carolina?](https://www.acornhouseacquisition.com/blog/how-much-do-cash-home-buyers-pay-nc.html): The honest math behind cash offers: the 70% rule, a side-by-side example of listing vs. selling for cash, and how to tell if an offer is fair.
+- [How We Helped Sell an Inherited House Through Probate in Nebo, NC](https://www.acornhouseacquisition.com/blog/inherited-house-probate-north-carolina-nebo.html): A real story of how we handled probate costs, repairs, and the full MLS sale for an inherited property in Nebo, North Carolina — using a novation agreement.
+- [Can't Sell Your House? Here Are 7 Real Options in 2026](https://www.acornhouseacquisition.com/blog/cant-sell-house-7-options-2026.html): Your house won't sell in 2026. Here are 7 real strategies beyond just dropping the price — including one most agents will never mention to you.
+- [Why Your House Is Not Selling in North Carolina in 2026](https://www.acornhouseacquisition.com/blog/why-house-not-selling-north-carolina-2026.html): Homes are sitting 45 to 75 days on market across NC in 2026. Here's exactly why your house isn't selling — and what your real options are right now.
+- [How to Stop Foreclosure Fast in NC - Your Options & What to Do Right Now](https://www.acornhouseacquisition.com/blog/how-to-stop-foreclosure-north-carolina.html): Received a foreclosure notice in North Carolina? You still have options — including selling for cash in as little as 7 days to stop the process before the auction date.
+- [Stop Foreclosure — Sell Your House Fast in North Carolina](https://www.acornhouseacquisition.com/blog/stop-foreclosure-sell-my-house-nc.html): Facing foreclosure in North Carolina? A fast cash sale can stop the process, protect your credit, and put money in your pocket - before the auction date arrives.
+- [Selling Your NC Home Just Got Easier. Acorn House Acquisition Buys for Cash](https://www.acornhouseacquisition.com/blog/acorn-house-acquisition-cash-buyers-nc.html): Acorn House Acquisition buys homes for cash all across North Carolina. No repairs, no fees, no agents — just a fast, fair offer and a closing date you choose.
+- [Cash Buyer vs. Real Estate Agent in Charlotte: Which Is Right for You?](https://www.acornhouseacquisition.com/blog/cash-buyer-vs-agent-charlotte-nc.html): Selling your home in Charlotte or Cornelius? Here's an honest side-by-side comparison of selling to a cash buyer versus listing with a real estate agent — so you can decide what's right for your situation.
+- [How We Helped a Cleveland Homeowner Sell Fast Without a Bank](https://www.acornhouseacquisition.com/blog/how-we-helped-a-cleveland-homeowner-sell-fast-without-a-bank.html): A homeowner in Cleveland needed to sell fast. No traditional buyer could make it work. Here's how we structured a creative deal that worked for everyone.
+- [5 Signs It's Time to Sell Your House for Cash Instead of Listing](https://www.acornhouseacquisition.com/blog/5-signs-sell-for-cash.html): Not every home sale belongs on the MLS. Here are five clear signs that a direct cash sale will save you time, money, and stress.
+- [What Is a Subject-To Real Estate Deal? A Plain-English Guide](https://www.acornhouseacquisition.com/blog/subject-to-real-estate-guide.html): If you owe close to what your home is worth, subject-to financing may let you walk away without bringing cash to closing.
+- [How to Stop Foreclosure in North Carolina: Your Timeline and Options](https://www.acornhouseacquisition.com/blog/stop-foreclosure-north-carolina.html): Facing foreclosure in NC? You have more options than you think — but the clock is ticking. Here's what to do at each stage.
 
-- Blog: https://www.acornhouseacquisition.com/blog
-- North Carolina: https://www.acornhouseacquisition.com/north-carolina
-- Florida: https://www.acornhouseacquisition.com/florida
-- Sitemap: https://www.acornhouseacquisition.com/sitemap.xml
+## How it works
 
-## Blogs
-- How to Sell a House As-Is in Florida: https://www.acornhouseacquisition.com/blog/sell-house-as-is-florida-old-roof-insurance.html
-- How Much Do Cash Home Buyers Pay in NC: https://www.acornhouseacquisition.com/blog/how-much-do-cash-home-buyers-pay-nc.html
-- How to Stop Foreclosure Fast in NC: https://www.acornhouseacquisition.com/blog/how-to-stop-foreclosure-north-carolina.html
+1. Call (786) 982-8464 or fill out the form on the website.
+2. We review the property and send a written, no-obligation cash offer within 24 hours.
+3. You pick the closing date, as soon as 7 days out. We close through a licensed title company.
+
+## Optional
+
+- [Sitemap](https://www.acornhouseacquisition.com/sitemap.xml)
+- [Privacy policy](https://www.acornhouseacquisition.com/privacy-policy.html)
+- [Terms of service](https://www.acornhouseacquisition.com/terms-of-service.html)

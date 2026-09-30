@@ -45,7 +45,9 @@
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -76,7 +78,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .trust-div{width:1px;height:17px;background:rgba(0,0,0,.2);}
 section{padding:80px 5%;}
 .container{max-width:1200px;margin:0 auto;}
-.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px;}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#8a6500;margin-bottom:12px;}
 .sec-title{font-family:"Fraunces",serif;font-size:clamp(26px,3.3vw,44px);color:var(--black);font-weight:700;line-height:1.15;margin-bottom:14px;}
 .sec-sub{font-size:17px;color:var(--tm);line-height:1.7;max-width:600px;}
 .city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:40px;}
@@ -110,9 +112,9 @@ section{padding:80px 5%;}
 .footer-bg{background:var(--black);padding:52px 5% 24px;border-top:3px solid rgba(244,180,0,.3);}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px;}
 .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
-.footer-links a{color:rgba(255,255,255,.42);font-size:14px;text-decoration:none;}
+.footer-links a{color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;}
 .footer-links a:hover{color:var(--gold);}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.2);text-align:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.65);text-align:center;}
 .pop-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9999;justify-content:center;align-items:center;padding:20px;}
 .pop-overlay.open{display:flex;}
 .pop-box{background:#fff;border-radius:var(--rl);padding:32px 28px;max-width:560px;width:100%;position:relative;max-height:92vh;overflow-y:auto;border-top:5px solid var(--gold);}
@@ -282,7 +284,7 @@ section{padding:80px 5%;}
     <button class="btn-gold" onclick="openPopup()">Get My Free Cash Offer</button>
     <a href="tel:+17869828464" style="padding:15px 28px;border-radius:10px;border:1.5px solid rgba(255,255,255,.3);color:white;font-size:15px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">(786) 982-8464</a>
   </div>
-  <p style="font-size:12px;color:rgba(255,255,255,.28);margin-top:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;">No fees &nbsp;&middot;&nbsp; No repairs &nbsp;&middot;&nbsp; We cover closing costs &nbsp;&middot;&nbsp; Cabarrus County, NC</p>
+  <p style="font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;">No fees &nbsp;&middot;&nbsp; No repairs &nbsp;&middot;&nbsp; We cover closing costs &nbsp;&middot;&nbsp; Cabarrus County, NC</p>
 </div>
 
 <!-- INTERNAL LINKS -->

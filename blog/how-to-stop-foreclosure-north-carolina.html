@@ -145,7 +145,9 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -247,7 +249,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 /* CTA BAND */
 .post-cta-band{background:var(--black);padding:72px 5%;text-align:center;margin-top:80px;}
 .post-cta-band h2{font-family:"Fraunces",serif;font-size:clamp(24px,3.5vw,40px);color:#fff;margin-bottom:12px;}
-.post-cta-band p{color:rgba(255,255,255,.55);font-size:16px;margin-bottom:30px;max-width:540px;margin-left:auto;margin-right:auto;}
+.post-cta-band p{color:rgba(255,255,255,.65);font-size:16px;margin-bottom:30px;max-width:540px;margin-left:auto;margin-right:auto;}
 /* INTERNAL LINKS */
 .post-related{background:var(--gl);padding:52px 5%;}
 .post-related-inner{max-width:1200px;margin:0 auto;}
@@ -261,9 +263,9 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .footer-bg{background:var(--black);padding:44px 5% 20px;border-top:3px solid rgba(244,180,0,.3);}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:14px;}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
-.footer-links a{color:rgba(255,255,255,.4);font-size:13px;text-decoration:none;}
+.footer-links a{color:rgba(255,255,255,.65);font-size:13px;text-decoration:none;}
 .footer-links a:hover{color:var(--gold);}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.2);text-align:center;max-width:1200px;margin:0 auto;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.65);text-align:center;max-width:1200px;margin:0 auto;}
 /* POPUP */
 .pop-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9999;justify-content:center;align-items:center;padding:20px;}
 .pop-overlay.open{display:flex;}
@@ -316,7 +318,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 
 <!-- HERO -->
 <div class="post-hero">
-  <img src="https://i.imgur.com/agKGkWN.jpg" alt="Stop foreclosure in North Carolina - sell your house fast for cash" class="post-hero-img" width="1200" height="480" loading="eager">
+  <img src="https://i.imgur.com/agKGkWNh.jpg" alt="Stop foreclosure in North Carolina - sell your house fast for cash" class="post-hero-img" width="1200" height="480" loading="eager">
   <div class="post-hero-overlay"></div>
   <div class="post-hero-content">
     <span class="post-category">Foreclosure Help</span>

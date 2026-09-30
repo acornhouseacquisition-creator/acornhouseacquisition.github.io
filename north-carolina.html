@@ -35,7 +35,9 @@ function toggleC(id) {
 
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -66,7 +68,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:14px;overflow:hidden;margin-bottom:34px;max-width:500px;}
 .hero-stat{background:rgba(255,255,255,.07);padding:18px 16px;text-align:center;}
 .hero-stat-num{font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:var(--gold);line-height:1;}
-.hero-stat-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px;font-weight:500;}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
 .btn-gold{background:var(--gold);color:var(--black);padding:15px 30px;border-radius:10px;font-size:16px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;transition:all .2s;box-shadow:0 4px 20px rgba(244,180,0,.5);}
 .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);}
@@ -88,7 +90,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 /* SECTIONS */
 section{padding:84px 5%;}
 .container{max-width:1200px;margin:0 auto;}
-.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px;}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#8a6500;margin-bottom:12px;}
 .sec-title{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,46px);color:var(--black);font-weight:700;line-height:1.12;margin-bottom:16px;letter-spacing:-.5px;}
 .sec-sub{font-size:17px;color:var(--tm);font-weight:300;max-width:640px;line-height:1.7;}
 
@@ -108,13 +110,13 @@ section{padding:84px 5%;}
 .wv-stat{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);}
 .wv-stat:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
 .wv-num{font-family:'Fraunces',serif;font-size:46px;font-weight:900;color:var(--gold);line-height:1;}
-.wv-label{font-size:14px;color:rgba(255,255,255,.55);margin-top:5px;line-height:1.4;}
+.wv-label{font-size:14px;color:rgba(255,255,255,.65);margin-top:5px;line-height:1.4;}
 
 /* CITIES — WHERE WE BUY */
 .cities-bg{background:var(--black);padding:88px 5%;}
 .cities-bg .eyebrow{color:var(--gold);}
 .cities-bg .sec-title{color:var(--white);}
-.cities-bg .sec-sub{color:rgba(255,255,255,.55);}
+.cities-bg .sec-sub{color:rgba(255,255,255,.65);}
 .cities-intro{max-width:720px;margin-bottom:52px;}
 
 /* CITY CHECKER */
@@ -123,10 +125,10 @@ section{padding:84px 5%;}
 .cc-icon{width:42px;height:42px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cc-icon svg{width:20px;height:20px;fill:var(--black);}
 .cc-text h3{font-family:'Fraunces',serif;font-size:19px;color:var(--white);margin-bottom:4px;}
-.cc-text p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.5;}
+.cc-text p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.5;}
 .cc-row{display:flex;gap:10px;flex-wrap:wrap;}
 .cc-input{flex:1;min-width:200px;padding:13px 18px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--white);background:rgba(255,255,255,.08);outline:none;transition:border-color .2s;}
-.cc-input::placeholder{color:rgba(255,255,255,.3);}
+.cc-input::placeholder{color:rgba(255,255,255,.65);}
 .cc-input:focus{border-color:var(--gold);background:rgba(255,255,255,.11);}
 .cc-btn{background:var(--gold);color:var(--black);padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap;}
 .cc-btn:hover{background:var(--gold-l);transform:translateY(-1px);}
@@ -137,7 +139,7 @@ section{padding:84px 5%;}
 .cc-ok{width:26px;height:26px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--black);flex-shrink:0;margin-top:1px;}
 #ccMsg{font-size:15px;color:rgba(255,255,255,.85);font-weight:400;line-height:1.55;}
 #ccMsg strong{color:var(--gold-l);}
-.cc-x{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);width:28px;height:28px;min-width:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.cc-x{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);width:28px;height:28px;min-width:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .cc-x:hover{background:rgba(255,255,255,.18);color:var(--white);}
 .cc-result-cta{border-top:1px solid rgba(244,180,0,.2);padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
 .cc-result-cta p{font-size:14px;color:rgba(255,255,255,.6);flex:1;margin:0;}
@@ -146,14 +148,14 @@ section{padding:84px 5%;}
 /* COUNTIES ACCORDION */
 .counties-wrap{display:flex;flex-direction:column;gap:0;}
 .region-group{margin-bottom:32px;}
-.region-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);}
+.region-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);}
 .counties-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
 .county-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;transition:border-color .2s;}
 .county-card:hover{border-color:rgba(244,180,0,.4);}
 .county-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none;}
 .county-name{font-family:'Fraunces',serif;font-size:16px;color:var(--white);font-weight:700;}
 .county-count{font-size:12px;color:rgba(244,180,0,.7);font-weight:600;background:rgba(244,180,0,.1);padding:3px 9px;border-radius:100px;}
-.county-toggle{width:22px;height:22px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:none;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:14px;flex-shrink:0;transition:all .2s;}
+.county-toggle{width:22px;height:22px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:none;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.65);font-size:14px;flex-shrink:0;transition:all .2s;}
 .county-card.open .county-toggle{background:var(--gold);border-color:var(--gold);color:var(--black);transform:rotate(45deg);}
 .county-cities{display:none;padding:0 14px 14px;flex-wrap:wrap;gap:7px;}
 .county-card.open .county-cities{display:flex;}
@@ -189,7 +191,7 @@ section{padding:84px 5%;}
 .comp-bg{background:var(--black);padding:84px 5%;}
 .comp-bg .eyebrow{color:var(--gold);}
 .comp-bg .sec-title{color:var(--white);}
-.comp-bg .sec-sub{color:rgba(255,255,255,.5);}
+.comp-bg .sec-sub{color:rgba(255,255,255,.65);}
 .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px;max-width:940px;margin-left:auto;margin-right:auto;}
 .comp-card{border-radius:var(--rl);padding:34px 32px;}
 .comp-card.us{background:var(--white);position:relative;}
@@ -260,21 +262,21 @@ section{padding:84px 5%;}
 .cta-band h2{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,46px);color:var(--white);margin-bottom:14px;font-weight:900;letter-spacing:-.5px;}
 .cta-band p{color:rgba(255,255,255,.6);font-size:17px;margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.cta-note{font-size:12px;color:rgba(255,255,255,.25);margin-top:14px;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;}
+.cta-note{font-size:12px;color:rgba(255,255,255,.65);margin-top:14px;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;}
 
 /* FOOTER */
 .footer-bg{background:var(--black);padding:60px 5% 28px;border-top:3px solid rgba(244,180,0,.3);}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:42px;border-bottom:1px solid rgba(255,255,255,.1);}
 .footer-logo-img{height:50px;width:auto;margin-bottom:12px;display:block;}
-.footer-desc{font-size:14px;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:16px;}
-.footer-contact a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.46);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:16px;}
+.footer-contact a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
 .footer-contact a:hover{color:var(--gold);}
-.footer-col h4{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:13px;}
-.footer-col a{display:block;color:rgba(255,255,255,.42);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-col h4{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:13px;}
+.footer-col a{display:block;color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
 .footer-col a:hover{color:var(--gold);}
 .footer-bottom{max-width:1200px;margin:0 auto;padding-top:22px;text-align:center;}
-.footer-disc{font-size:12px;color:rgba(255,255,255,.2);line-height:1.6;max-width:800px;margin:0 auto 8px;}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.2);margin-top:14px;}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;max-width:800px;margin:0 auto 8px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.65);margin-top:14px;}
 
 /* POPUP */
 .pop-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;justify-content:center;align-items:center;padding:20px;}
@@ -299,11 +301,11 @@ section{padding:84px 5%;}
 .nc-coverage{background:var(--black);padding:88px 5%;}
 .nc-cov-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:60px;flex-wrap:wrap;}
 .nc-cov-header-text .sec-title{color:#fff;margin-bottom:10px;}
-.nc-cov-desc{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;max-width:560px;}
+.nc-cov-desc{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;max-width:560px;}
 .nc-cov-stats{display:flex;align-items:center;gap:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;flex-shrink:0;}
 .nc-stat{padding:20px 28px;text-align:center;}
 .nc-stat-n{font-family:"Fraunces",serif;font-size:32px;font-weight:900;color:var(--gold);line-height:1;}
-.nc-stat-l{font-size:12px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.5px;margin-top:5px;}
+.nc-stat-l{font-size:12px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.5px;margin-top:5px;}
 .nc-stat-div{width:1px;background:rgba(255,255,255,.08);align-self:stretch;}
 
 .regions-wrap{display:flex;flex-direction:column;gap:2px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);}
@@ -313,7 +315,7 @@ section{padding:84px 5%;}
 .region-intro{display:flex;align-items:center;gap:16px;padding:22px 24px 16px;cursor:default;}
 .region-badge{width:36px;height:36px;border-radius:10px;background:rgba(244,180,0,.12);border:1px solid rgba(244,180,0,.25);display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:14px;font-weight:900;color:var(--gold);flex-shrink:0;}
 .region-title{font-family:"Fraunces",serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;}
-.region-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
+.region-desc{font-size:13px;color:rgba(255,255,255,.65);line-height:1.5;}
 .ccards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;padding:0 24px 20px;background:transparent;}
 
 .ccard{background:rgba(255,255,255,.03);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:border-color .2s;}
@@ -323,7 +325,7 @@ section{padding:84px 5%;}
 .ccard-name{font-family:"Fraunces",serif;font-size:15px;font-weight:700;color:#fff;text-decoration:none;transition:color .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .ccard-name:hover{color:var(--gold);}
 .ccard-sub{font-size:11px;color:rgba(244,180,0,.65);font-weight:600;letter-spacing:.3px;}
-.ccard-arrow{color:rgba(255,255,255,.3);transition:transform .25s,color .2s;flex-shrink:0;}
+.ccard-arrow{color:rgba(255,255,255,.65);transition:transform .25s,color .2s;flex-shrink:0;}
 .ccard.open .ccard-arrow{transform:rotate(180deg);color:var(--gold);}
 .ccard-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
 .ccard.open .ccard-body{max-height:400px;padding-bottom:14px;}
@@ -915,7 +917,7 @@ section{padding:84px 5%;}
     </div>
     <div style="text-align:center;margin-top:40px;">
       <button class="btn-gold" onclick="openPopup()">Get My NC Cash Offer Now</button>
-      <p style="color:rgba(255,255,255,.3);margin-top:10px;font-size:13px;">No obligation. No pressure. Just a fair offer.</p>
+      <p style="color:rgba(255,255,255,.65);margin-top:10px;font-size:13px;">No obligation. No pressure. Just a fair offer.</p>
     </div>
   </div>
 </div>

@@ -16,7 +16,9 @@
 <link rel="canonical" href="https://www.acornhouseacquisition.com/blog.html">
 <meta property="og:site_name" content="Acorn House Acquisition">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -82,7 +84,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .scard h3{font-family:'Fraunces',serif;font-size:16px;color:var(--black);margin-bottom:14px;padding-bottom:11px;border-bottom:2px solid var(--gold);}
 .scard-cta{background:var(--black);border-radius:var(--rl);padding:28px 20px;text-align:center;}
 .scard-cta h3{font-family:'Fraunces',serif;font-size:20px;color:#fff;margin-bottom:9px;border:none;padding:0;}
-.scard-cta p{font-size:13px;color:rgba(255,255,255,.58);margin-bottom:18px;line-height:1.6;}
+.scard-cta p{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:18px;line-height:1.6;}
 .btn-gold{background:var(--gold);color:var(--black);padding:13px 22px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all .2s;text-decoration:none;display:block;text-align:center;}
 .btn-gold:hover{background:var(--gold-l);}
 .recent-list{display:flex;flex-direction:column;gap:13px;}
@@ -108,9 +110,9 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:3px solid va
 .footer-bg{background:var(--black);padding:52px 5% 24px;border-top:3px solid rgba(244,180,0,.3);}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px;}
 .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
-.footer-links a{color:rgba(255,255,255,.42);font-size:14px;text-decoration:none;transition:color .2s;}
+.footer-links a{color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--gold);}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.2);text-align:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.65);text-align:center;}
 @media(max-width:1000px){.blog-layout{grid-template-columns:1fr;}.sidebar{position:static;}}
 @media(max-width:680px){.posts-grid{grid-template-columns:1fr;}.bcard.featured{grid-column:auto;}}
 @media(max-width:600px){.nav-phone{display:none;}}

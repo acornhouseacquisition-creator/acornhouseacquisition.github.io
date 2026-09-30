@@ -101,7 +101,9 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -274,7 +276,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 .footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
 .footer-links a{color:var(--ts);font-size:12px;text-decoration:none;transition:color .18s;}
 .footer-links a:hover{color:var(--gold);}
-.footer-copy{font-size:11px;color:rgba(255,255,255,.18);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.65);}
 
 @media(max-width:960px){
   .page-wrap{grid-template-columns:1fr;}
@@ -363,7 +365,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 .about-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
 .astat-c{background:#0a0a0a;border-radius:12px;padding:18px 14px;text-align:center;}
 .astat-c-n{font-family:"Fraunces",serif;font-size:28px;font-weight:900;color:var(--gold);line-height:1;}
-.astat-c-l{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;margin-top:5px;}
+.astat-c-l{font-size:11px;color:rgba(255,255,255,.65);font-weight:600;margin-top:5px;}
 .about-cred-link{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:var(--gold-d);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
 .about-cred-link:hover{border-color:var(--gold-d);}
 @media(max-width:680px){.about-grid-calc{grid-template-columns:1fr;}.about-stats-row{grid-template-columns:repeat(3,1fr);}}

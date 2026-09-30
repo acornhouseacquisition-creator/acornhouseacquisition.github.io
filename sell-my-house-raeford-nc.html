@@ -36,7 +36,9 @@
 "areaServed":[{"@type":"City","name":"Raeford"},{"@type":"County","name":"Hoke County"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -80,7 +82,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .btn-call:hover{color:#fff;}
 .hero-testimonial{margin-top:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:17px 20px;max-width:480px;}
 .hero-testimonial p{font-size:14px;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:7px;}
-.hero-testimonial span{font-size:12px;color:rgba(255,255,255,.4);}
+.hero-testimonial span{font-size:12px;color:rgba(255,255,255,.65);}
 .hero-form-side{position:relative;z-index:2;}
 .hf-card{background:var(--white);border-radius:var(--rl);padding:32px 28px;box-shadow:0 24px 64px rgba(0,0,0,.35);border-top:5px solid var(--gold);}
 .hf-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--black);margin-bottom:5px;}
@@ -93,7 +95,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:3px 
 .trust-div{width:1px;height:17px;background:rgba(0,0,0,.2);}
 section{padding:84px 5%;}
 .container{max-width:1200px;margin:0 auto;}
-.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px;}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#8a6500;margin-bottom:12px;}
 .sec-title{font-family:'Fraunces',serif;font-size:clamp(26px,3.3vw,44px);color:var(--black);font-weight:700;line-height:1.15;margin-bottom:14px;letter-spacing:-.4px;}
 .sec-sub{font-size:17px;color:var(--tm);font-weight:300;max-width:580px;line-height:1.7;}
 .local-intro-bg{background:var(--white);}
@@ -108,7 +110,7 @@ section{padding:84px 5%;}
 .nearby-bg{background:var(--black);padding:84px 5%;}
 .nearby-bg .eyebrow{color:var(--gold);}
 .nearby-bg .sec-title{color:var(--white);}
-.nearby-bg .sec-sub{color:rgba(255,255,255,.55);max-width:640px;}
+.nearby-bg .sec-sub{color:rgba(255,255,255,.65);max-width:640px;}
 .nearby-intro{margin-top:18px;margin-bottom:44px;}
 .nearby-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:38px;}
 .nearby-pill{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);text-decoration:none;color:rgba(255,255,255,.8);font-size:14px;font-weight:600;transition:all .22s;}
@@ -118,7 +120,7 @@ section{padding:84px 5%;}
 .nearby-radius{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:20px 22px;margin-top:8px;}
 .nearby-radius-icon{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(244,180,0,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nearby-radius-icon svg{width:16px;height:16px;fill:var(--gold);}
-.nearby-radius p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;}
+.nearby-radius p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin:0;}
 .nearby-radius strong{color:rgba(255,255,255,.85);}
 .nearby-cta{margin-top:34px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .nearby-cta p{font-size:15px;color:rgba(255,255,255,.6);}
@@ -143,7 +145,7 @@ section{padding:84px 5%;}
 .comp-bg{background:var(--black);padding:84px 5%;}
 .comp-bg .eyebrow{color:var(--gold);}
 .comp-bg .sec-title{color:var(--white);}
-.comp-bg .sec-sub{color:rgba(255,255,255,.5);}
+.comp-bg .sec-sub{color:rgba(255,255,255,.65);}
 .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:50px;max-width:940px;margin-left:auto;margin-right:auto;}
 .comp-card{border-radius:var(--rl);padding:34px 32px;}
 .comp-card.us{background:var(--white);position:relative;}
@@ -194,7 +196,7 @@ section{padding:84px 5%;}
 .cta-band{background:var(--black);padding:76px 5%;text-align:center;}
 .cta-band h2{font-family:'Fraunces',serif;font-size:clamp(26px,3.5vw,44px);color:var(--white);margin-bottom:12px;font-weight:700;}
 .cta-band p{color:rgba(255,255,255,.6);font-size:17px;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;}
-.cta-note{font-size:12px;color:rgba(255,255,255,.28);margin-top:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;}
+.cta-note{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .internal-links-bg{background:var(--gl);padding:44px 5%;}
 .internal-links-inner{max-width:1200px;margin:0 auto;}
@@ -206,15 +208,15 @@ section{padding:84px 5%;}
 .footer-bg{background:var(--black);padding:60px 5% 28px;border-top:3px solid rgba(244,180,0,.3);}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:46px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1);}
 .footer-logo-img{height:50px;width:auto;margin-bottom:12px;display:block;}
-.footer-desc{font-size:14px;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:18px;}
-.footer-contact a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.48);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:18px;}
+.footer-contact a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
 .footer-contact a:hover{color:var(--gold);}
-.footer-col h4{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:14px;}
-.footer-col a{display:block;color:rgba(255,255,255,.42);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.footer-col h4{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px;}
+.footer-col a{display:block;color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;}
 .footer-col a:hover{color:var(--gold);}
 .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;text-align:center;}
-.footer-disc{font-size:12px;color:rgba(255,255,255,.22);line-height:1.6;max-width:800px;margin:0 auto 8px;}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.2);margin-top:16px;}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;max-width:800px;margin:0 auto 8px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.65);margin-top:16px;}
 .pop-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:9999;justify-content:center;align-items:center;padding:20px;}
 .pop-overlay.open{display:flex;}
 .pop-box{background:var(--white);border-radius:var(--rl);padding:32px 28px;max-width:560px;width:100%;position:relative;max-height:92vh;overflow-y:auto;border-top:5px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.5);}
@@ -435,9 +437,9 @@ section{padding:84px 5%;}
     <h2 class="sec-title">How to Sell Your Raeford House Fast</h2>
     <p class="sec-sub">Three steps. No agent appointments. No open houses. No waiting months.</p>
     <div class="steps-row">
-      <div class="step"><span class="step-badge">STEP 1</span><span class="step-num">01</span><h3>Tell Us About Your Property</h3><p>Fill out the form or call us. Share your address and a little about your situation — takes under 2 minutes. No commitment required.</p></div>
-      <div class="step"><span class="step-badge">STEP 2</span><span class="step-num">02</span><h3>Receive Your Cash Offer</h3><p>We pull real Hoke County comps for your specific neighborhood and call you with a clear, fair cash offer within 24–48 hours.</p></div>
-      <div class="step"><span class="step-badge">STEP 3</span><span class="step-num">03</span><h3>Close and Get Paid</h3><p>You choose the closing date. We work with a licensed NC title company and handle every piece of paperwork. Just show up and collect your funds.</p></div>
+      <div class="step"><span class="step-badge">STEP 1</span><span class="step-num" aria-hidden="true">01</span><h3>Tell Us About Your Property</h3><p>Fill out the form or call us. Share your address and a little about your situation — takes under 2 minutes. No commitment required.</p></div>
+      <div class="step"><span class="step-badge">STEP 2</span><span class="step-num" aria-hidden="true">02</span><h3>Receive Your Cash Offer</h3><p>We pull real Hoke County comps for your specific neighborhood and call you with a clear, fair cash offer within 24–48 hours.</p></div>
+      <div class="step"><span class="step-badge">STEP 3</span><span class="step-num" aria-hidden="true">03</span><h3>Close and Get Paid</h3><p>You choose the closing date. We work with a licensed NC title company and handle every piece of paperwork. Just show up and collect your funds.</p></div>
     </div>
   </div>
 </section>
@@ -492,7 +494,7 @@ section{padding:84px 5%;}
     </div>
     <div style="text-align:center;margin-top:40px;">
       <button class="btn-gold" onclick="openPopup()">Get My Raeford Cash Offer</button>
-      <p style="color:rgba(255,255,255,.3);margin-top:10px;font-size:13px;">No obligation. No pressure. Just a fair offer.</p>
+      <p style="color:rgba(255,255,255,.65);margin-top:10px;font-size:13px;">No obligation. No pressure. Just a fair offer.</p>
     </div>
   </div>
 </div>
