@@ -411,6 +411,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 <div class="page-wrap">
 
   <!-- LEFT COLUMN: CALCULATOR -->
+  <script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
   <div class="calc-col">
 
     <!-- TABS -->
@@ -472,15 +473,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want to Receive Your Offer?</h3>
           <p>Submit your info and tell us what you are looking for. We will send a written offer within 24 hours.</p>
-          <div class="cta-grid">
-            <div class="f"><label>Name *</label><input type="text" id="c-name" placeholder="John Smith"></div>
-            <div class="f"><label>Email *</label><input type="email" id="c-email" placeholder="john@email.com"></div>
-            <div class="f"><label>Phone</label><input type="tel" id="c-phone" placeholder="(555) 000-0000"></div>
-            <div class="f"><label>Best Time to Call</label><input type="text" id="c-time" placeholder="Afternoons, weekends..."></div>
-          </div>
-          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="c-notes" placeholder="Tell us your situation, timeline, what you need at closing..."></textarea></div>
-          <button class="cta-btn" onclick="doSubmit('cash')">&#9993; Receive My Cash Offer by Email</button>
-          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="cash"></close-form>
+          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
         </div>
       </div>
       <div id="cash-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -530,15 +524,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want a Better Offer?</h3>
           <p>Tell us what terms you are looking for. Creative financing may allow for stronger offers.</p>
-          <div class="cta-grid">
-            <div class="f"><label>Name *</label><input type="text" id="s-name" placeholder="John Smith"></div>
-            <div class="f"><label>Email *</label><input type="email" id="s-email" placeholder="john@email.com"></div>
-            <div class="f"><label>Phone</label><input type="tel" id="s-phone" placeholder="(555) 000-0000"></div>
-            <div class="f"><label>Best Time to Call</label><input type="text" id="s-time" placeholder="Afternoons, weekends..."></div>
-          </div>
-          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="s-notes" placeholder="How much do you need at closing? Timeline? Other circumstances..."></textarea></div>
-          <button class="cta-btn" onclick="doSubmit('subto')">&#9993; Receive My Subject To Offer</button>
-          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="subto"></close-form>
+          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
         </div>
       </div>
       <div id="subto-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -590,15 +577,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want a Better Offer?</h3>
           <p>Tell us what terms you are looking for. Creative financing may allow for stronger, more flexible offers.</p>
-          <div class="cta-grid">
-            <div class="f"><label>Name *</label><input type="text" id="f-name" placeholder="John Smith"></div>
-            <div class="f"><label>Email *</label><input type="email" id="f-email" placeholder="john@email.com"></div>
-            <div class="f"><label>Phone</label><input type="tel" id="f-phone" placeholder="(555) 000-0000"></div>
-            <div class="f"><label>Best Time to Call</label><input type="text" id="f-time" placeholder="Afternoons, weekends..."></div>
-          </div>
-          <div class="f"><label>Notes — What Terms Are You Looking For?</label><textarea id="f-notes" placeholder="What you need at closing, preferred timeline, any other terms..."></textarea></div>
-          <button class="cta-btn" onclick="doSubmit('sf')">&#9993; Receive My Seller Financing Offer</button>
-          <p class="cta-disc">No obligation. No spam. We respond within 24 hours.</p>
+          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="sf"></close-form>
+          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
         </div>
       </div>
       <div id="sf-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -853,6 +833,8 @@ function doCash(){
   $('c-r-offer').textContent=fmt(m.offer);
   $('c-offer-big').innerHTML=fmt(m.offer)+' <small>estimate</small>';
   showResults('cash');
+  fillClose('cash',{address:addr,offer:fmt(m.offer),details:'Offer Calculator (cash): ARV '+fmt(arv)+' | Repairs '+fmt(repairs)+' | Estimated offer '+fmt(m.offer)+($('c-rdesc').value.trim()?' | Repair notes: '+$('c-rdesc').value.trim():'')});
+  trackCalc('cash',{arv:Math.round(arv),repairs:Math.round(repairs),offer:Math.round(m.offer)});
 }
 
 // ── SUBJECT TO ────────────────────────────────
@@ -885,6 +867,8 @@ function doSubTo(){
   badge.className='rule-badge rule-'+rule.toLowerCase();
   $('s-balloon').style.display=sf>0?'flex':'none';
   showResults('subto');
+  fillClose('subto',{address:addr,offer:'Subject To at '+fmt(price),details:'Offer Calculator (subject to): Price '+fmt(price)+' | Mortgage balance '+fmt(bal)+(pmt?' | Payment '+fmt(pmt)+'/mo':'')+(rent?' | Rent '+fmt(rent)+'/mo':'')+' | Rule '+rule+' | Cash at closing '+fmt(total)+(sf>0?' | Seller finance '+fmt(sf):'')});
+  trackCalc('subto',{price:Math.round(price),balance:Math.round(bal)});
 }
 
 // ── SELLER FINANCING ──────────────────────────
@@ -925,18 +909,30 @@ function doSF(){
   $('f-r-total').textContent=fmt(r.dp);
   $('f-pmt-big').innerHTML=fmt(r.monthly)+' <small>/month</small>';
   showResults('sf');
+  fillClose('sf',{address:addr,offer:'Seller financing at '+fmt(price),details:'Offer Calculator (seller financing): Price '+fmt(price)+' | Down '+fmt(r.dp)+' ('+dpPct+'%) | Rate '+r.rate.toFixed(2)+'% | Payment '+fmt(r.monthly)+'/mo'+(rent?' | Rent '+fmt(rent)+'/mo':'')});
+  trackCalc('sf',{price:Math.round(price),down_pct:dpPct});
 }
 
-// ── SUBMIT ────────────────────────────────────
-function doSubmit(type){
-  const p=type==='cash'?'c':type==='subto'?'s':'f';
-  const name=$(p+'-name').value.trim();
-  const email=$(p+'-email').value.trim();
-  if(!name||!email){alert('Please enter your name and email address.');return;}
-  $(type+'-cta').style.display='none';
-  $(type+'-success').classList.add('show');
-  console.log('Submitted:',{type,name,email});
+
+// ── CLOSE CRM FORM PREFILL + ANALYTICS ───────
+// Fills the Close web form under each calculator with what the seller entered,
+// so submissions land in Close with the address and numbers attached.
+function fillClose(tab,vals,tries=0){
+  const cf=document.querySelector('close-form[data-calc="'+tab+'"]'), root=cf&&cf.shadowRoot;
+  const ready=root&&root.querySelector('input[name="name"]');
+  if(!ready){ if(tries<40) setTimeout(()=>fillClose(tab,vals,tries+1),250); return; }
+  const set=(sel,v)=>{const el=root.querySelector(sel); if(!el||v==null) return;
+    const proto=el.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;
+    Object.getOwnPropertyDescriptor(proto,'value').set.call(el,v);
+    el.dispatchEvent(new Event('input',{bubbles:true,composed:true}));
+    el.dispatchEvent(new Event('change',{bubbles:true,composed:true}));};
+  set('input[name="name"]',vals.address);
+  set('input[name^="custom_fields_"]',vals.offer);
+  set('textarea[name^="multi_line_"]',vals.details);
 }
+function trackCalc(type,params){ if(typeof gtag==='function') gtag('event','offer_calculator',Object.assign({calc_type:type},params)); }
+
+// ── SUBMIT ────────────────────────────────────
 
 // Init slider label
 liveCalcSF();
