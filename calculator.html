@@ -411,7 +411,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 <div class="page-wrap">
 
   <!-- LEFT COLUMN: CALCULATOR -->
-  <script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" defer></script>
   <div class="calc-col">
 
     <!-- TABS -->
@@ -473,8 +472,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want to Receive Your Offer?</h3>
           <p>Submit your info and tell us what you are looking for. We will send a written offer within 24 hours.</p>
-          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="cash"></close-form>
-          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;">
+            <a href="tel:+17869828464" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;">&#128222; Call (786) 982-8464</a>
+            <a href="mailto:info@acornhouseacquisition.com?subject=Offer%20Calculator%20request" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;background:transparent;border:1.5px solid #f4b400;color:#f4b400;">&#9993; Email Us</a>
+          </div>
+          <p class="cta-disc">Tell us the address and your numbers. We reply within 24 hours.</p>
         </div>
       </div>
       <div id="cash-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -524,8 +526,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want a Better Offer?</h3>
           <p>Tell us what terms you are looking for. Creative financing may allow for stronger offers.</p>
-          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="subto"></close-form>
-          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;">
+            <a href="tel:+17869828464" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;">&#128222; Call (786) 982-8464</a>
+            <a href="mailto:info@acornhouseacquisition.com?subject=Offer%20Calculator%20request" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;background:transparent;border:1.5px solid #f4b400;color:#f4b400;">&#9993; Email Us</a>
+          </div>
+          <p class="cta-disc">Tell us the address and your numbers. We reply within 24 hours.</p>
         </div>
       </div>
       <div id="subto-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -577,8 +582,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <div class="cta-card">
           <h3>Want a Better Offer?</h3>
           <p>Tell us what terms you are looking for. Creative financing may allow for stronger, more flexible offers.</p>
-          <close-form id="form_034axoZ94giszgs286p2ja" data-calc="sf"></close-form>
-          <p class="cta-disc">Your address and the numbers above are filled in for you. Add your email and press Submit; we reply within 24 hours. By submitting, you agree we may contact you about your property.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;">
+            <a href="tel:+17869828464" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;">&#128222; Call (786) 982-8464</a>
+            <a href="mailto:info@acornhouseacquisition.com?subject=Offer%20Calculator%20request" class="cta-btn" style="flex:1;min-width:200px;text-align:center;text-decoration:none;background:transparent;border:1.5px solid #f4b400;color:#f4b400;">&#9993; Email Us</a>
+          </div>
+          <p class="cta-disc">Tell us the address and your numbers. We reply within 24 hours.</p>
         </div>
       </div>
       <div id="sf-success" class="success-msg"><h3>&#10003; Request Received!</h3><p>Our team will contact you within 24 hours with your written offer.</p></div>
@@ -833,7 +841,6 @@ function doCash(){
   $('c-r-offer').textContent=fmt(m.offer);
   $('c-offer-big').innerHTML=fmt(m.offer)+' <small>estimate</small>';
   showResults('cash');
-  fillClose('cash',{address:addr,offer:fmt(m.offer),details:'Offer Calculator (cash): ARV '+fmt(arv)+' | Repairs '+fmt(repairs)+' | Estimated offer '+fmt(m.offer)+($('c-rdesc').value.trim()?' | Repair notes: '+$('c-rdesc').value.trim():'')});
   trackCalc('cash',{arv:Math.round(arv),repairs:Math.round(repairs),offer:Math.round(m.offer)});
 }
 
@@ -867,7 +874,6 @@ function doSubTo(){
   badge.className='rule-badge rule-'+rule.toLowerCase();
   $('s-balloon').style.display=sf>0?'flex':'none';
   showResults('subto');
-  fillClose('subto',{address:addr,offer:'Subject To at '+fmt(price),details:'Offer Calculator (subject to): Price '+fmt(price)+' | Mortgage balance '+fmt(bal)+(pmt?' | Payment '+fmt(pmt)+'/mo':'')+(rent?' | Rent '+fmt(rent)+'/mo':'')+' | Rule '+rule+' | Cash at closing '+fmt(total)+(sf>0?' | Seller finance '+fmt(sf):'')});
   trackCalc('subto',{price:Math.round(price),balance:Math.round(bal)});
 }
 
@@ -909,27 +915,11 @@ function doSF(){
   $('f-r-total').textContent=fmt(r.dp);
   $('f-pmt-big').innerHTML=fmt(r.monthly)+' <small>/month</small>';
   showResults('sf');
-  fillClose('sf',{address:addr,offer:'Seller financing at '+fmt(price),details:'Offer Calculator (seller financing): Price '+fmt(price)+' | Down '+fmt(r.dp)+' ('+dpPct+'%) | Rate '+r.rate.toFixed(2)+'% | Payment '+fmt(r.monthly)+'/mo'+(rent?' | Rent '+fmt(rent)+'/mo':'')});
   trackCalc('sf',{price:Math.round(price),down_pct:dpPct});
 }
 
 
-// ── CLOSE CRM FORM PREFILL + ANALYTICS ───────
-// Fills the Close web form under each calculator with what the seller entered,
-// so submissions land in Close with the address and numbers attached.
-function fillClose(tab,vals,tries=0){
-  const cf=document.querySelector('close-form[data-calc="'+tab+'"]'), root=cf&&cf.shadowRoot;
-  const ready=root&&root.querySelector('input[name="name"]');
-  if(!ready){ if(tries<40) setTimeout(()=>fillClose(tab,vals,tries+1),250); return; }
-  const set=(sel,v)=>{const el=root.querySelector(sel); if(!el||v==null) return;
-    const proto=el.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;
-    Object.getOwnPropertyDescriptor(proto,'value').set.call(el,v);
-    el.dispatchEvent(new Event('input',{bubbles:true,composed:true}));
-    el.dispatchEvent(new Event('change',{bubbles:true,composed:true}));};
-  set('input[name="name"]',vals.address);
-  set('input[name^="custom_fields_"]',vals.offer);
-  set('textarea[name^="multi_line_"]',vals.details);
-}
+// ── ANALYTICS ─────────────────────────────────
 function trackCalc(type,params){ if(typeof gtag==='function') gtag('event','offer_calculator',Object.assign({calc_type:type},params)); }
 
 // ── SUBMIT ────────────────────────────────────
