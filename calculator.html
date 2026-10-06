@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Offer Calculator | Acorn House Acquisition</title>
-<meta name="description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimate calculator from Acorn House Acquisition.">
+<meta name="description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimates from the Acorn House Acquisition Offer Calculator.">
 <link rel="canonical" href="https://www.acornhouseacquisition.com/calculator.html">
 <meta property="og:title" content="Offer Calculator | Acorn House Acquisition">
-<meta property="og:description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimate calculator from Acorn House Acquisition.">
+<meta property="og:description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimates from the Acorn House Acquisition Offer Calculator.">
 <meta property="og:url" content="https://www.acornhouseacquisition.com/calculator.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://i.imgur.com/KmGo5Sc.png">
 <meta property="og:site_name" content="Acorn House Acquisition">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Offer Calculator | Acorn House Acquisition">
-<meta name="twitter:description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimate calculator from Acorn House Acquisition.">
+<meta name="twitter:description" content="Explore your cash offer, subject-to, or seller financing options. Instant estimates from the Acorn House Acquisition Offer Calculator.">
 <meta name="twitter:image" content="https://i.imgur.com/KmGo5Sc.png">
 <link rel="icon" type="image/png" href="https://i.imgur.com/KmGo5Sc.png">
 <meta name="robots" content="index, follow">
@@ -29,7 +29,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does the cash offer calculator work?",
+          "name": "How does the Offer Calculator work?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Enter the After Repair Value (ARV) of your property and the estimated repair costs. Our calculator instantly shows your estimated cash offer. The final offer is confirmed after an in-person property review."
@@ -432,7 +432,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
     <!-- CASH PANEL -->
     <div id="panel-cash" class="calc-panel active">
       <div class="card">
-        <div class="card-title"><span class="card-title-icon">&#128181;</span> Cash Offer Calculator</div>
+        <div class="card-title"><span class="card-title-icon">&#128181;</span> Offer Calculator: Cash Offer</div>
         <div class="f"><label>Property Address *</label><input type="text" id="c-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
         <div class="fg" style="margin-top:12px;">
           <div class="f"><label>After Repair Value (ARV) *</label><input type="number" id="c-arv" placeholder="200000" oninput="liveCalcCash()"><span class="hint">Estimated value after all repairs</span></div>
@@ -449,12 +449,20 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
             <div class="res-offer" id="c-offer-big">$0 <small>estimate</small></div>
           </div>
           <div class="res-body">
-            <div class="res-row"><span class="res-lbl">After Repair Value (ARV)</span><span class="res-val gold" id="c-r-arv">—</span></div>
-            <div class="res-row"><span class="res-lbl">Estimated Repairs</span><span class="res-val red" id="c-r-repairs">—</span></div>
+            <div class="res-row"><span class="res-lbl">After Repair Value (ARV)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">What the house sells for after repairs</span></span><span class="res-val gold" id="c-r-arv">—</span></div>
+            <div class="res-row"><span class="res-lbl">Estimated repairs</span><span class="res-val red" id="c-r-repairs">—</span></div>
+            <div class="res-row"><span class="res-lbl">Agent commission when we resell (6%)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">6% of ARV</span></span><span class="res-val red" id="c-r-comm">—</span></div>
+            <div class="res-row"><span class="res-lbl">Closing costs (2%)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">2% of ARV</span></span><span class="res-val red" id="c-r-close">—</span></div>
+            <div class="res-row"><span class="res-lbl">Insurance during renovation (1.5%)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">1.5% of ARV</span></span><span class="res-val red" id="c-r-ins">—</span></div>
+            <div class="res-row"><span class="res-lbl">Hard-money points (3%)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">3% of the loan: <span id="c-r-loan">—</span></span></span><span class="res-val red" id="c-r-points">—</span></div>
+            <div class="res-row"><span class="res-lbl">Lender underwriting fee<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">Flat fee</span></span><span class="res-val red" id="c-r-uw">—</span></div>
+            <div class="res-row"><span class="res-lbl">Loan interest, 6 months (12%/yr)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">Interest-only payments on the loan</span></span><span class="res-val red" id="c-r-int">—</span></div>
+            <div class="res-row"><span class="res-lbl">Investor profit (15%)<br><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:400;">15% of ARV</span></span><span class="res-val red" id="c-r-profit">—</span></div>
             <div class="res-row" style="border-top:2px solid rgba(244,180,0,.18);margin-top:4px;padding-top:14px;">
               <span class="res-lbl" style="color:#fff;font-weight:700;font-size:14px;">Estimated Offer Price</span>
               <span class="res-val gold" style="font-size:17px;" id="c-r-offer">—</span>
             </div>
+            <p style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;margin-top:12px;">The loan covers the purchase price plus repairs, so points and interest depend on the offer itself. The calculator solves for the exact number.</p>
           </div>
         </div>
         <div class="disc-note"><p>&#9888; Estimate only. Final offer may vary after property inspection, title review, and market verification. Not a binding agreement.</p></div>
@@ -481,7 +489,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
     <!-- SUBJECT TO PANEL -->
     <div id="panel-subto" class="calc-panel">
       <div class="card">
-        <div class="card-title"><span class="card-title-icon">&#127968;</span> Subject To Calculator</div>
+        <div class="card-title"><span class="card-title-icon">&#127968;</span> Offer Calculator: Subject To</div>
         <div class="f"><label>Property Address *</label><input type="text" id="s-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
         <div class="fg" style="margin-top:12px;">
           <div class="f"><label>Selling Price *</label><input type="number" id="s-price" placeholder="250000" oninput="liveCalcSubTo()"></div>
@@ -539,7 +547,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
     <!-- SELLER FINANCING PANEL -->
     <div id="panel-sf" class="calc-panel">
       <div class="card">
-        <div class="card-title"><span class="card-title-icon">&#128196;</span> Seller Financing Calculator</div>
+        <div class="card-title"><span class="card-title-icon">&#128196;</span> Offer Calculator: Seller Financing</div>
         <div class="f"><label>Property Address *</label><input type="text" id="f-addr" placeholder="123 Main St, Charlotte, NC 28201"></div>
         <div class="fg" style="margin-top:12px;">
           <div class="f"><label>Selling Price *</label><input type="number" id="f-price" placeholder="250000" oninput="liveCalcSF()"></div>
@@ -692,7 +700,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
         <span class="cc-divider-text">Common Questions</span>
         <span class="cc-divider-line"></span>
       </div>
-      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">How does the cash offer calculator work?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Enter the After Repair Value (ARV) of your property and the estimated repair costs. Our calculator instantly shows your estimated cash offer. The final offer is confirmed after an in-person property review and is not binding until signed by both parties.</div></div></div>
+      <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">How does the Offer Calculator work?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Enter the After Repair Value (ARV) and the estimated repairs. The Offer Calculator subtracts the repairs, the 6% agent commission and 2% closing costs when we resell, 1.5% insurance during the renovation, our hard-money loan costs (3 points, a $2,500 underwriting fee and 6 months of interest at 12% a year), and a 15% investor profit. You see every line. The final offer is confirmed after we see the property.</div></div></div>
       <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">What is a Subject To purchase?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">A Subject To purchase means Acorn House Acquisition takes ownership of your property while your existing mortgage stays in place. We take over the payments going forward. This allows sellers with little or no equity to exit without bringing cash to the closing table — all closed through a licensed title company.</div></div></div>
       <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">What is seller financing?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">Seller financing means the seller acts as the lender. Instead of getting a bank loan, the buyer makes monthly payments directly to the seller. We offer flexible down payment options from 0% to 20%, with interest rates that adjust proportionally — from 5% at 0% down to 0% at 20% down.</div></div></div>
       <div class="faq-item-calc"><button class="faq-q-calc" onclick="toggleFaqCalc(this)">How fast can you close?<span class="faq-ico">+</span></button><div class="faq-a-calc"><div class="faq-ai-calc">We can close cash transactions in as little as 7 days. Subject To and seller financing transactions typically close in 14 to 21 days. We work around the seller's timeline and can accommodate faster closings for foreclosure situations.</div></div></div>
@@ -809,11 +817,21 @@ function showResults(prefix){
 }
 
 // ── CASH ──────────────────────────────────────
+// Offer = ARV - repairs - selling costs - insurance - hard-money costs - profit.
+// The hard-money loan covers purchase + repairs, so points and interest depend on the
+// offer itself; solve: P = (ARV*(1-pct) - R*(1+loanPct) - fees) / (1+loanPct).
+const CASH={commission:.06,closing:.02,insurance:.015,profit:.15,points:.03,underwriting:2500,rate:.12,months:6};
+function cashMath(arv,repairs){
+  const c=CASH, loanPct=c.points+c.rate*c.months/12, arvPct=c.commission+c.closing+c.insurance+c.profit;
+  const offer=Math.max((arv*(1-arvPct)-repairs*(1+loanPct)-c.underwriting)/(1+loanPct),0);
+  const loan=offer+repairs;
+  return {offer,loan,comm:arv*c.commission,close:arv*c.closing,ins:arv*c.insurance,profit:arv*c.profit,
+          points:loan*c.points,uw:c.underwriting,int:loan*c.rate*c.months/12};
+}
 function liveCalcCash(){
   const arv=num('c-arv'),repairs=num('c-repairs');
   if(!arv)return;
-  const offer=Math.max(arv*0.65-repairs,0);
-  $('c-offer-big').innerHTML=fmt(offer)+' <small>estimate</small>';
+  $('c-offer-big').innerHTML=fmt(cashMath(arv,repairs).offer)+' <small>estimate</small>';
 }
 
 function doCash(){
@@ -821,11 +839,19 @@ function doCash(){
   const arv=num('c-arv'),repairs=num('c-repairs');
   if(!addr){alert('Please enter the property address.');return;}
   if(!arv){alert('Please enter the After Repair Value (ARV).');return;}
-  const offer=Math.max(arv*0.65-repairs,0);
+  const m=cashMath(arv,repairs), neg=n=>'-'+fmt(n);
   $('c-r-arv').textContent=fmt(arv);
-  $('c-r-repairs').textContent='-'+fmt(repairs);
-  $('c-r-offer').textContent=fmt(offer);
-  $('c-offer-big').innerHTML=fmt(offer)+' <small>estimate</small>';
+  $('c-r-repairs').textContent=neg(repairs);
+  $('c-r-comm').textContent=neg(m.comm);
+  $('c-r-close').textContent=neg(m.close);
+  $('c-r-ins').textContent=neg(m.ins);
+  $('c-r-points').textContent=neg(m.points);
+  $('c-r-loan').textContent=fmt(m.loan);
+  $('c-r-uw').textContent=neg(m.uw);
+  $('c-r-int').textContent=neg(m.int);
+  $('c-r-profit').textContent=neg(m.profit);
+  $('c-r-offer').textContent=fmt(m.offer);
+  $('c-offer-big').innerHTML=fmt(m.offer)+' <small>estimate</small>';
   showResults('cash');
 }
 
