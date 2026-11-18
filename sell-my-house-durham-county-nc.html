@@ -330,5 +330,17 @@ function closePopup(){document.getElementById("globalPopup").classList.remove("o
 window.addEventListener("scroll",()=>{document.getElementById("stickyBar").classList.toggle("visible",window.scrollY>600);});
 function toggleFaq(btn){const item=btn.parentElement;const open=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>{i.classList.remove("open");i.querySelector(".faq-a").style.maxHeight=null;});if(!open){item.classList.add("open");item.querySelector(".faq-a").style.maxHeight=item.querySelector(".faq-a").scrollHeight+"px";}}
 </script>
+<script>/* lead-tracking: GA4 events for calls, emails, form opens and Close form submissions */
+(function(){
+function ev(n,p){if(typeof gtag==='function')gtag('event',n,Object.assign({page_path:location.pathname},p||{}));}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(!a)return;ev(a.getAttribute('href').indexOf('tel:')===0?'phone_click':'email_click',{link_text:(a.textContent||'').trim().slice(0,40)});},true);
+if(typeof window.openPopup==='function'){var op=window.openPopup;window.openPopup=function(){ev('form_open');return op.apply(this,arguments);};}
+function hook(f){var r=f.shadowRoot;if(f.__lt||!r||!r.querySelector('form'))return;f.__lt=1;
+ r.addEventListener('submit',function(e){var form=e.target,loc=f.closest('#globalPopup')?'popup':'page',done=0;ev('form_submit',{form_location:loc});
+  [2500,6000,10000].forEach(function(ms){setTimeout(function(){if(done)return;if(!r.contains(form)||form.offsetParent===null){done=1;ev('generate_lead',{form_id:f.id,form_location:loc});}},ms);});},true);}
+function scan(){document.querySelectorAll('close-form').forEach(hook);}
+if(window.customElements&&document.querySelector('close-form')){customElements.whenDefined('close-form').then(function(){var n=0,t=setInterval(function(){scan();if(++n>20)clearInterval(t);},500);scan();});}
+})();
+</script>
 </body>
 </html>
